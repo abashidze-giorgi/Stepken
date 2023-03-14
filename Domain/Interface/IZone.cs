@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interface
 {
-    internal class IHitPoint
+    public interface IZone
     {
     }
 }
