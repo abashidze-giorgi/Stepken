@@ -1,9 +1,4 @@
 ﻿using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Models
 {
@@ -11,15 +6,17 @@ namespace Domain.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public CharacterRaceEnum Character {get; set; }
         public double Life { get; set; }
-        public double MagicPower { get; set; }
         public double Attack { get; set; }
         public double Defence { get; set; }
+        public double MagicPower { get; set; }
+        public CharacterRaceEnum Character {get; set; }
+        public ShieldModel Shield { get; set; } = new ShieldModel();
         public List<WeaponModel> Weapon { get; set; } = new List<WeaponModel>();
         public List<ArmorModel> Armor { get; set; } = new List<ArmorModel>();
-        public ShieldModel Shield { get; set; } = new ShieldModel();
         public MagicBonusModel MagicBonus { get; set; } = new MagicBonusModel();
+        public string ImageAddress { get; set; }
+
 
         public UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
         {

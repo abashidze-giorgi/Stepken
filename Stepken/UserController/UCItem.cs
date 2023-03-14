@@ -17,22 +17,24 @@ namespace Stepken.UserController
         {
             InitializeComponent();
         }
-        private Dictionary<string, double> _propertyValue;
 
-        public Dictionary<string, double> PropertyValue
+        public void AddItemCharactersAndValues(Dictionary<string, string> itemPropertye)
         {
-            get { return _propertyValue; }
-            set { _propertyValue = value; AddPropertyesToPanel(); }
-        }
-
-        private void AddPropertyesToPanel()
-        {
-            foreach (var p in PropertyValue)
+            ListBox list = new ListBox();
+            foreach(var kv in itemPropertye)
             {
-                Label label = new Label();
-                label.Text = $"{p.Key} - {p.Value}";
-                PropertyPanel.Controls.Add(label);
+                list.Items.Add($"{kv.Key} - {kv.Value}");
             }
+            PropertyPanel.Controls.Add(list);
         }
+
+        private string _imageAddress;
+
+        public string ImageAddress
+        {
+            get { return _imageAddress; }
+            set { _imageAddress = value; Image_item.ImageLocation = value; Image_item.SizeMode = PictureBoxSizeMode.StretchImage; }
+        }
+
     }
 }

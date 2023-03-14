@@ -105,12 +105,16 @@
             // 
             // Btn_equip
             // 
+            Btn_equip.BackColor = Color.Green;
+            Btn_equip.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Btn_equip.ForeColor = Color.White;
             Btn_equip.Location = new Point(245, 716);
             Btn_equip.Name = "Btn_equip";
             Btn_equip.Size = new Size(60, 60);
             Btn_equip.TabIndex = 1;
             Btn_equip.Text = "Equip";
-            Btn_equip.UseVisualStyleBackColor = true;
+            Btn_equip.UseVisualStyleBackColor = false;
+            Btn_equip.Click += Btn_equip_Click;
             // 
             // button2
             // 

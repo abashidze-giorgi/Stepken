@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Domain.Service
 {
-    public class CreateAllEquipments
+    public static class CreateAllEquipments
     {
-        public List<AmmunitionModel> AmmunitionGlobalList = new List<AmmunitionModel>();
+        public static List<AmmunitionModel> AmmunitionGlobalList = new List<AmmunitionModel>();
 
-        public void CreateWeapons()
+        public static void CreateWeapons()
         {
 
             AmmunitionGlobalList.Add(ShortSword());
@@ -24,8 +24,7 @@ namespace Domain.Service
             AmmunitionGlobalList.Add(LongBow());
             AmmunitionGlobalList.Add(ShortBow());
         }
-
-        private ShortSword ShortSword()
+        private static ShortSword ShortSword()
         {
             var shortSword = new ShortSword
             {
@@ -33,11 +32,12 @@ namespace Domain.Service
                 AttackPower = 0,
                 Id = 0,
                 Name = "Short Sword",
-                Price = 0
+                Price = 0,
+                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\ShortSword.jpg"
             };
             return shortSword;
         }
-        private LongSword LongtSword()
+        private static LongSword LongtSword()
         {
             var longtSword = new LongSword
             {
@@ -45,11 +45,12 @@ namespace Domain.Service
                 AttackPower = 0,
                 Id = 0,
                 Name = "Long Sword",
-                Price = 0
+                Price = 0,
+                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\LongSword.jpg"
             };
             return longtSword;
         }
-        private Alebard Halberd()
+        private static Alebard Halberd()
         {
             var alebard = new Alebard
             {
@@ -57,11 +58,12 @@ namespace Domain.Service
                 AttackPower = 0,
                 Id = 0,
                 Name = "Alebard",
-                Price = 0
+                Price = 0,
+                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\Alebard.jpg"
             };
             return alebard;
         }
-        private CrossBow CrossBow()
+        private static CrossBow CrossBow()
         {
             var crossBow = new CrossBow
             {
@@ -69,11 +71,12 @@ namespace Domain.Service
                 AttackPower = 0,
                 Id = 0,
                 Name = "CrossBow",
-                Price = 0
+                Price = 0,
+                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\CrossBow.jpg"
             };
             return crossBow;
         }
-        private LongBow LongBow()
+        private static LongBow LongBow()
         {
             var longBow = new LongBow
             {
@@ -81,11 +84,12 @@ namespace Domain.Service
                 AttackPower = 0,
                 Id = 0,
                 Name = "LongBow",
-                Price = 0
+                Price = 0,
+                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\LongBow.jpg"
             };
             return longBow;
         }
-        private ShortBow ShortBow()
+        private static ShortBow ShortBow()
         {
             var shortBow = new ShortBow
             {
@@ -93,7 +97,8 @@ namespace Domain.Service
                 AttackPower = 0,
                 Id = 0,
                 Name = "ShortBow",
-                Price = 0
+                Price = 0,
+                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\ShortBow.png"
             };
             return shortBow;
         }

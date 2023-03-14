@@ -4,12 +4,13 @@ using Microsoft.VisualBasic.ApplicationServices;
 using System.Security.Cryptography;
 using Domain.Inventory.Weapons;
 using Domain.Service;
+using Stepken.Page;
 
 namespace Stepken
 {
     public partial class Form1 : Form
     {
-        Player player;
+        Player? player;
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace Stepken
         private void GetPlayer()
         {
             player = new Player();
-            Picture_1.ImageLocation = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\human.jpg";
+            Picture_1.ImageLocation = player.ImageAddress;
         }
 
         private void GetEnemy()
@@ -30,8 +31,7 @@ namespace Stepken
 
         private void CreateWeapon()
         {
-            var cw = new CreateAllEquipments();
-            cw.CreateWeapons();
+            CreateAllEquipments.CreateWeapons();
         }
 
 
@@ -39,6 +39,19 @@ namespace Stepken
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Btn_equip_Click(object sender, EventArgs e)
+        {
+            var equipPanel = new EquipmentForm(player);
+            equipPanel.Show();
+            this.Hide();
+            equipPanel.FormClosing += equipClosing;
+        }
+
+        private void equipClosing(object? sender, FormClosingEventArgs e)
+        {
+            this.Show();
         }
     }
 }

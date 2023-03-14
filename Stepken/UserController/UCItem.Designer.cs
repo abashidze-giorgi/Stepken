@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            Image_item = new PictureBox();
             label13 = new Label();
             label14 = new Label();
             PropertyPanel = new FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_item).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // Image_item
             // 
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(206, 207);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            Image_item.Location = new Point(3, 3);
+            Image_item.Name = "Image_item";
+            Image_item.Size = new Size(98, 104);
+            Image_item.TabIndex = 0;
+            Image_item.TabStop = false;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(255, 128, 0);
-            label13.Location = new Point(401, 77);
+            label13.Location = new Point(349, 20);
             label13.Name = "label13";
             label13.Size = new Size(61, 25);
             label13.TabIndex = 1;
@@ -59,7 +59,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(255, 128, 0);
-            label14.Location = new Point(418, 118);
+            label14.Location = new Point(366, 61);
             label14.Name = "label14";
             label14.Size = new Size(23, 25);
             label14.TabIndex = 1;
@@ -68,9 +68,9 @@
             // PropertyPanel
             // 
             PropertyPanel.FlowDirection = FlowDirection.TopDown;
-            PropertyPanel.Location = new Point(217, 3);
+            PropertyPanel.Location = new Point(107, 3);
             PropertyPanel.Name = "PropertyPanel";
-            PropertyPanel.Size = new Size(178, 207);
+            PropertyPanel.Size = new Size(236, 104);
             PropertyPanel.TabIndex = 2;
             // 
             // UCItem
@@ -80,19 +80,19 @@
             Controls.Add(PropertyPanel);
             Controls.Add(label14);
             Controls.Add(label13);
-            Controls.Add(pictureBox1);
+            Controls.Add(Image_item);
             Name = "UCItem";
-            Size = new Size(508, 213);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Size = new Size(420, 113);
+            ((System.ComponentModel.ISupportInitialize)Image_item).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        public PictureBox Image_item;
         private Label label13;
         private Label label14;
-        private FlowLayoutPanel PropertyPanel;
+        public FlowLayoutPanel PropertyPanel;
     }
 }

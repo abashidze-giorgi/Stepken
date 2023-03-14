@@ -5,18 +5,22 @@ namespace Domain.Characters
 {
     public class Player: UnitModel
     {
-        private int Id = 1;
-        private double Life = 350;
-        private double Attack = 15;
-        private double Defence = 15;
-        private double MagicPower = 50;
-        private ShieldModel Shield = new ShieldModel();
-        private List<ArmorModel> Armor = new List<ArmorModel>();
-        private List<WeaponModel> Weapon = new List<WeaponModel>();
-        private MagicBonusModel MagicBonus = new MagicBonusModel();
-        private CharacterRaceEnum Character = CharacterRaceEnum.Human;
-
-        private string Name = $"Human";
+        
+        public Player()
+        {
+            Id = 1;
+            Name = $"Human";
+            Life = 350;
+            Attack = 15;
+            Defence = 15;
+            MagicPower = 50;
+            Shield = new ShieldModel();
+            Armor = new List<ArmorModel>();
+            Weapon = new List<WeaponModel>();
+            MagicBonus = new MagicBonusModel();
+            Character = CharacterRaceEnum.Human;
+            ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\Character\human.jpg";
+        }
 
         private ZoneModel LegZone = new ZoneModel
         {
