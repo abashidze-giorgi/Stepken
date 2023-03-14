@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace Domain.Inventory.Weapons
 {
-    public class ShortSword: MeleeWeaponModel
+    public class ShortSword : MeleeWeaponModel
     {
+        public ShortSword()
+        {
+
+        }
     }
 }

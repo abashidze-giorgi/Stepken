@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class MeleeWeaponModel : WeaponModel
+    public abstract class MeleeWeaponModel : WeaponModel
     {
+
     }
 }

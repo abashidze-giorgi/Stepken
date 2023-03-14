@@ -14,10 +14,30 @@ namespace Domain.Characters
         private List<ArmorModel> Armor = new List<ArmorModel>();
         private List<WeaponModel> Weapon = new List<WeaponModel>();
         private MagicBonusModel MagicBonus = new MagicBonusModel();
-        private CharacterRaceEnum Character = CharacterRaceEnum.Humans;
-        private string Name = $"{CharacterRaceEnum.Humans.ToString()}-1";
-        private ZoneModel Leg = new ZoneModel();
-        private ZoneModel Body = new ZoneModel();
-        private ZoneModel Head = new ZoneModel();
+        private CharacterRaceEnum Character = CharacterRaceEnum.Human;
+
+        private string Name = $"Human";
+
+        private ZoneModel LegZone = new ZoneModel
+        {
+            ID = 2,
+            IsProtected = false,
+            IsAttacked = false,
+            Name = "leg"
+        };
+        private ZoneModel BodyZone = new ZoneModel
+        {
+            ID = 3,
+            IsProtected= false,
+            IsAttacked = false,
+            Name = "body"
+        };
+        private ZoneModel HeadZone = new ZoneModel
+        {
+            ID = 4,
+            IsProtected = false,
+            IsAttacked = false,
+            Name = "head"
+        };
     }
 }

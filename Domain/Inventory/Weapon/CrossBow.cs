@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Inventory.Weapons
 {
-    public class Halberd : MeleeWeaponModel
+    public class CrossBow: RangedWeaponModel
     {
     }
 }
