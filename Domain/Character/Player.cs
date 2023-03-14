@@ -1,4 +1,5 @@
-﻿using Domain.Models;
+﻿using Domain.Model.HitPointModel;
+using Domain.Models;
 
 namespace Domain.Characters
 {
@@ -15,5 +16,8 @@ namespace Domain.Characters
         private MagicBonusModel MagicBonus = new MagicBonusModel();
         private CharacterRaceEnum Character = CharacterRaceEnum.Humans;
         private string Name = $"{CharacterRaceEnum.Humans.ToString()}-1";
+        private ZoneModel Leg = new ZoneModel();
+        private ZoneModel Body = new ZoneModel();
+        private ZoneModel Head = new ZoneModel();
     }
 }

@@ -10,5 +10,7 @@ namespace Domain.Model.HitPointModel
     {
         public int ID { get; set; }
         public string Name { get; set;}
+        public bool IsProtected { get; set; }
+        public bool IsAttacked { get; set; }
     }
 }
