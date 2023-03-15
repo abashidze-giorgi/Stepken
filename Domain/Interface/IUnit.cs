@@ -12,6 +12,5 @@ namespace Domain.Interfaces
         public abstract UnitModel GiveWeapon(UnitModel unit, List<WeaponModel> weaponList);
         public abstract UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList);
         public abstract UnitModel GiveShield(UnitModel unit, ShieldModel shield);
-        public abstract UnitModel GiveMagicBonus(UnitModel unit, MagicBonusModel bonus);
     }
 }

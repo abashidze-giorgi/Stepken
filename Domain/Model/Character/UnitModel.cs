@@ -9,12 +9,10 @@ namespace Domain.Models
         public double Life { get; set; }
         public double Attack { get; set; }
         public double Defence { get; set; }
-        public double Mana { get; set; }
         public CharacterRaceEnum Character {get; set; }
         public ShieldModel Shield { get; set; } = new ShieldModel();
         public List<WeaponModel> Weapon { get; set; } = new List<WeaponModel>();
         public List<ArmorModel> Armor { get; set; } = new List<ArmorModel>();
-        public MagicBonusModel MagicBonus { get; set; } = new MagicBonusModel();
         public string ImageAddress { get; set; }
 
 
@@ -25,12 +23,6 @@ namespace Domain.Models
             {
                 unit.Armor.Add(a);
             }
-            return unit;
-        }
-
-        public UnitModel GiveMagicBonus(UnitModel unit, MagicBonusModel bonus)
-        {
-            unit.MagicBonus = bonus;
             return unit;
         }
 

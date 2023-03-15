@@ -14,11 +14,9 @@ namespace Domain.Characters
             Life = 350;
             Attack = 15;
             Defence = 15;
-            Mana = 50;
             Shield = new ShieldModel();
             Armor = new List<ArmorModel>();
             Weapon = new List<WeaponModel>();
-            MagicBonus = new MagicBonusModel();
             Character = CharacterRaceEnum.Human;
             ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\Character\human.jpg";
         }

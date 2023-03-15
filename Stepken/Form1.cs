@@ -26,7 +26,6 @@ namespace Stepken
             Picture_1.ImageLocation = player.ImageAddress;
             Lbl_PlayerLife.Text = player.Life.ToString();
             Lbl_Gold.Text = player.Gold.ToString();
-            Lbl_mana.Text = player.Mana.ToString();
             Lbl_param_attack.Text = getAttackAmount().ToString();
         }
 

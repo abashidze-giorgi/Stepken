@@ -58,8 +58,6 @@
             Lbl_param_magicAttack = new Label();
             label29 = new Label();
             Lbl_Gold = new Label();
-            label31 = new Label();
-            Lbl_mana = new Label();
             label5 = new Label();
             Lbl_EnemyLife = new Label();
             label17 = new Label();
@@ -226,7 +224,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(0, 192, 0);
-            label1.Location = new Point(27, 30);
+            label1.Location = new Point(203, 30);
             label1.Name = "label1";
             label1.Size = new Size(56, 30);
             label1.TabIndex = 3;
@@ -237,7 +235,7 @@
             Lbl_PlayerLife.AutoSize = true;
             Lbl_PlayerLife.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             Lbl_PlayerLife.ForeColor = Color.FromArgb(0, 192, 0);
-            Lbl_PlayerLife.Location = new Point(89, 30);
+            Lbl_PlayerLife.Location = new Point(265, 30);
             Lbl_PlayerLife.Name = "Lbl_PlayerLife";
             Lbl_PlayerLife.Size = new Size(26, 30);
             Lbl_PlayerLife.TabIndex = 3;
@@ -356,7 +354,7 @@
             label29.AutoSize = true;
             label29.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label29.ForeColor = Color.FromArgb(255, 128, 0);
-            label29.Location = new Point(185, 30);
+            label29.Location = new Point(12, 30);
             label29.Name = "label29";
             label29.Size = new Size(68, 30);
             label29.TabIndex = 3;
@@ -367,40 +365,18 @@
             Lbl_Gold.AutoSize = true;
             Lbl_Gold.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             Lbl_Gold.ForeColor = Color.FromArgb(255, 128, 0);
-            Lbl_Gold.Location = new Point(259, 30);
+            Lbl_Gold.Location = new Point(86, 30);
             Lbl_Gold.Name = "Lbl_Gold";
             Lbl_Gold.Size = new Size(26, 30);
             Lbl_Gold.TabIndex = 3;
             Lbl_Gold.Text = "0";
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label31.ForeColor = Color.Blue;
-            label31.Location = new Point(318, 30);
-            label31.Name = "label31";
-            label31.Size = new Size(77, 30);
-            label31.TabIndex = 3;
-            label31.Text = "Mana:";
-            // 
-            // Lbl_mana
-            // 
-            Lbl_mana.AutoSize = true;
-            Lbl_mana.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            Lbl_mana.ForeColor = Color.Blue;
-            Lbl_mana.Location = new Point(401, 30);
-            Lbl_mana.Name = "Lbl_mana";
-            Lbl_mana.Size = new Size(26, 30);
-            Lbl_mana.TabIndex = 3;
-            Lbl_mana.Text = "0";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(192, 0, 0);
-            label5.Location = new Point(1134, 30);
+            label5.Location = new Point(918, 30);
             label5.Name = "label5";
             label5.Size = new Size(56, 30);
             label5.TabIndex = 3;
@@ -411,7 +387,7 @@
             Lbl_EnemyLife.AutoSize = true;
             Lbl_EnemyLife.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             Lbl_EnemyLife.ForeColor = Color.FromArgb(192, 0, 0);
-            Lbl_EnemyLife.Location = new Point(1196, 30);
+            Lbl_EnemyLife.Location = new Point(980, 30);
             Lbl_EnemyLife.Name = "Lbl_EnemyLife";
             Lbl_EnemyLife.Size = new Size(26, 30);
             Lbl_EnemyLife.TabIndex = 3;
@@ -609,7 +585,6 @@
             Controls.Add(Lbl_param_defence);
             Controls.Add(label23);
             Controls.Add(Lbl_param_attack);
-            Controls.Add(Lbl_mana);
             Controls.Add(Lbl_Gold);
             Controls.Add(Lbl_EnemyLife);
             Controls.Add(Lbl_PlayerLife);
@@ -631,7 +606,6 @@
             Controls.Add(label17);
             Controls.Add(label7);
             Controls.Add(label3);
-            Controls.Add(label31);
             Controls.Add(label29);
             Controls.Add(label5);
             Controls.Add(label1);
@@ -692,8 +666,6 @@
         private Label Lbl_param_magicAttack;
         private Label label29;
         private Label Lbl_Gold;
-        private Label label31;
-        private Label Lbl_mana;
         private Label label5;
         private Label Lbl_EnemyLife;
         private Label label17;
