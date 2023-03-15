@@ -9,7 +9,7 @@ namespace Domain.Models
         public double Life { get; set; }
         public double Attack { get; set; }
         public double Defence { get; set; }
-        public double MagicPower { get; set; }
+        public double Mana { get; set; }
         public CharacterRaceEnum Character {get; set; }
         public ShieldModel Shield { get; set; } = new ShieldModel();
         public List<WeaponModel> Weapon { get; set; } = new List<WeaponModel>();
