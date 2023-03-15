@@ -15,7 +15,7 @@ namespace Domain.Service
         public static List<WeaponModel> WeaponFullList { get; set; } =  new List<WeaponModel>();
         public static List<ArmorModel> ArmorFullList { get; set; } = new List<ArmorModel> { };
         public static List<ShieldModel> ShieldFullList { get; set; } = new List<ShieldModel> { };
-        public static void CreateWeapons()
+        public static void CreateWeapon()
         {
 
             WeaponFullList.Add(ShortSword());

@@ -5,33 +5,37 @@ using System.Security.Cryptography;
 using Domain.Inventory.Weapons;
 using Domain.Service;
 using Stepken.Page;
+using Domain.Character;
 
 namespace Stepken
 {
     public partial class Form1 : Form
     {
         Player? player;
+        private string playerName = "YourNameHere";
         public Form1()
         {
             InitializeComponent();
-            CreateWeapon();
-            CreateWeaponList.CreateWeapons();
+            CreateWeapons();
             GetPlayer();
+            GetEnemy();
         }
 
         private void GetPlayer()
         {
             player = new Player();
             player.Weapon.Add(CreateWeaponList.WeaponFullList[0]);
+            Weapon_1.ImageLocation = player.Weapon[0].ImageAddress;
             Picture_1.ImageLocation = player.ImageAddress;
             Lbl_PlayerLife.Text = player.Life.ToString();
             Lbl_Gold.Text = player.Gold.ToString();
-            Lbl_param_attack.Text = getAttackAmount().ToString();
+            Lbl_param_attack.Text = getAttackAmount(player).ToString();
+            PlayerName_Text.Text = playerName;
         }
 
-        private double getAttackAmount()
+        private double getAttackAmount(UnitModel unit)
         {
-            double atackAmount = Math.Round(player.Attack + player.Weapon[0].AttackPower, 2);
+            double atackAmount = Math.Round(unit.Attack + unit.Weapon[0].AttackPower, 2);
             return atackAmount;
         }
 
@@ -43,15 +47,19 @@ namespace Stepken
 
         private void GetEnemy()
         {
-
+            var enemy = new Goblin();
+            enemy.Weapon.Add(CreateWeaponList.WeaponFullList[1]);
+            Weapon_2.ImageLocation = enemy.Weapon[0].ImageAddress;
+            Picture_2.ImageLocation = enemy.ImageAddress;
+            Lbl_EnemyLife.Text = enemy.Life.ToString();
+            Lbl_param_attack_enemy.Text = getAttackAmount(enemy).ToString();
+            EnemyName_Text.Text = enemy.Name.ToString();
         }
 
-        private void CreateWeapon()
+        private void CreateWeapons()
         {
-            CreateWeaponList.CreateWeapons();
+            CreateWeaponList.CreateWeapon();
         }
-
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -74,6 +82,11 @@ namespace Stepken
             equipPanel.Show();
             this.Hide();
             equipPanel.FormClosing += equipClosing;
+        }
+
+        private void AddWeaponImageToPanelWhenEquiped(string path, PictureBox box)
+        {
+
         }
     }
 }
