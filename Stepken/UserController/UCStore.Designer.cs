@@ -1,6 +1,6 @@
 ﻿namespace Stepken.UserController
 {
-    partial class UCEquipment
+    partial class UCStore
     {
         /// <summary> 
         /// Required designer variable.
@@ -227,7 +227,6 @@
             Controls.Add(Btn_exit);
             Name = "UCEquipment";
             Size = new Size(980, 560);
-            Load += UCEquipment_Load;
             Control_equipment.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedWeapon).EndInit();

@@ -30,7 +30,7 @@
         {
             Image_item = new PictureBox();
             label13 = new Label();
-            label14 = new Label();
+            Lbl_Price = new Label();
             PropertyPanel = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)Image_item).BeginInit();
             SuspendLayout();
@@ -54,16 +54,16 @@
             label13.TabIndex = 1;
             label13.Text = "Price:";
             // 
-            // label14
+            // Lbl_Price
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = Color.FromArgb(255, 128, 0);
-            label14.Location = new Point(366, 61);
-            label14.Name = "label14";
-            label14.Size = new Size(23, 25);
-            label14.TabIndex = 1;
-            label14.Text = "0";
+            Lbl_Price.AutoSize = true;
+            Lbl_Price.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_Price.ForeColor = Color.FromArgb(255, 128, 0);
+            Lbl_Price.Location = new Point(366, 61);
+            Lbl_Price.Name = "Lbl_Price";
+            Lbl_Price.Size = new Size(23, 25);
+            Lbl_Price.TabIndex = 1;
+            Lbl_Price.Text = "0";
             // 
             // PropertyPanel
             // 
@@ -78,7 +78,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PropertyPanel);
-            Controls.Add(label14);
+            Controls.Add(Lbl_Price);
             Controls.Add(label13);
             Controls.Add(Image_item);
             Name = "UCItem";
@@ -92,7 +92,7 @@
 
         public PictureBox Image_item;
         private Label label13;
-        private Label label14;
+        private Label Lbl_Price;
         public FlowLayoutPanel PropertyPanel;
     }
 }

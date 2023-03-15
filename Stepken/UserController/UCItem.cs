@@ -21,7 +21,7 @@ namespace Stepken.UserController
         public void AddItemCharactersAndValues(Dictionary<string, string> itemPropertye)
         {
             ListBox list = new ListBox();
-            foreach(var kv in itemPropertye)
+            foreach (var kv in itemPropertye)
             {
                 list.Items.Add($"{kv.Key} - {kv.Value}");
             }
@@ -35,6 +35,15 @@ namespace Stepken.UserController
             get { return _imageAddress; }
             set { _imageAddress = value; Image_item.ImageLocation = value; Image_item.SizeMode = PictureBoxSizeMode.StretchImage; }
         }
+
+        private double _price;
+
+        public double Price
+        {
+            get { return _price; }
+            set { _price = value; Lbl_Price.Text = value.ToString(); }
+        }
+
 
     }
 }

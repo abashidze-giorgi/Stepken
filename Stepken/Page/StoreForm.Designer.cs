@@ -2,7 +2,7 @@
 
 namespace Stepken.Page
 {
-    partial class EquipmentForm
+    partial class StoreForm
     {
         /// <summary>
         /// Required designer variable.

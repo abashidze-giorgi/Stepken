@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace Stepken.Page
 {
-    public partial class EquipmentForm : Form
+    public partial class StoreForm : Form
     {
         private Player _player { get; set; }
 
-        public EquipmentForm(Player player)
+        public StoreForm(Player player)
         {
             _player = player;
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Stepken.Page
 
         public void EquipmentForm_Load(object sender, EventArgs e)
         {
-            var uc = new UCEquipment();
+            var uc = new UCStore();
             uc.Dock = DockStyle.Fill;
             uc.Btn_exit.Click += (s, e) => { this.Close(); };
             this.Controls.Add(uc);

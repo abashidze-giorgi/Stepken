@@ -13,28 +13,29 @@ using System.Windows.Forms;
 
 namespace Stepken.UserController
 {
-    public partial class UCEquipment : UserControl, IEquipmentPanel
+    public partial class UCStore : UserControl, IItemPanel
     {
-        public UCEquipment()
+        public UCStore()
         {
             InitializeComponent();
-            AddWeaponToEquipmentPanel();
+            AddWeaponToStorePanel();
 
         }
 
-        public void AddWeaponToEquipmentPanel()
+        public void AddWeaponToStorePanel()
         {
-            foreach (WeaponModel w in CreateAllEquipments.AmmunitionGlobalList)
+            foreach (WeaponModel weapon in CreateWeaponList.WeaponFullList)
             {
                 UCItem item = new UCItem();
-                item.Name = w.Name;
+                item.Name = weapon.Name;
                 Dictionary<string, string> itemPropertyes = new Dictionary<string, string>();
-                itemPropertyes.Add("Id", w.Id.ToString());
-                itemPropertyes.Add("Name", w.Name.ToString());
-                itemPropertyes.Add("Attack", w.AttackPower.ToString());
-                itemPropertyes.Add("Accuracy", w.Accuracy.ToString());
+                itemPropertyes.Add("Id", weapon.Id.ToString());
+                itemPropertyes.Add("Name", weapon.Name.ToString());
+                itemPropertyes.Add("Attack", weapon.AttackPower.ToString());
+                itemPropertyes.Add("Accuracy", weapon.Accuracy.ToString());
                 item.AddItemCharactersAndValues(itemPropertyes);
-                item.ImageAddress = w.ImageAddress;
+                item.Price = weapon.Price;
+                item.ImageAddress = weapon.ImageAddress;
                 Flow_weapon.Controls.Add(item);
             }
         }
@@ -43,11 +44,7 @@ namespace Stepken.UserController
         {
         }
 
-        public void SelectWeaponFromEquipmentPanel()
-        {
-        }
-
-        private void UCEquipment_Load(object sender, EventArgs e)
+        public void SelectWeaponFromStorePanel()
         {
         }
 

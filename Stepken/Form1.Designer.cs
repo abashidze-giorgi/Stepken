@@ -43,25 +43,25 @@
             panel5 = new Panel();
             panel6 = new Panel();
             label1 = new Label();
-            label2 = new Label();
+            Lbl_PlayerLife = new Label();
             label3 = new Label();
-            label4 = new Label();
+            Lbl_param_attack = new Label();
             label7 = new Label();
-            label8 = new Label();
+            Lbl_param_defence = new Label();
             label9 = new Label();
-            label10 = new Label();
+            Lbl_param_armor = new Label();
             label11 = new Label();
-            label12 = new Label();
+            Lbl_param_shield = new Label();
             label13 = new Label();
-            label14 = new Label();
+            Lbl_param_magicDefence = new Label();
             label15 = new Label();
-            label16 = new Label();
+            Lbl_param_magicAttack = new Label();
             label29 = new Label();
-            label30 = new Label();
+            Lbl_Gold = new Label();
             label31 = new Label();
-            label32 = new Label();
+            Lbl_mana = new Label();
             label5 = new Label();
-            label6 = new Label();
+            Lbl_EnemyLife = new Label();
             label17 = new Label();
             label18 = new Label();
             label19 = new Label();
@@ -74,7 +74,7 @@
             label26 = new Label();
             label27 = new Label();
             label28 = new Label();
-            button1 = new Button();
+            Btn_Store = new Button();
             label33 = new Label();
             label34 = new Label();
             label35 = new Label();
@@ -106,6 +106,7 @@
             // Btn_equip
             // 
             Btn_equip.BackColor = Color.Green;
+            Btn_equip.Enabled = false;
             Btn_equip.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Btn_equip.ForeColor = Color.White;
             Btn_equip.Location = new Point(245, 716);
@@ -131,12 +132,13 @@
             // 
             // button3
             // 
-            button3.Location = new Point(647, 770);
+            button3.Location = new Point(608, 821);
             button3.Name = "button3";
             button3.Size = new Size(60, 60);
             button3.TabIndex = 1;
             button3.Text = "button1";
             button3.UseVisualStyleBackColor = true;
+            button3.Visible = false;
             // 
             // button4
             // 
@@ -230,16 +232,16 @@
             label1.TabIndex = 3;
             label1.Text = "Life:";
             // 
-            // label2
+            // Lbl_PlayerLife
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(0, 192, 0);
-            label2.Location = new Point(89, 30);
-            label2.Name = "label2";
-            label2.Size = new Size(26, 30);
-            label2.TabIndex = 3;
-            label2.Text = "0";
+            Lbl_PlayerLife.AutoSize = true;
+            Lbl_PlayerLife.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_PlayerLife.ForeColor = Color.FromArgb(0, 192, 0);
+            Lbl_PlayerLife.Location = new Point(89, 30);
+            Lbl_PlayerLife.Name = "Lbl_PlayerLife";
+            Lbl_PlayerLife.Size = new Size(26, 30);
+            Lbl_PlayerLife.TabIndex = 3;
+            Lbl_PlayerLife.Text = "0";
             // 
             // label3
             // 
@@ -250,14 +252,14 @@
             label3.TabIndex = 3;
             label3.Text = "Attack:";
             // 
-            // label4
+            // Lbl_param_attack
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(340, 96);
-            label4.Name = "label4";
-            label4.Size = new Size(13, 15);
-            label4.TabIndex = 3;
-            label4.Text = "0";
+            Lbl_param_attack.AutoSize = true;
+            Lbl_param_attack.Location = new Point(340, 96);
+            Lbl_param_attack.Name = "Lbl_param_attack";
+            Lbl_param_attack.Size = new Size(13, 15);
+            Lbl_param_attack.TabIndex = 3;
+            Lbl_param_attack.Text = "0";
             // 
             // label7
             // 
@@ -268,14 +270,14 @@
             label7.TabIndex = 3;
             label7.Text = "Defence:";
             // 
-            // label8
+            // Lbl_param_defence
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(340, 137);
-            label8.Name = "label8";
-            label8.Size = new Size(13, 15);
-            label8.TabIndex = 3;
-            label8.Text = "0";
+            Lbl_param_defence.AutoSize = true;
+            Lbl_param_defence.Location = new Point(340, 137);
+            Lbl_param_defence.Name = "Lbl_param_defence";
+            Lbl_param_defence.Size = new Size(13, 15);
+            Lbl_param_defence.TabIndex = 3;
+            Lbl_param_defence.Text = "0";
             // 
             // label9
             // 
@@ -286,14 +288,14 @@
             label9.TabIndex = 3;
             label9.Text = "Armor:";
             // 
-            // label10
+            // Lbl_param_armor
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(340, 172);
-            label10.Name = "label10";
-            label10.Size = new Size(13, 15);
-            label10.TabIndex = 3;
-            label10.Text = "0";
+            Lbl_param_armor.AutoSize = true;
+            Lbl_param_armor.Location = new Point(340, 172);
+            Lbl_param_armor.Name = "Lbl_param_armor";
+            Lbl_param_armor.Size = new Size(13, 15);
+            Lbl_param_armor.TabIndex = 3;
+            Lbl_param_armor.Text = "0";
             // 
             // label11
             // 
@@ -304,14 +306,14 @@
             label11.TabIndex = 3;
             label11.Text = "Shield:";
             // 
-            // label12
+            // Lbl_param_shield
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(340, 207);
-            label12.Name = "label12";
-            label12.Size = new Size(13, 15);
-            label12.TabIndex = 3;
-            label12.Text = "0";
+            Lbl_param_shield.AutoSize = true;
+            Lbl_param_shield.Location = new Point(340, 207);
+            Lbl_param_shield.Name = "Lbl_param_shield";
+            Lbl_param_shield.Size = new Size(13, 15);
+            Lbl_param_shield.TabIndex = 3;
+            Lbl_param_shield.Text = "0";
             // 
             // label13
             // 
@@ -322,14 +324,14 @@
             label13.TabIndex = 3;
             label13.Text = "Magic Defence:";
             // 
-            // label14
+            // Lbl_param_magicDefence
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(340, 239);
-            label14.Name = "label14";
-            label14.Size = new Size(13, 15);
-            label14.TabIndex = 3;
-            label14.Text = "0";
+            Lbl_param_magicDefence.AutoSize = true;
+            Lbl_param_magicDefence.Location = new Point(340, 239);
+            Lbl_param_magicDefence.Name = "Lbl_param_magicDefence";
+            Lbl_param_magicDefence.Size = new Size(13, 15);
+            Lbl_param_magicDefence.TabIndex = 3;
+            Lbl_param_magicDefence.Text = "0";
             // 
             // label15
             // 
@@ -340,36 +342,36 @@
             label15.TabIndex = 3;
             label15.Text = "Magic attack:";
             // 
-            // label16
+            // Lbl_param_magicAttack
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(340, 279);
-            label16.Name = "label16";
-            label16.Size = new Size(13, 15);
-            label16.TabIndex = 3;
-            label16.Text = "0";
+            Lbl_param_magicAttack.AutoSize = true;
+            Lbl_param_magicAttack.Location = new Point(340, 279);
+            Lbl_param_magicAttack.Name = "Lbl_param_magicAttack";
+            Lbl_param_magicAttack.Size = new Size(13, 15);
+            Lbl_param_magicAttack.TabIndex = 3;
+            Lbl_param_magicAttack.Text = "0";
             // 
             // label29
             // 
             label29.AutoSize = true;
             label29.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label29.ForeColor = Color.FromArgb(255, 128, 0);
-            label29.Location = new Point(163, 30);
+            label29.Location = new Point(185, 30);
             label29.Name = "label29";
-            label29.Size = new Size(90, 30);
+            label29.Size = new Size(68, 30);
             label29.TabIndex = 3;
-            label29.Text = "Money:";
+            label29.Text = "Gold:";
             // 
-            // label30
+            // Lbl_Gold
             // 
-            label30.AutoSize = true;
-            label30.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label30.ForeColor = Color.FromArgb(255, 128, 0);
-            label30.Location = new Point(259, 30);
-            label30.Name = "label30";
-            label30.Size = new Size(26, 30);
-            label30.TabIndex = 3;
-            label30.Text = "0";
+            Lbl_Gold.AutoSize = true;
+            Lbl_Gold.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_Gold.ForeColor = Color.FromArgb(255, 128, 0);
+            Lbl_Gold.Location = new Point(259, 30);
+            Lbl_Gold.Name = "Lbl_Gold";
+            Lbl_Gold.Size = new Size(26, 30);
+            Lbl_Gold.TabIndex = 3;
+            Lbl_Gold.Text = "0";
             // 
             // label31
             // 
@@ -382,38 +384,38 @@
             label31.TabIndex = 3;
             label31.Text = "Mana:";
             // 
-            // label32
+            // Lbl_mana
             // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label32.ForeColor = Color.Blue;
-            label32.Location = new Point(401, 30);
-            label32.Name = "label32";
-            label32.Size = new Size(26, 30);
-            label32.TabIndex = 3;
-            label32.Text = "0";
+            Lbl_mana.AutoSize = true;
+            Lbl_mana.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_mana.ForeColor = Color.Blue;
+            Lbl_mana.Location = new Point(401, 30);
+            Lbl_mana.Name = "Lbl_mana";
+            Lbl_mana.Size = new Size(26, 30);
+            Lbl_mana.TabIndex = 3;
+            Lbl_mana.Text = "0";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(0, 192, 0);
+            label5.ForeColor = Color.FromArgb(192, 0, 0);
             label5.Location = new Point(1134, 30);
             label5.Name = "label5";
             label5.Size = new Size(56, 30);
             label5.TabIndex = 3;
             label5.Text = "Life:";
             // 
-            // label6
+            // Lbl_EnemyLife
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.FromArgb(0, 192, 0);
-            label6.Location = new Point(1196, 30);
-            label6.Name = "label6";
-            label6.Size = new Size(26, 30);
-            label6.TabIndex = 3;
-            label6.Text = "0";
+            Lbl_EnemyLife.AutoSize = true;
+            Lbl_EnemyLife.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_EnemyLife.ForeColor = Color.FromArgb(192, 0, 0);
+            Lbl_EnemyLife.Location = new Point(1196, 30);
+            Lbl_EnemyLife.Name = "Lbl_EnemyLife";
+            Lbl_EnemyLife.Size = new Size(26, 30);
+            Lbl_EnemyLife.TabIndex = 3;
+            Lbl_EnemyLife.Text = "0";
             // 
             // label17
             // 
@@ -523,17 +525,18 @@
             label28.TabIndex = 3;
             label28.Text = "0";
             // 
-            // button1
+            // Btn_Store
             // 
-            button1.BackColor = Color.FromArgb(255, 128, 0);
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(12, 929);
-            button1.Name = "button1";
-            button1.Size = new Size(138, 44);
-            button1.TabIndex = 1;
-            button1.Text = "Store";
-            button1.UseVisualStyleBackColor = false;
+            Btn_Store.BackColor = Color.FromArgb(255, 128, 0);
+            Btn_Store.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            Btn_Store.ForeColor = Color.White;
+            Btn_Store.Location = new Point(12, 929);
+            Btn_Store.Name = "Btn_Store";
+            Btn_Store.Size = new Size(138, 44);
+            Btn_Store.TabIndex = 1;
+            Btn_Store.Text = "Store";
+            Btn_Store.UseVisualStyleBackColor = false;
+            Btn_Store.Click += Btn_Store_Click;
             // 
             // label33
             // 
@@ -595,21 +598,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 985);
             Controls.Add(label28);
-            Controls.Add(label16);
+            Controls.Add(Lbl_param_magicAttack);
             Controls.Add(label27);
-            Controls.Add(label14);
+            Controls.Add(Lbl_param_magicDefence);
             Controls.Add(label26);
-            Controls.Add(label12);
+            Controls.Add(Lbl_param_shield);
             Controls.Add(label25);
-            Controls.Add(label10);
+            Controls.Add(Lbl_param_armor);
             Controls.Add(label24);
-            Controls.Add(label8);
+            Controls.Add(Lbl_param_defence);
             Controls.Add(label23);
-            Controls.Add(label4);
-            Controls.Add(label32);
-            Controls.Add(label30);
-            Controls.Add(label6);
-            Controls.Add(label2);
+            Controls.Add(Lbl_param_attack);
+            Controls.Add(Lbl_mana);
+            Controls.Add(Lbl_Gold);
+            Controls.Add(Lbl_EnemyLife);
+            Controls.Add(Lbl_PlayerLife);
             Controls.Add(label22);
             Controls.Add(label21);
             Controls.Add(label38);
@@ -642,7 +645,7 @@
             Controls.Add(button5);
             Controls.Add(button3);
             Controls.Add(button4);
-            Controls.Add(button1);
+            Controls.Add(Btn_Store);
             Controls.Add(button2);
             Controls.Add(Btn_equip);
             Controls.Add(pictureBox1);
@@ -674,25 +677,25 @@
         private Panel panel5;
         private Panel panel6;
         private Label label1;
-        private Label label2;
+        private Label Lbl_PlayerLife;
         private Label label3;
-        private Label label4;
+        private Label Lbl_param_attack;
         private Label label7;
-        private Label label8;
+        private Label Lbl_param_defence;
         private Label label9;
-        private Label label10;
+        private Label Lbl_param_armor;
         private Label label11;
-        private Label label12;
+        private Label Lbl_param_shield;
         private Label label13;
-        private Label label14;
+        private Label Lbl_param_magicDefence;
         private Label label15;
-        private Label label16;
+        private Label Lbl_param_magicAttack;
         private Label label29;
-        private Label label30;
+        private Label Lbl_Gold;
         private Label label31;
-        private Label label32;
+        private Label Lbl_mana;
         private Label label5;
-        private Label label6;
+        private Label Lbl_EnemyLife;
         private Label label17;
         private Label label18;
         private Label label19;
@@ -705,7 +708,7 @@
         private Label label26;
         private Label label27;
         private Label label28;
-        private Button button1;
+        private Button Btn_Store;
         private Label label33;
         private Label label34;
         private Label label35;
