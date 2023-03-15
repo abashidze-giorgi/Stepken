@@ -35,7 +35,6 @@
             Flow_weapon = new FlowLayoutPanel();
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
-            tabPage4 = new TabPage();
             Pic_EquipedWeapon = new PictureBox();
             Pic_EquipedArmor = new PictureBox();
             label1 = new Label();
@@ -82,7 +81,6 @@
             Control_equipment.Controls.Add(tabPage1);
             Control_equipment.Controls.Add(tabPage2);
             Control_equipment.Controls.Add(tabPage3);
-            Control_equipment.Controls.Add(tabPage4);
             Control_equipment.Location = new Point(518, 3);
             Control_equipment.Name = "Control_equipment";
             Control_equipment.SelectedIndex = 0;
@@ -128,15 +126,6 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Shield";
             tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            tabPage4.Location = new Point(4, 24);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(451, 470);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Magic Weapon";
-            tabPage4.UseVisualStyleBackColor = true;
             // 
             // Pic_EquipedWeapon
             // 
@@ -210,7 +199,7 @@
             label4.TabIndex = 3;
             label4.Text = "Magic weapon";
             // 
-            // UCEquipment
+            // UCStore
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -225,7 +214,7 @@
             Controls.Add(Control_equipment);
             Controls.Add(Btn_equip);
             Controls.Add(Btn_exit);
-            Name = "UCEquipment";
+            Name = "UCStore";
             Size = new Size(980, 560);
             Control_equipment.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -246,7 +235,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private TabPage tabPage4;
         private TabControl Control_equipment;
         private FlowLayoutPanel Flow_weapon;
         private PictureBox Pic_EquipedWeapon;
