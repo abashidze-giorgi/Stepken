@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Interface
 {
-    public interface IEquipmentPanel
+    public interface IItemPanel
     {
-        public void AddWeaponToEquipmentPanel();
-        public void SelectWeaponFromEquipmentPanel();
+        public void AddWeaponToStorePanel();
+        public void SelectWeaponFromStorePanel();
         public void DeselectWeaponFromUnit();
     }
 }
