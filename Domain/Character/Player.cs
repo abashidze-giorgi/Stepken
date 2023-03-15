@@ -5,15 +5,16 @@ namespace Domain.Characters
 {
     public class Player: UnitModel
     {
-        
+        public double Gold { get; set; }
         public Player()
         {
+            Gold = 10;
             Id = 1;
             Name = $"Human";
             Life = 350;
             Attack = 15;
             Defence = 15;
-            MagicPower = 50;
+            Mana = 50;
             Shield = new ShieldModel();
             Armor = new List<ArmorModel>();
             Weapon = new List<WeaponModel>();
