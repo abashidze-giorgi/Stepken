@@ -18,7 +18,6 @@ namespace Domain.Models
 
         public virtual UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
         {
-            
             foreach(var a in armorList)
             {
                 unit.Armor.Add(a);
