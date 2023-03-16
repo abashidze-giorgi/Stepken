@@ -32,7 +32,7 @@
             Picture_2 = new PictureBox();
             Btn_equip = new Button();
             button2 = new Button();
-            button3 = new Button();
+            Btn_StartBattle = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -109,15 +109,15 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button3
+            // Btn_StartBattle
             // 
-            button3.Location = new Point(608, 821);
-            button3.Name = "button3";
-            button3.Size = new Size(60, 60);
-            button3.TabIndex = 1;
-            button3.Text = "button1";
-            button3.UseVisualStyleBackColor = true;
-            button3.Visible = false;
+            Btn_StartBattle.Location = new Point(503, 798);
+            Btn_StartBattle.Name = "Btn_StartBattle";
+            Btn_StartBattle.Size = new Size(211, 60);
+            Btn_StartBattle.TabIndex = 1;
+            Btn_StartBattle.Text = "Start Battle";
+            Btn_StartBattle.UseVisualStyleBackColor = true;
+            Btn_StartBattle.Click += Btn_StartBattle_Click;
             // 
             // button4
             // 
@@ -380,7 +380,7 @@
             Controls.Add(label1);
             Controls.Add(button6);
             Controls.Add(button5);
-            Controls.Add(button3);
+            Controls.Add(Btn_StartBattle);
             Controls.Add(button4);
             Controls.Add(Btn_Store);
             Controls.Add(button2);
@@ -405,7 +405,7 @@
         private PictureBox Picture_2;
         private Button Btn_equip;
         private Button button2;
-        private Button button3;
+        private Button Btn_StartBattle;
         private Button button4;
         private Button button5;
         private Button button6;

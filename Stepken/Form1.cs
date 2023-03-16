@@ -6,6 +6,7 @@ using Domain.Inventory.Weapons;
 using Domain.Service;
 using Stepken.Page;
 using Domain.Character;
+using Domain.Interface;
 
 namespace Stepken
 {
@@ -43,7 +44,7 @@ namespace Stepken
         private double getDefenceAmount(UnitModel unit)
         {
             double armorValue = 0;
-            foreach(var arm in unit.Armor)
+            foreach (var arm in unit.Armor)
             {
                 armorValue += arm.DefensePower;
             }
@@ -101,6 +102,13 @@ namespace Stepken
         private void AddWeaponImageToPanelWhenEquiped(string path, PictureBox box)
         {
 
+        }
+
+        private void Btn_StartBattle_Click(object sender, EventArgs e)
+        {
+            var batlle = new Battle();
+            var hitPower = batlle.GetHitPower(player);
+            MessageBox.Show(hitPower.ToString());
         }
     }
 }

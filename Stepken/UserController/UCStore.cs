@@ -32,7 +32,7 @@ namespace Stepken.UserController
                 itemPropertyes.Add("Id", weapon.Id.ToString());
                 itemPropertyes.Add("Name", weapon.Name.ToString());
                 itemPropertyes.Add("Attack", weapon.AttackPower.ToString());
-                itemPropertyes.Add("Accuracy", weapon.Accuracy.ToString());
+                itemPropertyes.Add("Fault", weapon.Fault.ToString());
                 item.AddItemCharactersAndValues(itemPropertyes);
                 item.Price = weapon.Price;
                 item.ImageAddress = weapon.ImageAddress;

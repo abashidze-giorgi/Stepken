@@ -29,7 +29,7 @@ namespace Domain.Service
         {
             var shortSword = new ShortSword
             {
-                Accuracy = 0.99,
+                Fault = 50,
                 AttackPower = 8,
                 Id = 1,
                 Name = "Short Sword",
@@ -42,7 +42,7 @@ namespace Domain.Service
         {
             var longtSword = new LongSword
             {
-                Accuracy = 0.99,
+                Fault = 50,
                 AttackPower = 16,
                 Id = 2,
                 Name = "Long Sword",
@@ -55,7 +55,7 @@ namespace Domain.Service
         {
             var alebard = new Alebard
             {
-                Accuracy = 0.85,
+                Fault = 75,
                 AttackPower = 24,
                 Id = 3,
                 Name = "Alebard",
@@ -68,7 +68,7 @@ namespace Domain.Service
         {
             var crossBow = new CrossBow
             {
-                Accuracy = 0.95,
+                Fault = 58,
                 AttackPower = 35,
                 Id = 6,
                 Name = "CrossBow",
@@ -81,7 +81,7 @@ namespace Domain.Service
         {
             var longBow = new LongBow
             {
-                Accuracy = 80,
+                Fault = 60,
                 AttackPower = 30,
                 Id = 5,
                 Name = "LongBow",
@@ -94,7 +94,7 @@ namespace Domain.Service
         {
             var shortBow = new ShortBow
             {
-                Accuracy = 0.75,
+                Fault = 75,
                 AttackPower = 30,
                 Id = 4,
                 Name = "ShortBow",
