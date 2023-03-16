@@ -51,5 +51,9 @@ namespace Stepken.UserController
         private void Btn_exit_Click(object sender, EventArgs e)
         {
         }
+
+        private void UCStore_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

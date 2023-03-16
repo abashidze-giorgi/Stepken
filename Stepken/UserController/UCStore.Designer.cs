@@ -34,29 +34,29 @@
             tabPage1 = new TabPage();
             Flow_weapon = new FlowLayoutPanel();
             tabPage2 = new TabPage();
+            panel1 = new Panel();
+            label5 = new Label();
             tabPage3 = new TabPage();
+            panel2 = new Panel();
+            label6 = new Label();
             Pic_EquipedWeapon = new PictureBox();
             Pic_EquipedArmor = new PictureBox();
-            label1 = new Label();
+            Label_Diagonale = new Label();
             label2 = new Label();
             Pic_EquipedShield = new PictureBox();
             Pic_EquipedMagicWeapon = new PictureBox();
             label3 = new Label();
             label4 = new Label();
-            panel1 = new Panel();
-            label5 = new Label();
-            panel2 = new Panel();
-            label6 = new Label();
             Control_equipment.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            panel1.SuspendLayout();
             tabPage3.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedWeapon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedArmor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedShield).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedMagicWeapon).BeginInit();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // Btn_exit
@@ -127,6 +127,25 @@
             tabPage2.Text = "Armor";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(445, 464);
+            panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(134, 204);
+            label5.Name = "label5";
+            label5.Size = new Size(180, 59);
+            label5.TabIndex = 3;
+            label5.Text = "SOON!!!";
+            // 
             // tabPage3
             // 
             tabPage3.Controls.Add(panel2);
@@ -136,6 +155,25 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Shield";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label6);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(451, 470);
+            panel2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(134, 204);
+            label6.Name = "label6";
+            label6.Size = new Size(180, 59);
+            label6.TabIndex = 3;
+            label6.Text = "SOON!!!";
             // 
             // Pic_EquipedWeapon
             // 
@@ -155,14 +193,16 @@
             Pic_EquipedArmor.TabIndex = 2;
             Pic_EquipedArmor.TabStop = false;
             // 
-            // label1
+            // Label_Diagonale
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(20, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Weapon";
+            Label_Diagonale.AutoSize = true;
+            Label_Diagonale.Font = new Font("Segoe UI", 120F, FontStyle.Regular, GraphicsUnit.Point);
+            Label_Diagonale.Location = new Point(148, 148);
+            Label_Diagonale.Name = "Label_Diagonale";
+            Label_Diagonale.Size = new Size(671, 212);
+            Label_Diagonale.TabIndex = 4;
+            Label_Diagonale.Text = "SOON!!!";
+            Label_Diagonale.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -209,53 +249,15 @@
             label4.TabIndex = 3;
             label4.Text = "Magic weapon";
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(label5);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(445, 464);
-            panel1.TabIndex = 0;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(134, 204);
-            label5.Name = "label5";
-            label5.Size = new Size(180, 59);
-            label5.TabIndex = 3;
-            label5.Text = "SOON!!!";
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(label6);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(451, 470);
-            panel2.TabIndex = 1;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(134, 204);
-            label6.Name = "label6";
-            label6.Size = new Size(180, 59);
-            label6.TabIndex = 3;
-            label6.Text = "SOON!!!";
-            // 
             // UCStore
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(Label_Diagonale);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(Pic_EquipedMagicWeapon);
-            Controls.Add(label1);
             Controls.Add(Pic_EquipedShield);
             Controls.Add(Pic_EquipedArmor);
             Controls.Add(Pic_EquipedWeapon);
@@ -264,18 +266,19 @@
             Controls.Add(Btn_exit);
             Name = "UCStore";
             Size = new Size(980, 560);
+            Load += UCStore_Load;
             Control_equipment.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             tabPage3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedWeapon).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedArmor).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedShield).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedMagicWeapon).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,5 +306,6 @@
         private Label label5;
         private Panel panel2;
         private Label label6;
+        private Label Label_Diagonale;
     }
 }
