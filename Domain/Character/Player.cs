@@ -52,21 +52,18 @@ namespace Domain.Characters
         {
             ID = 2,
             IsProtected = false,
-            IsAttacked = false,
             Name = "leg"
         };
         private ZoneModel BodyZone = new ZoneModel
         {
             ID = 3,
             IsProtected = false,
-            IsAttacked = false,
             Name = "body"
         };
         private ZoneModel HeadZone = new ZoneModel
         {
             ID = 4,
             IsProtected = false,
-            IsAttacked = false,
             Name = "head"
         };
     }

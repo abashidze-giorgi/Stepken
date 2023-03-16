@@ -1,11 +1,12 @@
 ﻿using Domain.Models;
 using Domain.Interface;
+using Domain.Model.HitPointModel;
 
 namespace Domain.Service
 {
     public class Battle : IBattle
     {
-        public double GetBattleResult()
+        public double GetBattleResult(ZoneModel zone, double hitPower, double defencePower)
         {
             throw new NotImplementedException();
         }
