@@ -30,6 +30,7 @@ namespace Domain.Service
             double percent = random.NextDouble() * fault;
             double decrease = (double)(weaponAttack * percent / 100);
             double result = weaponAttack - decrease;
+            // set average hit power
             double averageHitPower = Math.Round(unitAtack + result, 2);
             return averageHitPower;
         }
