@@ -1,10 +1,5 @@
-﻿using Domain.Interface;
-using Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Models;
+using Domain.Interface;
 
 namespace Domain.Service
 {
@@ -19,7 +14,6 @@ namespace Domain.Service
         {
             throw new NotImplementedException();
         }
-
         public double GetHitPower(UnitModel atacker)
         {
             double unitAtack = atacker.Attack;
@@ -34,12 +28,10 @@ namespace Domain.Service
             double averageHitPower = Math.Round(unitAtack + result, 2);
             return averageHitPower;
         }
-
         public bool IsDefenderAlive(UnitModel defender, double HitPower)
         {
             return defender.Life - HitPower > 0? true: false;
         }
-
         public int WhoStartBattle()
         {
             return new Random().Next(0, 2);
