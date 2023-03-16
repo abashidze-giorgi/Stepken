@@ -1,6 +1,6 @@
-﻿using Domain.Model.HitPointModel;
-using Domain.Models;
+﻿using Domain.Models;
 using Domain.Service;
+using Domain.Model.HitPointModel;
 
 namespace Domain.Characters
 {

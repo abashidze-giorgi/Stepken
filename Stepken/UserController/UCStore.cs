@@ -1,15 +1,6 @@
-﻿using Domain.Interface;
-using Domain.Models;
+﻿using Domain.Models;
 using Domain.Service;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Domain.Interface;
 
 namespace Stepken.UserController
 {

@@ -38,4 +38,6 @@ namespace Domain.Service
             return new Random().Next(0, 2);
         }
     }
+
+
 }
