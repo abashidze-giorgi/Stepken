@@ -42,22 +42,14 @@
             Lbl_param_attack = new Label();
             label7 = new Label();
             Lbl_param_defence = new Label();
-            label9 = new Label();
-            Lbl_param_armor = new Label();
-            label11 = new Label();
-            Lbl_param_shield = new Label();
             label29 = new Label();
             Lbl_Gold = new Label();
             label5 = new Label();
             Lbl_EnemyLife = new Label();
             label17 = new Label();
             label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
             Lbl_param_attack_enemy = new Label();
             Lbl_param_defence_enemy = new Label();
-            Lbl_param_armor_enemy = new Label();
-            Lbl_param_shield_enemy = new Label();
             Btn_Store = new Button();
             label37 = new Label();
             PlayerName_Text = new Label();
@@ -179,7 +171,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(206, 229);
+            label3.Location = new Point(206, 305);
             label3.Name = "label3";
             label3.Size = new Size(44, 15);
             label3.TabIndex = 3;
@@ -188,7 +180,7 @@
             // Lbl_param_attack
             // 
             Lbl_param_attack.AutoSize = true;
-            Lbl_param_attack.Location = new Point(340, 229);
+            Lbl_param_attack.Location = new Point(340, 305);
             Lbl_param_attack.Name = "Lbl_param_attack";
             Lbl_param_attack.Size = new Size(13, 15);
             Lbl_param_attack.TabIndex = 3;
@@ -197,7 +189,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(206, 270);
+            label7.Location = new Point(206, 346);
             label7.Name = "label7";
             label7.Size = new Size(53, 15);
             label7.TabIndex = 3;
@@ -206,47 +198,11 @@
             // Lbl_param_defence
             // 
             Lbl_param_defence.AutoSize = true;
-            Lbl_param_defence.Location = new Point(340, 270);
+            Lbl_param_defence.Location = new Point(340, 346);
             Lbl_param_defence.Name = "Lbl_param_defence";
             Lbl_param_defence.Size = new Size(13, 15);
             Lbl_param_defence.TabIndex = 3;
             Lbl_param_defence.Text = "0";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(206, 305);
-            label9.Name = "label9";
-            label9.Size = new Size(44, 15);
-            label9.TabIndex = 3;
-            label9.Text = "Armor:";
-            // 
-            // Lbl_param_armor
-            // 
-            Lbl_param_armor.AutoSize = true;
-            Lbl_param_armor.Location = new Point(340, 305);
-            Lbl_param_armor.Name = "Lbl_param_armor";
-            Lbl_param_armor.Size = new Size(13, 15);
-            Lbl_param_armor.TabIndex = 3;
-            Lbl_param_armor.Text = "0";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(206, 340);
-            label11.Name = "label11";
-            label11.Size = new Size(42, 15);
-            label11.TabIndex = 3;
-            label11.Text = "Shield:";
-            // 
-            // Lbl_param_shield
-            // 
-            Lbl_param_shield.AutoSize = true;
-            Lbl_param_shield.Location = new Point(340, 340);
-            Lbl_param_shield.Name = "Lbl_param_shield";
-            Lbl_param_shield.Size = new Size(13, 15);
-            Lbl_param_shield.TabIndex = 3;
-            Lbl_param_shield.Text = "0";
             // 
             // label29
             // 
@@ -295,7 +251,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(917, 229);
+            label17.Location = new Point(917, 305);
             label17.Name = "label17";
             label17.Size = new Size(44, 15);
             label17.TabIndex = 3;
@@ -304,34 +260,16 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(917, 270);
+            label18.Location = new Point(917, 346);
             label18.Name = "label18";
             label18.Size = new Size(53, 15);
             label18.TabIndex = 3;
             label18.Text = "Defence:";
             // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(917, 305);
-            label19.Name = "label19";
-            label19.Size = new Size(44, 15);
-            label19.TabIndex = 3;
-            label19.Text = "Armor:";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(917, 340);
-            label20.Name = "label20";
-            label20.Size = new Size(42, 15);
-            label20.TabIndex = 3;
-            label20.Text = "Shield:";
-            // 
             // Lbl_param_attack_enemy
             // 
             Lbl_param_attack_enemy.AutoSize = true;
-            Lbl_param_attack_enemy.Location = new Point(1051, 229);
+            Lbl_param_attack_enemy.Location = new Point(1051, 305);
             Lbl_param_attack_enemy.Name = "Lbl_param_attack_enemy";
             Lbl_param_attack_enemy.Size = new Size(13, 15);
             Lbl_param_attack_enemy.TabIndex = 3;
@@ -340,29 +278,11 @@
             // Lbl_param_defence_enemy
             // 
             Lbl_param_defence_enemy.AutoSize = true;
-            Lbl_param_defence_enemy.Location = new Point(1051, 270);
+            Lbl_param_defence_enemy.Location = new Point(1051, 346);
             Lbl_param_defence_enemy.Name = "Lbl_param_defence_enemy";
             Lbl_param_defence_enemy.Size = new Size(13, 15);
             Lbl_param_defence_enemy.TabIndex = 3;
             Lbl_param_defence_enemy.Text = "0";
-            // 
-            // Lbl_param_armor_enemy
-            // 
-            Lbl_param_armor_enemy.AutoSize = true;
-            Lbl_param_armor_enemy.Location = new Point(1051, 305);
-            Lbl_param_armor_enemy.Name = "Lbl_param_armor_enemy";
-            Lbl_param_armor_enemy.Size = new Size(13, 15);
-            Lbl_param_armor_enemy.TabIndex = 3;
-            Lbl_param_armor_enemy.Text = "0";
-            // 
-            // Lbl_param_shield_enemy
-            // 
-            Lbl_param_shield_enemy.AutoSize = true;
-            Lbl_param_shield_enemy.Location = new Point(1051, 340);
-            Lbl_param_shield_enemy.Name = "Lbl_param_shield_enemy";
-            Lbl_param_shield_enemy.Size = new Size(13, 15);
-            Lbl_param_shield_enemy.TabIndex = 3;
-            Lbl_param_shield_enemy.Text = "0";
             // 
             // Btn_Store
             // 
@@ -440,10 +360,6 @@
             ClientSize = new Size(1264, 985);
             Controls.Add(Weapon_2);
             Controls.Add(Weapon_1);
-            Controls.Add(Lbl_param_shield_enemy);
-            Controls.Add(Lbl_param_shield);
-            Controls.Add(Lbl_param_armor_enemy);
-            Controls.Add(Lbl_param_armor);
             Controls.Add(Lbl_param_defence_enemy);
             Controls.Add(Lbl_param_defence);
             Controls.Add(Lbl_param_attack_enemy);
@@ -455,11 +371,7 @@
             Controls.Add(label37);
             Controls.Add(EnemyName_Text);
             Controls.Add(PlayerName_Text);
-            Controls.Add(label20);
-            Controls.Add(label19);
-            Controls.Add(label11);
             Controls.Add(label18);
-            Controls.Add(label9);
             Controls.Add(label17);
             Controls.Add(label7);
             Controls.Add(label3);
@@ -503,22 +415,14 @@
         private Label Lbl_param_attack;
         private Label label7;
         private Label Lbl_param_defence;
-        private Label label9;
-        private Label Lbl_param_armor;
-        private Label label11;
-        private Label Lbl_param_shield;
         private Label label29;
         private Label Lbl_Gold;
         private Label label5;
         private Label Lbl_EnemyLife;
         private Label label17;
         private Label label18;
-        private Label label19;
-        private Label label20;
         private Label Lbl_param_attack_enemy;
         private Label Lbl_param_defence_enemy;
-        private Label Lbl_param_armor_enemy;
-        private Label Lbl_param_shield_enemy;
         private Button Btn_Store;
         private Label label37;
         private Label PlayerName_Text;

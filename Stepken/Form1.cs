@@ -30,12 +30,24 @@ namespace Stepken
             Lbl_PlayerLife.Text = player.Life.ToString();
             Lbl_Gold.Text = player.Gold.ToString();
             Lbl_param_attack.Text = getAttackAmount(player).ToString();
+            Lbl_param_defence.Text = getDefenceAmount(player).ToString();
             PlayerName_Text.Text = playerName;
         }
 
         private double getAttackAmount(UnitModel unit)
         {
             double atackAmount = Math.Round(unit.Attack + unit.Weapon[0].AttackPower, 2);
+            return atackAmount;
+        }
+
+        private double getDefenceAmount(UnitModel unit)
+        {
+            double armorValue = 0;
+            foreach(var arm in unit.Armor)
+            {
+                armorValue += arm.DefensePower;
+            }
+            double atackAmount = Math.Round(unit.Defence + armorValue + unit.Shield.Protection, 2);
             return atackAmount;
         }
 
@@ -52,8 +64,10 @@ namespace Stepken
             Weapon_2.ImageLocation = enemy.Weapon[0].ImageAddress;
             Picture_2.ImageLocation = enemy.ImageAddress;
             Lbl_EnemyLife.Text = enemy.Life.ToString();
-            Lbl_param_attack_enemy.Text = getAttackAmount(enemy).ToString();
             EnemyName_Text.Text = enemy.Name.ToString();
+            Lbl_param_attack_enemy.Text = getAttackAmount(enemy).ToString();
+            Lbl_param_defence_enemy.Text = getDefenceAmount(enemy).ToString();
+
         }
 
         private void CreateWeapons()
