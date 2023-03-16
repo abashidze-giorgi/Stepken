@@ -1,4 +1,5 @@
 ﻿using Domain.Models;
+using Domain.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Domain.Character
             Shield = new ShieldModel();
             Weapon = new List<WeaponModel>();
             Armor = new List<ArmorModel>();
-            ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\Character\Goblin.jpg";
+            ImageAddress = $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg";
         }
 
         public override UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
