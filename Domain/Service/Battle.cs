@@ -1,6 +1,6 @@
-﻿using Domain.Models;
-using Domain.Interface;
+﻿using Domain.Interface;
 using Domain.Model.HitPointModel;
+using Domain.Models;
 
 namespace Domain.Service
 {
@@ -31,7 +31,7 @@ namespace Domain.Service
         }
         public bool IsDefenderAlive(UnitModel defender, double HitPower)
         {
-            return defender.Life - HitPower > 0? true: false;
+            return defender.Life - HitPower > 0 ? true : false;
         }
         public int WhoStartBattle()
         {

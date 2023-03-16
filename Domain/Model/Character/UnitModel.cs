@@ -2,14 +2,14 @@
 
 namespace Domain.Models
 {
-    public class UnitModel: IUnit
+    public class UnitModel : IUnit
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
         public virtual double Life { get; set; }
         public virtual double Attack { get; set; }
         public virtual double Defence { get; set; }
-        public virtual CharacterRaceEnum Character {get; set; }
+        public virtual CharacterRaceEnum Character { get; set; }
         public virtual ShieldModel Shield { get; set; } = new ShieldModel();
         public virtual List<WeaponModel> Weapon { get; set; } = new List<WeaponModel>();
         public virtual List<ArmorModel> Armor { get; set; } = new List<ArmorModel>();
@@ -18,7 +18,7 @@ namespace Domain.Models
 
         public virtual UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
         {
-            foreach(var a in armorList)
+            foreach (var a in armorList)
             {
                 unit.Armor.Add(a);
             }

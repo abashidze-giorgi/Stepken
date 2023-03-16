@@ -2,8 +2,8 @@
 {
     None = 0,
     Human = 1,
-    Elve =  2,
-    Dwarve =  3,
+    Elve = 2,
+    Dwarve = 3,
     Orc = 4,
     Troll = 5,
     Goblin = 6,
@@ -94,5 +94,5 @@
     Wight = 96,
     Witch = 97,
     Wizard = 98,
-    Zombie =99
+    Zombie = 99
 }

@@ -1,6 +1,6 @@
-﻿using Domain.Models;
+﻿using Domain.Interface;
+using Domain.Models;
 using Domain.Service;
-using Domain.Interface;
 
 namespace Stepken.UserController
 {

@@ -1,10 +1,10 @@
-﻿using Domain.Models;
+﻿using Domain.Model.HitPointModel;
+using Domain.Models;
 using Domain.Service;
-using Domain.Model.HitPointModel;
 
 namespace Domain.Characters
 {
-    public class Player: UnitModel
+    public class Player : UnitModel
     {
         public double Gold { get; set; }
         public override int Id { get => base.Id; set => base.Id = value; }
@@ -31,7 +31,7 @@ namespace Domain.Characters
             Character = CharacterRaceEnum.Human;
             ImageAddress = $"{GetFolderPath.GetCharacterFolderPath()}\\human.jpg";
         }
-        
+
         public override UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
         {
             return base.GiveArmor(unit, armorList);

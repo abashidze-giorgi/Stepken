@@ -1,5 +1,5 @@
-﻿using Domain.Models;
-using Domain.Model.HitPointModel;
+﻿using Domain.Model.HitPointModel;
+using Domain.Models;
 
 namespace Domain.Interface
 {

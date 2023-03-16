@@ -2,7 +2,7 @@
 
 namespace Domain.Inventory.Weapons
 {
-    public class Pike: MeleeWeaponModel
+    public class Pike : MeleeWeaponModel
     {
     }
 }

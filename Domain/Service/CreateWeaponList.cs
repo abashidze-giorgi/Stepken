@@ -1,11 +1,11 @@
-﻿using Domain.Models;
-using Domain.Inventory.Weapons;
+﻿using Domain.Inventory.Weapons;
+using Domain.Models;
 
 namespace Domain.Service
 {
     public static class CreateWeaponList
     {
-        public static List<WeaponModel> WeaponFullList { get; set; } =  new List<WeaponModel>();
+        public static List<WeaponModel> WeaponFullList { get; set; } = new List<WeaponModel>();
         public static List<ArmorModel> ArmorFullList { get; set; } = new List<ArmorModel> { };
         public static List<ShieldModel> ShieldFullList { get; set; } = new List<ShieldModel> { };
         public static void CreateWeapon()
