@@ -1,5 +1,6 @@
 ﻿using Domain.Model.HitPointModel;
 using Domain.Models;
+using Domain.Service;
 
 namespace Domain.Characters
 {
@@ -19,7 +20,6 @@ namespace Domain.Characters
 
         public Player()
         {
-            Gold = 10;
             Id = 1;
             Name = $"Human";
             Life = 350;
@@ -29,7 +29,7 @@ namespace Domain.Characters
             Armor = new List<ArmorModel>();
             Weapon = new List<WeaponModel>();
             Character = CharacterRaceEnum.Human;
-            ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\Character\human.jpg";
+            ImageAddress = $"{GetFolderPath.GetCharacterFolderPath()}\\human.jpg";
         }
         
         public override UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)

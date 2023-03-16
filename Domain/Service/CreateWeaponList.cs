@@ -34,7 +34,7 @@ namespace Domain.Service
                 Id = 1,
                 Name = "Short Sword",
                 Price = 0,
-                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\ShortSword.jpg"
+                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\ShortSword.jpg"
             };
             return shortSword;
         }
@@ -47,7 +47,7 @@ namespace Domain.Service
                 Id = 2,
                 Name = "Long Sword",
                 Price = 45,
-                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\LongSword.jpg"
+                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\LongSword.jpg"
             };
             return longtSword;
         }
@@ -60,7 +60,7 @@ namespace Domain.Service
                 Id = 3,
                 Name = "Alebard",
                 Price = 52,
-                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\Alebard.jpg"
+                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\Alebard.jpg"
             };
             return alebard;
         }
@@ -73,7 +73,7 @@ namespace Domain.Service
                 Id = 6,
                 Name = "CrossBow",
                 Price = 98,
-                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\CrossBow.jpg"
+                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\CrossBow.jpg"
             };
             return crossBow;
         }
@@ -86,7 +86,7 @@ namespace Domain.Service
                 Id = 5,
                 Name = "LongBow",
                 Price = 70,
-                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\LongBow.jpg"
+                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\LongBow.jpg"
             };
             return longBow;
         }
@@ -99,7 +99,7 @@ namespace Domain.Service
                 Id = 4,
                 Name = "ShortBow",
                 Price = 64,
-                ImageAddress = @"C:\Users\GFavaz\source\repos\Stepken\Domain\Lib\Image\WeaponImage\ShortBow.png"
+                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\ShortBow.png"
             };
             return shortBow;
         }
