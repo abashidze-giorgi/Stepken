@@ -43,12 +43,20 @@
             Pic_EquipedMagicWeapon = new PictureBox();
             label3 = new Label();
             label4 = new Label();
+            panel1 = new Panel();
+            label5 = new Label();
+            panel2 = new Panel();
+            label6 = new Label();
             Control_equipment.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedWeapon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedArmor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedShield).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedMagicWeapon).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // Btn_exit
@@ -110,6 +118,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(panel1);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -120,6 +129,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(panel2);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(451, 470);
@@ -199,6 +209,44 @@
             label4.TabIndex = 3;
             label4.Text = "Magic weapon";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(445, 464);
+            panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(134, 204);
+            label5.Name = "label5";
+            label5.Size = new Size(180, 59);
+            label5.TabIndex = 3;
+            label5.Text = "SOON!!!";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label6);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(451, 470);
+            panel2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(134, 204);
+            label6.Name = "label6";
+            label6.Size = new Size(180, 59);
+            label6.TabIndex = 3;
+            label6.Text = "SOON!!!";
+            // 
             // UCStore
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -218,10 +266,16 @@
             Size = new Size(980, 560);
             Control_equipment.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedWeapon).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedArmor).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedShield).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pic_EquipedMagicWeapon).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,5 +299,9 @@
         private PictureBox Pic_EquipedMagicWeapon;
         private Label label3;
         private Label label4;
+        private Panel panel1;
+        private Label label5;
+        private Panel panel2;
+        private Label label6;
     }
 }
