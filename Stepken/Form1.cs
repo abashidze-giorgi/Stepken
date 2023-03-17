@@ -31,20 +31,20 @@ namespace Stepken
             PlayerName_Text.Text = playerName;
         }
 
-        private double getAttackAmount(UnitModel unit)
+        private double getAttackAmount(CharacterModel unit)
         {
             double atackAmount = Math.Round(unit.Attack + unit.Weapon[0].AttackPower, 2);
             return atackAmount;
         }
 
-        private double getDefenceAmount(UnitModel unit)
+        private double getDefenceAmount(CharacterModel unit)
         {
             double armorValue = 0;
             foreach (var arm in unit.Armor)
             {
-                armorValue += arm.DefensePower;
+                armorValue += arm.Defence;
             }
-            double atackAmount = Math.Round(unit.Defence + armorValue + unit.Shield.Protection, 2);
+            double atackAmount = Math.Round(unit.Defence + armorValue + unit.Shield.Defence, 2);
             return atackAmount;
         }
 
