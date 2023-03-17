@@ -1,8 +1,9 @@
 ﻿using Domain.Interfaces;
+using Domain.Model.HitPointModel;
 
 namespace Domain.Models
 {
-    public class UnitModel : IUnit
+    public class CharacterModel : ICharacter
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
@@ -16,7 +17,7 @@ namespace Domain.Models
         public virtual string ImageAddress { get; set; }
 
 
-        public virtual UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
+        public virtual CharacterModel GiveArmor(CharacterModel unit, List<ArmorModel> armorList)
         {
             foreach (var a in armorList)
             {
@@ -25,13 +26,13 @@ namespace Domain.Models
             return unit;
         }
 
-        public virtual UnitModel GiveShield(UnitModel unit, ShieldModel shield)
+        public virtual CharacterModel GiveShield(CharacterModel unit, ShieldModel shield)
         {
             unit.Shield = shield;
             return unit;
         }
 
-        public virtual UnitModel GiveWeapon(UnitModel unit, List<WeaponModel> weaponList)
+        public virtual CharacterModel GiveWeapon(CharacterModel unit, List<WeaponModel> weaponList)
         {
             foreach (var w in weaponList)
             {
