@@ -1,4 +1,6 @@
-﻿using Domain.Interfaces;
+﻿using Domain.Character;
+using Domain.Interfaces;
+using Domain.Model.Character;
 using Domain.Model.HitPointModel;
 
 namespace Domain.Models
@@ -11,6 +13,7 @@ namespace Domain.Models
         public virtual double Attack { get; set; }
         public virtual double Defence { get; set; }
         public virtual CharacterRaceEnum Character { get; set; }
+        public virtual EnemyLevelModel Level { get; set; }
         public virtual ShieldModel Shield { get; set; } = new ShieldModel();
         public virtual List<WeaponModel> Weapon { get; set; } = new List<WeaponModel>();
         public virtual List<ArmorModel> Armor { get; set; } = new List<ArmorModel>();
