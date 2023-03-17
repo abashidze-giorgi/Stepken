@@ -3,7 +3,7 @@ using Domain.Service;
 
 namespace Domain.Character
 {
-    public class Goblin : UnitModel
+    public class Goblin : CharacterModel
     {
         public override int Id { get => base.Id; set => base.Id = value; }
         public override string Name { get => base.Name; set => base.Name = value; }
@@ -30,17 +30,17 @@ namespace Domain.Character
             ImageAddress = $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg";
         }
 
-        public override UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
+        public override CharacterModel GiveArmor(CharacterModel unit, List<ArmorModel> armorList)
         {
             return base.GiveArmor(unit, armorList);
         }
 
-        public override UnitModel GiveShield(UnitModel unit, ShieldModel shield)
+        public override CharacterModel GiveShield(CharacterModel unit, ShieldModel shield)
         {
             return base.GiveShield(unit, shield);
         }
 
-        public override UnitModel GiveWeapon(UnitModel unit, List<WeaponModel> weaponList)
+        public override CharacterModel GiveWeapon(CharacterModel unit, List<WeaponModel> weaponList)
         {
             return base.GiveWeapon(unit, weaponList);
         }

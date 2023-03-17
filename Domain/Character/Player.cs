@@ -4,7 +4,7 @@ using Domain.Service;
 
 namespace Domain.Characters
 {
-    public class Player : UnitModel
+    public class Player : CharacterModel
     {
         public double Gold { get; set; }
         public override int Id { get => base.Id; set => base.Id = value; }
@@ -32,17 +32,17 @@ namespace Domain.Characters
             ImageAddress = $"{GetFolderPath.GetCharacterFolderPath()}\\human.jpg";
         }
 
-        public override UnitModel GiveArmor(UnitModel unit, List<ArmorModel> armorList)
+        public override CharacterModel GiveArmor(CharacterModel unit, List<ArmorModel> armorList)
         {
             return base.GiveArmor(unit, armorList);
         }
 
-        public override UnitModel GiveShield(UnitModel unit, ShieldModel shield)
+        public override CharacterModel GiveShield(CharacterModel unit, ShieldModel shield)
         {
             return base.GiveShield(unit, shield);
         }
 
-        public override UnitModel GiveWeapon(UnitModel unit, List<WeaponModel> weaponList)
+        public override CharacterModel GiveWeapon(CharacterModel unit, List<WeaponModel> weaponList)
         {
             return base.GiveWeapon(unit, weaponList);
         }
