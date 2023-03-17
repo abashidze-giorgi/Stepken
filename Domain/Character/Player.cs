@@ -46,25 +46,5 @@ namespace Domain.Characters
         {
             return base.GiveWeapon(unit, weaponList);
         }
-
-
-        private ZoneModel LegZone = new ZoneModel
-        {
-            ID = 2,
-            IsProtected = false,
-            Name = "leg"
-        };
-        private ZoneModel BodyZone = new ZoneModel
-        {
-            ID = 3,
-            IsProtected = false,
-            Name = "body"
-        };
-        private ZoneModel HeadZone = new ZoneModel
-        {
-            ID = 4,
-            IsProtected = false,
-            Name = "head"
-        };
     }
 }
