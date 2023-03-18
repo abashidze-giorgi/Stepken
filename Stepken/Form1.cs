@@ -10,12 +10,19 @@ namespace Stepken
     {
         Player? player;
         private string playerName = "YourNameHere";
+        public List<CharacterModel> characters = new List<CharacterModel>();
         public Form1()
         {
             InitializeComponent();
             CreateWeapons();
+            CreateEnemy();
             GetPlayer();
             GetEnemy();
+        }
+
+        private void CreateEnemy()
+        {
+            CreateEnemyList.CreateEnemyes();
         }
 
         private void GetPlayer()
@@ -56,7 +63,7 @@ namespace Stepken
 
         private void GetEnemy()
         {
-            var enemy = new Goblin();
+            var enemy = new CharacterModel();
             enemy.Weapon.Add(CreateWeaponList.WeaponFullList[1]);
             Weapon_2.ImageLocation = enemy.Weapon[0].ImageAddress;
             Picture_2.ImageLocation = enemy.ImageAddress;
@@ -103,7 +110,7 @@ namespace Stepken
         private void Btn_StartBattle_Click(object sender, EventArgs e)
         {
             var batlle = new Battle();
-            var hitPower = batlle.GetHitPower(player);
+            double hitPower = batlle.GetHitPower(player);
             MessageBox.Show(hitPower.ToString());
         }
     }
