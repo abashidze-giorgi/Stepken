@@ -2,8 +2,8 @@
 {
     public abstract class WeaponModel : AmmunitionModel
     {
-        public double AttackPower { get; set; }
-        public double Fault { get; set; }
+        public virtual double AttackPower { get; set; }
+        public virtual double Fault { get; set; }
     }
 
 }
