@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Inventory\Shield\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Lib\Image\Character\Changeling.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
