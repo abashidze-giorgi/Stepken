@@ -7,6 +7,7 @@ namespace Domain.Interface
     {
         public int WhoStartBattle(); // get randomly 0 or 1 in stage start
         public double GetHitPower(CharacterModel atacker); // return demage power 
+        public double GetWeaponFault(WeaponModel weapon); // возвращает количество промаха
         public double GetDefencePower(CharacterModel defender); // return defence power
         public double GetBattleResult(ZoneModel zone, double hitPower, double defencePower);
         public bool IsDefenderAlive(CharacterModel defender, double HitPower);
