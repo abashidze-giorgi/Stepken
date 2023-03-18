@@ -31,18 +31,21 @@ namespace Domain.Service
 
         public double GetHitPower(CharacterModel unit)
         {
-            double unitAtack = unit.Attack;
-            //calculate weapon attack by its fault value
-            double weaponAttack = unit.Weapon[0].AttackPower;
-            double fault = unit.Weapon[0].Fault;
-            var random = new Random();
-            double percent = random.NextDouble() * fault;
-            double decrease = (double)(weaponAttack * percent / 100);
-            double result = weaponAttack - decrease;
+            double result = unit.Weapon[0].AttackPower - CalculateWEaponFault(unit.Weapon[0]);
             // set average hit power
-            double averageHitPower = Math.Round(unitAtack + result, 2);
+            double averageHitPower = Math.Round(unit.Attack + result, 2);
             return averageHitPower;
         }
+
+        public double CalculateWEaponFault(WeaponModel weapon)
+        {
+            //calculate weapon fault 
+            var random = new Random();
+            double percent = random.NextDouble() * weapon.Fault;
+            double result = (double)(weapon.AttackPower * percent / 100);
+            return result;
+        }
+
         public bool IsDefenderAlive(CharacterModel defender, double HitPower)
         {
             return defender.Life - HitPower > 0 ? true : false;
