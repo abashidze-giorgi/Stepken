@@ -57,10 +57,16 @@
             Weapon_1 = new PictureBox();
             label4 = new Label();
             Weapon_2 = new PictureBox();
+            Image_Shield_2 = new PictureBox();
+            Image_Shield_1 = new PictureBox();
+            Image_Shield_3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)Picture_1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Picture_2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Shield_2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Shield_1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Shield_3).BeginInit();
             SuspendLayout();
             // 
             // Picture_1
@@ -359,11 +365,44 @@
             Weapon_2.TabIndex = 4;
             Weapon_2.TabStop = false;
             // 
+            // Image_Shield_2
+            // 
+            Image_Shield_2.BackColor = Color.FromArgb(128, 64, 0);
+            Image_Shield_2.Location = new Point(379, 495);
+            Image_Shield_2.Name = "Image_Shield_2";
+            Image_Shield_2.Size = new Size(86, 86);
+            Image_Shield_2.TabIndex = 5;
+            Image_Shield_2.TabStop = false;
+            Image_Shield_2.Visible = false;
+            // 
+            // Image_Shield_1
+            // 
+            Image_Shield_1.BackColor = Color.FromArgb(128, 64, 0);
+            Image_Shield_1.Location = new Point(379, 388);
+            Image_Shield_1.Name = "Image_Shield_1";
+            Image_Shield_1.Size = new Size(86, 86);
+            Image_Shield_1.TabIndex = 5;
+            Image_Shield_1.TabStop = false;
+            Image_Shield_1.Visible = false;
+            // 
+            // Image_Shield_3
+            // 
+            Image_Shield_3.BackColor = Color.FromArgb(128, 64, 0);
+            Image_Shield_3.Location = new Point(379, 624);
+            Image_Shield_3.Name = "Image_Shield_3";
+            Image_Shield_3.Size = new Size(86, 86);
+            Image_Shield_3.TabIndex = 5;
+            Image_Shield_3.TabStop = false;
+            Image_Shield_3.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 985);
+            Controls.Add(Image_Shield_3);
+            Controls.Add(Image_Shield_1);
+            Controls.Add(Image_Shield_2);
             Controls.Add(Weapon_2);
             Controls.Add(Weapon_1);
             Controls.Add(Lbl_param_defence_enemy);
@@ -401,6 +440,9 @@
             ((System.ComponentModel.ISupportInitialize)Picture_2).EndInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_1).EndInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Shield_2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Shield_1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Shield_3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -436,5 +478,8 @@
         private PictureBox Weapon_1;
         private Label label4;
         private PictureBox Weapon_2;
+        private PictureBox Image_Shield_2;
+        private PictureBox Image_Shield_1;
+        private PictureBox Image_Shield_3;
     }
 }

@@ -15,7 +15,7 @@ namespace Stepken
     {
 
         private Character player { get; set; }
-        private Character enemy { get; set; }
+        public  Character currentEnemy { get; set; }
 
         private Battle battle;
         private string playerName = "YourNameHere";
@@ -28,6 +28,7 @@ namespace Stepken
             CreateEnemy();
             GetEnemy();
             SetLifeCount();
+            GetShields();
         }
 
         private void CreateEnemy()
@@ -67,14 +68,14 @@ namespace Stepken
 
         private void GetEnemy()
         {
-            enemy = GameList.UnitList[1];
-            enemy.Weapon.Add(GameList.WeaponList[1]);
-            Weapon_2.ImageLocation = enemy.Weapon[0].ImageAddress;
-            Picture_2.ImageLocation = enemy.ImageAddress;
+            currentEnemy = GameList.UnitList[1];
+            currentEnemy.Weapon.Add(GameList.WeaponList[1]);
+            Weapon_2.ImageLocation = currentEnemy.Weapon[0].ImageAddress;
+            Picture_2.ImageLocation = currentEnemy.ImageAddress;
 
-            EnemyName_Text.Text = enemy.Name.ToString();
-            Lbl_param_attack_enemy.Text = getAttackAmount(enemy).ToString();
-            Lbl_param_defence_enemy.Text = getDefenceAmount(enemy).ToString();
+            EnemyName_Text.Text = currentEnemy.Name.ToString();
+            Lbl_param_attack_enemy.Text = getAttackAmount(currentEnemy).ToString();
+            Lbl_param_defence_enemy.Text = getDefenceAmount(currentEnemy).ToString();
         }
 
         private void CreateWeapons()
@@ -129,7 +130,7 @@ namespace Stepken
         {
             await Task.Delay(1000);
             // code to be executed after the delay
-            Battle(player, enemy, battle.GetRandomAttackZone());
+            Battle(player, currentEnemy, battle.GetRandomAttackZone());
         }
 
         private void Battle(Character player, Character enemy, ZoneModel zone)
@@ -148,23 +149,45 @@ namespace Stepken
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Battle(player, enemy, ZoneModel.Head);
+            Battle(player, currentEnemy, ZoneModel.Head);
         }
 
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Battle(player, enemy, ZoneModel.Body);
+            Battle(player, currentEnemy, ZoneModel.Body);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Battle(player, enemy, ZoneModel.Leg);
+            Battle(player, currentEnemy, ZoneModel.Leg);
         }
         private void SetLifeCount()
         {
-            Lbl_EnemyLife.Text = enemy.Life.ToString();
+            Lbl_EnemyLife.Text = currentEnemy.Life.ToString();
             Lbl_PlayerLife.Text = player.Life.ToString();
+        }
+
+        private void GetShields()
+        {
+            Image_Shield_1.Visible = false;
+            Image_Shield_2.Visible = false;
+            Image_Shield_3.Visible = false;
+            foreach (var sh in player.Shield.Zone)
+            {
+                if(sh == ZoneModel.Head)
+                {
+                    Image_Shield_1.Visible = true;
+                }
+                if(sh == ZoneModel.Body)
+                {
+                    Image_Shield_2.Visible = true;
+                }
+                if(sh == ZoneModel.Leg)
+                {
+                    Image_Shield_3.Visible = true;
+                }
+            }
         }
     }
 }
