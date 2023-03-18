@@ -1,4 +1,4 @@
-﻿using Domain.Character;
+﻿using Domain.GameCharacter;
 using Domain.Inventory.Shield;
 using Domain.Model.Character;
 using Domain.Models;
@@ -15,34 +15,36 @@ namespace Domain.Service
 {
     public static class CreateEnemyList
     {
-        public static List<CharacterModel> EnemyList { get; set; } = new List<CharacterModel>();
+        
         private static int GetUnitId()
         {
-            return EnemyList.Count + 1;
+            return GameIncludeList.UnitList.Count + 1;
         }
         public static void CreateEnemyes()
         {
             CreateGoblin();
+            CreateKobold();
+            CreateOrc();
         }
         private static void CreateGoblin()
         {
-            var goblin = new Enemy(
-                GetUnitId(), "Goblin", 450, 17, 16, CharacterRaceEnum.Goblin, EnemyLevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg");
-            EnemyList.Add(goblin);
+            var goblin = new Character(
+                GetUnitId(), "Goblin", 450, 17, 16, CharacterRaceEnum.Goblin, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg");
+            GameIncludeList.UnitList.Add(goblin);
         }
 
 
         private static void CreateKobold()
         {
-            var kobold = new Enemy(3, "Kobold", 320, 14, 17, CharacterRaceEnum.Kobold, EnemyLevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Kobold.jpg");
-            EnemyList.Add(kobold);
+            var kobold = new Character(3, "Kobold", 320, 14, 17, CharacterRaceEnum.Kobold, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Kobold.jpg");
+            GameIncludeList.UnitList.Add(kobold);
         }
 
         private static void CreateOrc()
         {
-            var orc = new Enemy(
-                GetUnitId(), "Orc", 640, 32, 24, CharacterRaceEnum.Orc, EnemyLevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Orc.jpg");
-            EnemyList.Add(orc);
+            var orc = new Character(
+                GetUnitId(), "Orc", 640, 32, 24, CharacterRaceEnum.Orc, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Orc.jpg");
+            GameIncludeList.UnitList.Add(orc);
         }
     }
 }

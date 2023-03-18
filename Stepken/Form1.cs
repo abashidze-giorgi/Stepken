@@ -1,22 +1,22 @@
-using Domain.Character;
-using Domain.Characters;
+using Domain.GameCharacter;
 using Domain.Models;
 using Domain.Service;
 using Stepken.Page;
+using System.Numerics;
 
 namespace Stepken
 {
     public partial class Form1 : Form
     {
-        Player? player;
+        CharacterModel player { get; set; }
         private string playerName = "YourNameHere";
         public List<CharacterModel> characters = new List<CharacterModel>();
         public Form1()
         {
             InitializeComponent();
             CreateWeapons();
-            CreateEnemy();
             GetPlayer();
+            CreateEnemy();
             GetEnemy();
         }
 
@@ -27,24 +27,25 @@ namespace Stepken
 
         private void GetPlayer()
         {
-            player = new Player();
-            player.Weapon.Add(CreateWeaponList.WeaponFullList[0]);
+            var cp = new CreatePlayer();
+            cp.Player();
+            player = GameIncludeList.UnitList.Where(u => u.CharacterRace == CharacterRaceEnum.Human).FirstOrDefault();
             Weapon_1.ImageLocation = player.Weapon[0].ImageAddress;
             Picture_1.ImageLocation = player.ImageAddress;
             Lbl_PlayerLife.Text = player.Life.ToString();
-            Lbl_Gold.Text = player.Gold.ToString();
+            Lbl_Gold.Text = player.ToString();
             Lbl_param_attack.Text = getAttackAmount(player).ToString();
             Lbl_param_defence.Text = getDefenceAmount(player).ToString();
             PlayerName_Text.Text = playerName;
         }
 
-        private double getAttackAmount(CharacterModel unit)
+        private double getAttackAmount(Domain.Models.CharacterModel unit)
         {
             double atackAmount = Math.Round(unit.Attack + unit.Weapon[0].AttackPower, 2);
             return atackAmount;
         }
 
-        private double getDefenceAmount(CharacterModel unit)
+        private double getDefenceAmount(Domain.Models.CharacterModel unit)
         {
             double armorValue = 0;
             foreach (var arm in unit.Armor)
@@ -55,23 +56,16 @@ namespace Stepken
             return atackAmount;
         }
 
-        private double getGold()
-        {
-            double atackAmount = Math.Round(player.Attack + player.Weapon[0].AttackPower, 2);
-            return atackAmount;
-        }
-
         private void GetEnemy()
         {
-            var enemy = new CharacterModel();
-            enemy.Weapon.Add(CreateWeaponList.WeaponFullList[1]);
+            var enemy = GameIncludeList.UnitList[1];
+            enemy.Weapon.Add(CreateWeaponList.WeaponList[1]);
             Weapon_2.ImageLocation = enemy.Weapon[0].ImageAddress;
             Picture_2.ImageLocation = enemy.ImageAddress;
             Lbl_EnemyLife.Text = enemy.Life.ToString();
             EnemyName_Text.Text = enemy.Name.ToString();
             Lbl_param_attack_enemy.Text = getAttackAmount(enemy).ToString();
             Lbl_param_defence_enemy.Text = getDefenceAmount(enemy).ToString();
-
         }
 
         private void CreateWeapons()

@@ -1,4 +1,4 @@
-﻿using Domain.Characters;
+﻿using Domain.Models;
 
 namespace Stepken.Page
 {
@@ -8,7 +8,7 @@ namespace Stepken.Page
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private Player player;
+        private CharacterModel player;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>

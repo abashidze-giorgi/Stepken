@@ -19,7 +19,6 @@ namespace Domain.Service
             {
                 armorDefence += unit.Armor[0].Defence;
             }
-            double ZoneDefences = 0;
             foreach(var arm in unit.Armor)
             {
 
@@ -29,7 +28,7 @@ namespace Domain.Service
         }
 
 
-        public double GetHitPower(CharacterModel unit)
+        public double GetHitPower(Models.CharacterModel unit)
         {
             double result = unit.Weapon[0].AttackPower - CalculateWEaponFault(unit.Weapon[0]);
             // set average hit power
@@ -46,7 +45,7 @@ namespace Domain.Service
             return result;
         }
 
-        public bool IsDefenderAlive(CharacterModel defender, double HitPower)
+        public bool IsDefenderAlive(Models.CharacterModel defender, double HitPower)
         {
             return defender.Life - HitPower > 0 ? true : false;
         }

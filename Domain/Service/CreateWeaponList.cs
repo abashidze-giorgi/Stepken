@@ -1,100 +1,57 @@
-﻿using Domain.Inventory.Weapons;
+﻿using Domain.Inventory.Weapon;
 using Domain.Models;
 
 namespace Domain.Service
 {
     public static class CreateWeaponList
     {
-        public static List<WeaponModel> WeaponFullList { get; set; } = new List<WeaponModel>();
-        public static List<ArmorModel> ArmorFullList { get; set; } = new List<ArmorModel> { };
-        public static List<ShieldModel> ShieldFullList { get; set; } = new List<ShieldModel> { };
+        public static List<WeaponModel> WeaponList { get; set; } = new List<WeaponModel>();
+        public static List<ArmorModel> ArmorList { get; set; } = new List<ArmorModel> { };
+        public static List<ShieldModel> ShieldList { get; set; } = new List<ShieldModel> { };
         public static void CreateWeapon()
         {
+            ShortSword();
+            LongtSword();
+            Halberd();
+            ShortBow();
+            LongBow();
+            CrossBow();
+        }
 
-            WeaponFullList.Add(ShortSword());
-            WeaponFullList.Add(LongtSword());
-            WeaponFullList.Add(Halberd());
-            WeaponFullList.Add(ShortBow());
-            WeaponFullList.Add(LongBow());
-            WeaponFullList.Add(CrossBow());
-        }
-        private static ShortSword ShortSword()
+        private static int GetId()
         {
-            var shortSword = new ShortSword
-            {
-                Fault = 50,
-                AttackPower = 8,
-                Id = 1,
-                Name = "Short Sword",
-                Price = 0,
-                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\ShortSword.jpg"
-            };
-            return shortSword;
+            return WeaponList.Count() + 1;
         }
-        private static LongSword LongtSword()
+
+        private static void ShortSword()
         {
-            var longtSword = new LongSword
-            {
-                Fault = 50,
-                AttackPower = 16,
-                Id = 2,
-                Name = "Long Sword",
-                Price = 45,
-                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\LongSword.jpg"
-            };
-            return longtSword;
+            var shortSword = new Weapon(GetId(), "Short Sword", 0, 8, 50, $"{GetFolderPath.GetWeaponFolderPath()}\\ShortSword.jpg");
+            WeaponList.Add(shortSword);
         }
-        private static Alebard Halberd()
+        private static void LongtSword()
         {
-            var alebard = new Alebard
-            {
-                Fault = 75,
-                AttackPower = 24,
-                Id = 3,
-                Name = "Alebard",
-                Price = 52,
-                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\Alebard.jpg"
-            };
-            return alebard;
+            var longtSword = new Weapon(GetId(), "Long sword", 45, 16, 50, $"{GetFolderPath.GetWeaponFolderPath()}\\LongSword.jpg");
+            WeaponList.Add(longtSword);
         }
-        private static CrossBow CrossBow()
+        private static void Halberd()
         {
-            var crossBow = new CrossBow
-            {
-                Fault = 58,
-                AttackPower = 35,
-                Id = 6,
-                Name = "CrossBow",
-                Price = 98,
-                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\CrossBow.jpg"
-            };
-            return crossBow;
+            var alebard = new Weapon(GetId(), "Alebard", 52, 24, 75, $"{GetFolderPath.GetWeaponFolderPath()}\\Alebard.jpg");
+            WeaponList.Add(alebard);
         }
-        private static LongBow LongBow()
+        private static void CrossBow()
         {
-            var longBow = new LongBow
-            {
-                Fault = 60,
-                AttackPower = 30,
-                Id = 5,
-                Name = "LongBow",
-                Price = 70,
-                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\LongBow.jpg"
-            };
-            return longBow;
+            var crossBow = new Weapon(GetId(), "CrossBow", 98, 35, 58, $"{GetFolderPath.GetWeaponFolderPath()}\\CrossBow.jpg");
+            WeaponList.Add(crossBow);
         }
-        private static ShortBow ShortBow()
+        private static void LongBow()
         {
-            var shortBow = new ShortBow
-            {
-                Fault = 75,
-                AttackPower = 30,
-                Id = 4,
-                Name = "ShortBow",
-                Price = 64,
-                ImageAddress = $"{GetFolderPath.GetWeaponFolderPath()}\\ShortBow.png"
-            };
-            return shortBow;
+            var longBow = new Weapon(GetId(), "LongBow", 70, 30, 60, $"{GetFolderPath.GetWeaponFolderPath()}\\LongBow.jpg");
+            WeaponList.Add(longBow);
+        }
+        private static void ShortBow()
+        {
+            var shortBow = new Weapon(GetId(), "ShortBow", 64, 30, 75, $"{GetFolderPath.GetWeaponFolderPath()}\\ShortBow.png");
+            WeaponList.Add(shortBow);
         }
     }
 }
