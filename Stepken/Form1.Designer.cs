@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Picture_1 = new PictureBox();
+            Image_Player = new PictureBox();
             Picture_2 = new PictureBox();
             Btn_equip = new Button();
             button2 = new Button();
@@ -54,29 +54,29 @@
             label37 = new Label();
             PlayerName_Text = new Label();
             EnemyName_Text = new Label();
-            Weapon_1 = new PictureBox();
+            Image_Weapon_Player = new PictureBox();
             label4 = new Label();
             Weapon_2 = new PictureBox();
             Image_Shield_2 = new PictureBox();
             Image_Shield_1 = new PictureBox();
             Image_Shield_3 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)Picture_1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Picture_2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Weapon_1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Weapon_Player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_Shield_2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_Shield_1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_Shield_3).BeginInit();
             SuspendLayout();
             // 
-            // Picture_1
+            // Image_Player
             // 
-            Picture_1.Location = new Point(206, 388);
-            Picture_1.Name = "Picture_1";
-            Picture_1.Size = new Size(147, 322);
-            Picture_1.SizeMode = PictureBoxSizeMode.StretchImage;
-            Picture_1.TabIndex = 0;
-            Picture_1.TabStop = false;
+            Image_Player.Location = new Point(206, 388);
+            Image_Player.Name = "Image_Player";
+            Image_Player.Size = new Size(147, 322);
+            Image_Player.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image_Player.TabIndex = 0;
+            Image_Player.TabStop = false;
             // 
             // Picture_2
             // 
@@ -338,14 +338,14 @@
             EnemyName_Text.TabIndex = 3;
             EnemyName_Text.Text = "-";
             // 
-            // Weapon_1
+            // Image_Weapon_Player
             // 
-            Weapon_1.Location = new Point(92, 427);
-            Weapon_1.Name = "Weapon_1";
-            Weapon_1.Size = new Size(108, 117);
-            Weapon_1.SizeMode = PictureBoxSizeMode.StretchImage;
-            Weapon_1.TabIndex = 4;
-            Weapon_1.TabStop = false;
+            Image_Weapon_Player.Location = new Point(92, 427);
+            Image_Weapon_Player.Name = "Image_Weapon_Player";
+            Image_Weapon_Player.Size = new Size(108, 117);
+            Image_Weapon_Player.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image_Weapon_Player.TabIndex = 4;
+            Image_Weapon_Player.TabStop = false;
             // 
             // label4
             // 
@@ -367,30 +367,33 @@
             // 
             // Image_Shield_2
             // 
-            Image_Shield_2.BackColor = Color.FromArgb(128, 64, 0);
+            Image_Shield_2.BackColor = Color.White;
             Image_Shield_2.Location = new Point(379, 495);
             Image_Shield_2.Name = "Image_Shield_2";
             Image_Shield_2.Size = new Size(86, 86);
+            Image_Shield_2.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_Shield_2.TabIndex = 5;
             Image_Shield_2.TabStop = false;
             Image_Shield_2.Visible = false;
             // 
             // Image_Shield_1
             // 
-            Image_Shield_1.BackColor = Color.FromArgb(128, 64, 0);
+            Image_Shield_1.BackColor = Color.White;
             Image_Shield_1.Location = new Point(379, 388);
             Image_Shield_1.Name = "Image_Shield_1";
             Image_Shield_1.Size = new Size(86, 86);
+            Image_Shield_1.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_Shield_1.TabIndex = 5;
             Image_Shield_1.TabStop = false;
             Image_Shield_1.Visible = false;
             // 
             // Image_Shield_3
             // 
-            Image_Shield_3.BackColor = Color.FromArgb(128, 64, 0);
+            Image_Shield_3.BackColor = Color.White;
             Image_Shield_3.Location = new Point(379, 624);
             Image_Shield_3.Name = "Image_Shield_3";
             Image_Shield_3.Size = new Size(86, 86);
+            Image_Shield_3.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_Shield_3.TabIndex = 5;
             Image_Shield_3.TabStop = false;
             Image_Shield_3.Visible = false;
@@ -404,7 +407,7 @@
             Controls.Add(Image_Shield_1);
             Controls.Add(Image_Shield_2);
             Controls.Add(Weapon_2);
-            Controls.Add(Weapon_1);
+            Controls.Add(Image_Weapon_Player);
             Controls.Add(Lbl_param_defence_enemy);
             Controls.Add(Lbl_param_defence);
             Controls.Add(Lbl_param_attack_enemy);
@@ -431,14 +434,14 @@
             Controls.Add(button2);
             Controls.Add(Btn_equip);
             Controls.Add(Picture_2);
-            Controls.Add(Picture_1);
+            Controls.Add(Image_Player);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)Picture_1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Player).EndInit();
             ((System.ComponentModel.ISupportInitialize)Picture_2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Weapon_1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Image_Weapon_Player).EndInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_2).EndInit();
             ((System.ComponentModel.ISupportInitialize)Image_Shield_2).EndInit();
             ((System.ComponentModel.ISupportInitialize)Image_Shield_1).EndInit();
@@ -449,7 +452,7 @@
 
         #endregion
 
-        private PictureBox Picture_1;
+        private PictureBox Image_Player;
         private PictureBox Picture_2;
         private Button Btn_equip;
         private Button button2;
@@ -475,7 +478,7 @@
         private Label label37;
         private Label PlayerName_Text;
         private Label EnemyName_Text;
-        private PictureBox Weapon_1;
+        private PictureBox Image_Weapon_Player;
         private Label label4;
         private PictureBox Weapon_2;
         private PictureBox Image_Shield_2;

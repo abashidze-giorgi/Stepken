@@ -28,5 +28,12 @@
             string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\WeaponImage"));
             return folderPath;
         }
+
+        public static string GetShieldFolderPath()
+        {
+            string mainDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
+            string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\ShieldImage"));
+            return folderPath;
+        }
     }
 }

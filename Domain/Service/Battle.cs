@@ -23,11 +23,12 @@ namespace Domain.Service
             var isDefenderAlive = IsDefenderAlive(figters[defender], lifeDecrease);
             if(isDefenderAlive)
             {
-                figters[defender].Life -= lifeDecrease;
+                figters[defender].Life = Math.Round(figters[defender].Life - lifeDecrease, 2);
             }
             else
             {
                 figters[defender].Life = 0;
+                figters.Clear();
             }
             ChageAtacker();
         }

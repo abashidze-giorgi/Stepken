@@ -77,7 +77,8 @@ namespace Domain.Service
         private void BodyShield()
         {
             var bodySHield = new Shield(
-                GetId(GameList.ShieldList), "Body shield", 0, null, 10, 80, 10, new List<ZoneModel>()
+                GetId(GameList.ShieldList), "Body shield", 0, 
+                $"{GetFolderPath.GetShieldFolderPath()}\\BodyShield.jpg", 10, 80, 10, new List<ZoneModel>()
                 );
             bodySHield.Zone.Add(ZoneModel.Body);
             GameList.ShieldList.Add(bodySHield);
@@ -86,7 +87,8 @@ namespace Domain.Service
         private void HeadShield()
         {
             var headShield = new Shield(
-                GetId(GameList.ShieldList), "Head shield", 0, null, 10, 80, 10, new List<ZoneModel>()
+                GetId(GameList.ShieldList), "Head shield", 0, 
+                $"{GetFolderPath.GetShieldFolderPath()}\\BodyShield.jpg", 10, 80, 10, new List<ZoneModel>()
                 );
             headShield.Zone.Add(ZoneModel.Head);
             GameList.ShieldList.Add(headShield);
@@ -95,7 +97,8 @@ namespace Domain.Service
         private void LegShield()
         {
             var legShield = new Shield(
-                GetId(GameList.ShieldList), "Leg shield", 0, null, 10, 80, 10, new List<ZoneModel>()
+                GetId(GameList.ShieldList), "Leg shield", 0, 
+                $"{GetFolderPath.GetShieldFolderPath()}\\BodyShield.jpg", 10, 80, 10, new List<ZoneModel>()
                 );
             legShield.Zone.Add(ZoneModel.Leg);
             GameList.ShieldList.Add(legShield);
@@ -104,7 +107,8 @@ namespace Domain.Service
         private void HeadBodyShield()
         {
             var headBodyShield = new Shield(
-                GetId(GameList.ShieldList), "Head-Body shield", 0, null, 10, 80, 10, new List<ZoneModel>()
+                GetId(GameList.ShieldList), "Head-Body shield", 0, 
+                $"{GetFolderPath.GetShieldFolderPath()}\\BodyShield.jpg", 10, 80, 10, new List<ZoneModel>()
                 );
             headBodyShield.Zone.Add(ZoneModel.Head);
             headBodyShield.Zone.Add(ZoneModel.Body);
@@ -115,7 +119,8 @@ namespace Domain.Service
         private void LegBodyShield()
         {
             var legBodyShield = new Shield(
-                GetId(GameList.ShieldList), "Leg-Body shield", 0, null, 10, 80, 10, new List<ZoneModel>()
+                GetId(GameList.ShieldList), "Leg-Body shield", 0, 
+                $"{GetFolderPath.GetShieldFolderPath()}\\BodyShield.jpg", 10, 80, 10, new List<ZoneModel>()
                 );
             legBodyShield.Zone.Add(ZoneModel.Body);
             legBodyShield.Zone.Add(ZoneModel.Leg);

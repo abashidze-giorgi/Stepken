@@ -15,7 +15,7 @@ namespace Stepken
     {
 
         private Character player { get; set; }
-        public  Character currentEnemy { get; set; }
+        public Character currentEnemy { get; set; }
 
         private Battle battle;
         private string playerName = "YourNameHere";
@@ -41,8 +41,9 @@ namespace Stepken
             var cp = new CreatePlayer();
             cp.Player();
             player = GameList.UnitList.Where(u => u.CharacterRace == CharacterRaceEnum.Human).FirstOrDefault();
-            Weapon_1.ImageLocation = player.Weapon[0].ImageAddress;
-            Picture_1.ImageLocation = player.ImageAddress;
+            player.Weapon[0] = GameList.WeaponList[GetRandomWeaponId()];
+            Image_Weapon_Player.ImageLocation = player.Weapon[0].ImageAddress;
+            Image_Player.ImageLocation = player.ImageAddress;
             Lbl_Gold.Text = Gold.ToString();
             Lbl_param_attack.Text = getAttackAmount(player).ToString();
             Lbl_param_defence.Text = getDefenceAmount(player).ToString();
@@ -68,8 +69,8 @@ namespace Stepken
 
         private void GetEnemy()
         {
-            currentEnemy = GameList.UnitList[1];
-            currentEnemy.Weapon.Add(GameList.WeaponList[1]);
+            currentEnemy = GameList.UnitList[GetRandomEnemyId()];
+            currentEnemy.Weapon.Add(GameList.WeaponList[GetRandomWeaponId()]);
             Weapon_2.ImageLocation = currentEnemy.Weapon[0].ImageAddress;
             Picture_2.ImageLocation = currentEnemy.ImageAddress;
 
@@ -164,10 +165,45 @@ namespace Stepken
         }
         private void SetLifeCount()
         {
+            if (currentEnemy.Life == 0)
+            {
+                GetEnemy();
+            }
+            if (player.Life == 0)
+            {
+                PlayerDead();
+                return;
+
+            }
             Lbl_EnemyLife.Text = currentEnemy.Life.ToString();
             Lbl_PlayerLife.Text = player.Life.ToString();
         }
 
+        private void PlayerDead()
+        {
+            player = null;
+            Lbl_PlayerLife.Text = 0.ToString();
+            Image_Player.ImageLocation = null;
+            Image_Weapon_Player.ImageLocation = null;
+            Image_Shield_1.Visible = false;
+            Image_Shield_2.Visible = false;
+            Image_Shield_3.Visible = false;
+
+        }
+
+        private int GetRandomEnemyId()
+        {
+            var random = new Random();
+            int result = (int)random.Next(1, GameList.UnitList.Count);
+            return result;
+        }
+
+        private int GetRandomWeaponId()
+        {
+            var random = new Random();
+            int weaponId = (int)random.Next(0, GameList.WeaponList.Count);
+            return weaponId;
+        }
         private void GetShields()
         {
             Image_Shield_1.Visible = false;
@@ -175,17 +211,20 @@ namespace Stepken
             Image_Shield_3.Visible = false;
             foreach (var sh in player.Shield.Zone)
             {
-                if(sh == ZoneModel.Head)
+                if (sh == ZoneModel.Head)
                 {
                     Image_Shield_1.Visible = true;
+                    Image_Shield_1.ImageLocation = player.Shield.ImageAddress;
                 }
-                if(sh == ZoneModel.Body)
+                if (sh == ZoneModel.Body)
                 {
                     Image_Shield_2.Visible = true;
+                    Image_Shield_2.ImageLocation = player.Shield.ImageAddress;
                 }
-                if(sh == ZoneModel.Leg)
+                if (sh == ZoneModel.Leg)
                 {
                     Image_Shield_3.Visible = true;
+                    Image_Shield_3.ImageLocation = player.Shield.ImageAddress;
                 }
             }
         }
