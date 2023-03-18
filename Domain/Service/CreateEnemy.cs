@@ -29,6 +29,7 @@ namespace Domain.Service
         {
             var goblin = new Character(
                 GetUnitId(), "Goblin", 450, 17, 16, CharacterRaceEnum.Goblin, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg");
+            goblin.Shield = GameList.ShieldList[1];
             GameList.UnitList.Add(goblin);
         }
 
@@ -36,6 +37,7 @@ namespace Domain.Service
         private static void CreateKobold()
         {
             var kobold = new Character(3, "Kobold", 320, 14, 17, CharacterRaceEnum.Kobold, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Kobold.jpg");
+            kobold.Shield = GameList.ShieldList[1];
             GameList.UnitList.Add(kobold);
         }
 
@@ -43,6 +45,7 @@ namespace Domain.Service
         {
             var orc = new Character(
                 GetUnitId(), "Orc", 640, 32, 24, CharacterRaceEnum.Orc, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Orc.jpg");
+            orc.Shield = GameList.ShieldList[1];
             GameList.UnitList.Add(orc);
         }
     }

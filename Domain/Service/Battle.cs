@@ -49,11 +49,15 @@ namespace Domain.Service
             double HeadPenalt = 0.7;
             double bodyPenalt = 0.5;
             double legPenalt = 0.2;
-            double zonePenalt = 1;
-            if (figters[defender].Shield.Zone == zone)
+            double zonePenalt = 0.5;
+            foreach(var sh in figters[defender].Shield.Zone)
             {
-                zonePenalt = 1;
+                if(sh == zone)
+                {
+                    zonePenalt = 1.1;
+                }
             }
+           
             switch(zone)
             {
                 case ZoneModel.Head:

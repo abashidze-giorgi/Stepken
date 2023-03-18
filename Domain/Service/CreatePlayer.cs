@@ -20,6 +20,7 @@ namespace Domain.Service
                 CharacterRaceEnum.Human, Model.Character.LevelModel.Level_1,                
                 $"{GetFolderPath.GetCharacterFolderPath()}\\human.jpg");
             player.Weapon.Add(GameList.WeaponList[0]);
+            player.Shield = GameList.ShieldList[4];
             GameList.UnitList.Add(player);
         }
         private static int GetId()
