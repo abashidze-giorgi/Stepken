@@ -1,5 +1,4 @@
-﻿using Domain.Interfaces;
-using Domain.Model.Character;
+﻿using Domain.Model.Character;
 using Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -26,21 +25,6 @@ namespace Domain.GameCharacter
             Weapon = new List<WeaponModel>();
             Armor = new List<ArmorModel>();
             ImageAddress = imageAddress;
-        }
-
-        public override Models.CharacterModel GiveArmor(Models.CharacterModel unit, List<ArmorModel> armorList)
-        {
-            return base.GiveArmor(unit, armorList);
-        }
-
-        public override Models.CharacterModel GiveShield(Models.CharacterModel unit, ShieldModel shield)
-        {
-            return base.GiveShield(unit, shield);
-        }
-
-        public override Models.CharacterModel GiveWeapon(Models.CharacterModel unit, List<WeaponModel> weaponList)
-        {
-            return base.GiveWeapon(unit, weaponList);
         }
     }
 }

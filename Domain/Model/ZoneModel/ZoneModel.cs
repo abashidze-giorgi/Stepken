@@ -1,9 +1,10 @@
 ﻿namespace Domain.Model.HitPointModel
 {
-    public class ZoneModel
+    public enum ZoneModel
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public bool IsProtected { get; set; }
+        none = 0,
+        Head = 1,
+        Body = 2,
+        Leg = 3
     }
 }

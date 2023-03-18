@@ -13,12 +13,11 @@ using System.Xml.Linq;
 
 namespace Domain.Service
 {
-    public static class CreateEnemyList
+    public static class CreateEnemy
     {
-        
         private static int GetUnitId()
         {
-            return GameIncludeList.UnitList.Count + 1;
+            return GameList.UnitList.Count + 1;
         }
         public static void CreateEnemyes()
         {
@@ -30,21 +29,21 @@ namespace Domain.Service
         {
             var goblin = new Character(
                 GetUnitId(), "Goblin", 450, 17, 16, CharacterRaceEnum.Goblin, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg");
-            GameIncludeList.UnitList.Add(goblin);
+            GameList.UnitList.Add(goblin);
         }
 
 
         private static void CreateKobold()
         {
             var kobold = new Character(3, "Kobold", 320, 14, 17, CharacterRaceEnum.Kobold, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Kobold.jpg");
-            GameIncludeList.UnitList.Add(kobold);
+            GameList.UnitList.Add(kobold);
         }
 
         private static void CreateOrc()
         {
             var orc = new Character(
                 GetUnitId(), "Orc", 640, 32, 24, CharacterRaceEnum.Orc, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Orc.jpg");
-            GameIncludeList.UnitList.Add(orc);
+            GameList.UnitList.Add(orc);
         }
     }
 }

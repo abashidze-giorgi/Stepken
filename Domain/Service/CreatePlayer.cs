@@ -16,15 +16,15 @@ namespace Domain.Service
     {
         public void Player() 
         {
-            var player = new Character(GetId(), "Human", 350, 15, 15,
+            var player = new Character(GetId(), "Human", 350, 40, 40,
                 CharacterRaceEnum.Human, Model.Character.LevelModel.Level_1,                
                 $"{GetFolderPath.GetCharacterFolderPath()}\\human.jpg");
-            player.Weapon.Add(CreateWeaponList.WeaponList[0]);
-            GameIncludeList.UnitList.Add(player);
+            player.Weapon.Add(GameList.WeaponList[0]);
+            GameList.UnitList.Add(player);
         }
         private static int GetId()
         {
-            return GameIncludeList.UnitList.Count + 1;
+            return GameList.UnitList.Count + 1;
         }
     }
 }

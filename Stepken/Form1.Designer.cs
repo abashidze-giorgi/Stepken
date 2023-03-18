@@ -121,30 +121,36 @@
             // 
             // button4
             // 
+            button4.Enabled = false;
             button4.Location = new Point(799, 405);
             button4.Name = "button4";
             button4.Size = new Size(99, 27);
             button4.TabIndex = 1;
             button4.Text = "Hit --->";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
+            button5.Enabled = false;
             button5.Location = new Point(799, 535);
             button5.Name = "button5";
             button5.Size = new Size(99, 27);
             button5.TabIndex = 1;
             button5.Text = "Hit --->";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
+            button6.Enabled = false;
             button6.Location = new Point(799, 667);
             button6.Name = "button6";
             button6.Size = new Size(99, 27);
             button6.TabIndex = 1;
             button6.Text = "Hit --->";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // label1
             // 

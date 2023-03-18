@@ -7,6 +7,6 @@ namespace Domain.Models
         public double Defence { get; set; } // сила защиты
         public double BlockChance { get; set; } // процент шанса отражения удара.
         public double AttackPenalty { get; set; } // насколько щит влияет на силу атаки юнита
-        public List<ZoneModel> Zone { get; set; } = new List<ZoneModel>(); //лист зон защиты 
+        public ZoneModel Zone { get; set; } //лист зон защиты 
     }
 }

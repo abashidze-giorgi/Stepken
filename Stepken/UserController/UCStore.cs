@@ -15,7 +15,7 @@ namespace Stepken.UserController
 
         public void AddWeaponToStorePanel()
         {
-            foreach (WeaponModel weapon in CreateWeaponList.WeaponList)
+            foreach (WeaponModel weapon in GameList.WeaponList)
             {
                 UCItem item = new UCItem();
                 item.Name = weapon.Name;

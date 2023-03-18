@@ -1,16 +1,25 @@
 using Domain.GameCharacter;
+using Domain.Model.HitPointModel;
 using Domain.Models;
 using Domain.Service;
 using Stepken.Page;
+using System;
+using System.Collections;
 using System.Numerics;
+using System.Security.Policy;
+using System.Threading.Tasks;
 
 namespace Stepken
 {
     public partial class Form1 : Form
     {
-        CharacterModel player { get; set; }
+
+        private Character player { get; set; }
+        private Character enemy { get; set; }
+
+        private Battle battle;
         private string playerName = "YourNameHere";
-        public List<CharacterModel> characters = new List<CharacterModel>();
+        private int Gold = 10;
         public Form1()
         {
             InitializeComponent();
@@ -18,34 +27,34 @@ namespace Stepken
             GetPlayer();
             CreateEnemy();
             GetEnemy();
+            SetLifeCount();
         }
 
         private void CreateEnemy()
         {
-            CreateEnemyList.CreateEnemyes();
+            Domain.Service.CreateEnemy.CreateEnemyes();
         }
 
         private void GetPlayer()
         {
             var cp = new CreatePlayer();
             cp.Player();
-            player = GameIncludeList.UnitList.Where(u => u.CharacterRace == CharacterRaceEnum.Human).FirstOrDefault();
+            player = GameList.UnitList.Where(u => u.CharacterRace == CharacterRaceEnum.Human).FirstOrDefault();
             Weapon_1.ImageLocation = player.Weapon[0].ImageAddress;
             Picture_1.ImageLocation = player.ImageAddress;
-            Lbl_PlayerLife.Text = player.Life.ToString();
-            Lbl_Gold.Text = player.ToString();
+            Lbl_Gold.Text = Gold.ToString();
             Lbl_param_attack.Text = getAttackAmount(player).ToString();
             Lbl_param_defence.Text = getDefenceAmount(player).ToString();
             PlayerName_Text.Text = playerName;
         }
 
-        private double getAttackAmount(Domain.Models.CharacterModel unit)
+        private double getAttackAmount(Character unit)
         {
             double atackAmount = Math.Round(unit.Attack + unit.Weapon[0].AttackPower, 2);
             return atackAmount;
         }
 
-        private double getDefenceAmount(Domain.Models.CharacterModel unit)
+        private double getDefenceAmount(Character unit)
         {
             double armorValue = 0;
             foreach (var arm in unit.Armor)
@@ -58,11 +67,11 @@ namespace Stepken
 
         private void GetEnemy()
         {
-            var enemy = GameIncludeList.UnitList[1];
-            enemy.Weapon.Add(CreateWeaponList.WeaponList[1]);
+            enemy = GameList.UnitList[1];
+            enemy.Weapon.Add(GameList.WeaponList[1]);
             Weapon_2.ImageLocation = enemy.Weapon[0].ImageAddress;
             Picture_2.ImageLocation = enemy.ImageAddress;
-            Lbl_EnemyLife.Text = enemy.Life.ToString();
+
             EnemyName_Text.Text = enemy.Name.ToString();
             Lbl_param_attack_enemy.Text = getAttackAmount(enemy).ToString();
             Lbl_param_defence_enemy.Text = getDefenceAmount(enemy).ToString();
@@ -70,7 +79,8 @@ namespace Stepken
 
         private void CreateWeapons()
         {
-            CreateWeaponList.CreateWeapon();
+            var ca = new CreateAmmunition();
+            ca.Create();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -96,16 +106,65 @@ namespace Stepken
             equipPanel.FormClosing += equipClosing;
         }
 
-        private void AddWeaponImageToPanelWhenEquiped(string path, PictureBox box)
+
+        private void CheckAtacker()
         {
 
+            if (battle.atacker == 1)
+            {
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+                Wait1000MillisecondsAsync();
+            }
+            else
+            {
+                button4.Enabled = true;
+                button5.Enabled = true;
+                button6.Enabled = true;
+            }
+        }
+
+        public async Task Wait1000MillisecondsAsync()
+        {
+            await Task.Delay(1000);
+            // code to be executed after the delay
+            Battle(player, enemy, battle.GetRandomAttackZone());
+        }
+
+        private void Battle(Character player, Character enemy, ZoneModel zone)
+        {
+            battle.StartBattle(player, enemy, zone);
+            SetLifeCount();
+            CheckAtacker();
         }
 
         private void Btn_StartBattle_Click(object sender, EventArgs e)
         {
-            var batlle = new Battle();
-            double hitPower = batlle.GetHitPower(player);
-            MessageBox.Show(hitPower.ToString());
+            battle = new Battle();
+            battle.SetAtacker();
+            CheckAtacker();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Battle(player, enemy, ZoneModel.Head);
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Battle(player, enemy, ZoneModel.Body);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Battle(player, enemy, ZoneModel.Leg);
+        }
+        private void SetLifeCount()
+        {
+            Lbl_EnemyLife.Text = enemy.Life.ToString();
+            Lbl_PlayerLife.Text = player.Life.ToString();
         }
     }
 }

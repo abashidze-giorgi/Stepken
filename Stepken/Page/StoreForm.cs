@@ -1,13 +1,13 @@
-﻿using Domain.Models;
+﻿using Domain.GameCharacter;
 using Stepken.UserController;
 
 namespace Stepken.Page
 {
     public partial class StoreForm : Form
     {
-        private CharacterModel _player { get; set; }
+        private Character _player { get; set; }
 
-        public StoreForm(CharacterModel player)
+        public StoreForm(Character player)
         {
             _player = player;
             InitializeComponent();
