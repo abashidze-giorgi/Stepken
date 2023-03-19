@@ -38,7 +38,7 @@ namespace Domain.Service
             if(stringList == null)
             {
                 userCount = 0;
-                return false;
+                return true;
             }
             else
             {
@@ -61,12 +61,16 @@ namespace Domain.Service
             {
                 List<Character> myList = new List<Character>(); // new character list
                 StringCollection stringList = Settings.Settings1.Default.PlayerS; // get list from settings
+                if (stringList == null)
+                {
+                    stringList = new StringCollection();
+                }
 
                 string characterJson = JsonConvert.SerializeObject(CreateCharacter(userName, userCount));
                 stringList.Add(characterJson);
 
-                Domain.Settings.Settings1.Default.PlayerS = stringList;
-                Domain.Settings.Settings1.Default.Save();
+                Settings.Settings1.Default.PlayerS = stringList;
+                Settings.Settings1.Default.Save();
                 saved = true;
                 return saved;
             }

@@ -16,22 +16,22 @@ namespace Stepken
 {
     public partial class GameSettingForm : Form
     {
-        private string userName = "";
         public GameSettingForm()
         {
             InitializeComponent();
-            LoadUserList();
-            LoadGame();
+            LoadGameEnvironment();
+            LoadPlayerList();
         }
 
-        private void LoadGame()
+        private void LoadGameEnvironment()
         {
             var lg = new LoadGameEnvironment();
             lg.LoadGame();
         }
 
-        private void LoadUserList()
+        private void LoadPlayerList()
         {
+            PlayerPanel.Controls.Clear();
             var gu = new GetUserList();
             var list = gu.GetUsers();
             if (list.Count > 0)
@@ -40,15 +40,10 @@ namespace Stepken
                 {
                     var uc = new UCLoadGameUsedrs();
                     uc.UserName = u;
-                    uc.btn_UserName.Click += (s, e) => { SetUserName(uc.UserName); };
-                    UserPanel.Controls.Add(uc);
+                    uc.btn_UserName.Click += (s, e) => { LoadGame(uc.UserName); };
+                    PlayerPanel.Controls.Add(uc);
                 }
             }
-        }
-
-        private void SetUserName(string name)
-        {
-            userName = name;
         }
 
         private void Btn_exit_Click(object sender, EventArgs e)
@@ -56,16 +51,17 @@ namespace Stepken
             this.Close();
         }
 
-        private void Btn_load_Click(object sender, EventArgs e)
+        private void LoadGame(string userName)
         {
-            if (string.IsNullOrEmpty(userName))
-            {
-                MessageBox.Show("Game not selected");
-            }
-            else
-            {
-                LoadGame();
-            }
+            var loadGame = new SaveAndLoadGame();
+            loadGame.Load(userName);
+            var ld = new LoadGame();
+            ld.LoadGameUnits();
+
+            var nf = new Form1();
+            nf.Show();
+            this.Hide();
+            nf.FormClosing += Form1Closing;
         }
 
         private void Btn_New_Click(object sender, EventArgs e)
@@ -78,14 +74,29 @@ namespace Stepken
 
         private void ShowThis(object? sender, FormClosingEventArgs e)
         {
-            if(GameList.UnitList.Count > 0)
+            if (GameList.Player != null)
             {
-
+                if (!string.IsNullOrEmpty(GameList.Player.Name))
+                {
+                    var nf = new Form1();
+                    nf.Show();
+                    nf.FormClosing += Form1Closing;
+                }
+                else
+                {
+                    this.Show();
+                }
             }
             else
             {
                 this.Show();
             }
+        }
+
+        private void Form1Closing(object? sender, FormClosingEventArgs e)
+        {
+            LoadPlayerList();
+            this.Show();
         }
     }
 }

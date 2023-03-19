@@ -11,14 +11,21 @@ using System.Collections.Specialized;
 
 namespace Domain.Service
 {
-    public class SaveLoadUser : ISaveLoadUser
+    public class SaveAndLoadGame : ISaveAndLoadGame
     {
-        public Character LoadUser(string userName)
+        public void Load(string userName)
         {
-            throw new NotImplementedException();
+            List<Character> playerList = GetSavedCharacters();
+            foreach(var player in playerList)
+            {
+                if(player.Name == userName)
+                {
+                    GameList.Player = player;
+                }
+            }
         }
 
-        public bool SaveUser(Character user)
+        public bool Save(Character user)
         {
             try
             {
@@ -28,34 +35,19 @@ namespace Domain.Service
                  
                 StringCollection savedList = Settings.Settings1.Default.PlayerS; // get list from settings
 
-                if(savedList != null)
+                myList = GetSavedCharacters();
+
+                foreach (Character character in myList)
                 {
-                    myList = GetSavedCharacters();
-                    bool exist = ChecUserExist(myList, user);
-                    if (!exist)
+                    if (character.Name != user.Name)
                     {
-                        string newCharacter = JsonConvert.SerializeObject(user);
-                        stringList.Add(newCharacter);
-                    }
-                    else
-                    {
-                        foreach (Character character in myList)
-                        {
-                            if (character.Name != user.Name)
-                            {
-                                string oldCharacter = JsonConvert.SerializeObject(character);
-                                stringList.Add(oldCharacter);
-                            }
-                        }
-                        string characterJson = JsonConvert.SerializeObject(user);
-                        stringList.Add(characterJson);
+                        string oldCharacter = JsonConvert.SerializeObject(character);
+                        stringList.Add(oldCharacter);
                     }
                 }
-                else
-                {
-                    
-                }
-                
+                string palayerJson = JsonConvert.SerializeObject(user);
+                stringList.Add(palayerJson);
+
                 Settings.Settings1.Default.PlayerS = stringList;
                 Settings.Settings1.Default.Save();
                 return true;
@@ -66,11 +58,6 @@ namespace Domain.Service
             }
         }
 
-        private bool ChecUserExist(List<Character> list, Character user)
-        {
-            var exist = list.Where(u => u.Name == user.Name).FirstOrDefault();
-            return exist==null ? false : true;
-        }
         private List<Character> GetSavedCharacters()
         {
             StringCollection stringList = Settings.Settings1.Default.PlayerS;

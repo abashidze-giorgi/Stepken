@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Interface
 {
-    public interface ISaveLoadUser
+    public interface ISaveAndLoadGame
     {
-        public bool SaveUser(Character user);
+        public bool Save(Character user);
 
-        public Character LoadUser(string userName);
+        public void Load(string userName);
     }
 }

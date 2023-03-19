@@ -30,7 +30,6 @@
         {
             Image_Player = new PictureBox();
             Picture_2 = new PictureBox();
-            Btn_equip = new Button();
             button2 = new Button();
             Btn_StartBattle = new Button();
             button4 = new Button();
@@ -86,21 +85,6 @@
             Picture_2.SizeMode = PictureBoxSizeMode.StretchImage;
             Picture_2.TabIndex = 0;
             Picture_2.TabStop = false;
-            // 
-            // Btn_equip
-            // 
-            Btn_equip.BackColor = Color.Green;
-            Btn_equip.Enabled = false;
-            Btn_equip.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Btn_equip.ForeColor = Color.White;
-            Btn_equip.Location = new Point(56, 442);
-            Btn_equip.Name = "Btn_equip";
-            Btn_equip.Size = new Size(60, 60);
-            Btn_equip.TabIndex = 1;
-            Btn_equip.Text = "Equip";
-            Btn_equip.UseVisualStyleBackColor = false;
-            Btn_equip.Visible = false;
-            Btn_equip.Click += Btn_equip_Click;
             // 
             // button2
             // 
@@ -432,7 +416,6 @@
             Controls.Add(button4);
             Controls.Add(Btn_Store);
             Controls.Add(button2);
-            Controls.Add(Btn_equip);
             Controls.Add(Picture_2);
             Controls.Add(Image_Player);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -454,7 +437,6 @@
 
         private PictureBox Image_Player;
         private PictureBox Picture_2;
-        private Button Btn_equip;
         private Button button2;
         private Button Btn_StartBattle;
         private Button button4;

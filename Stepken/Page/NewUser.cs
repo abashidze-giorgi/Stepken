@@ -24,12 +24,9 @@ namespace Stepken.Page
             {
                 var cu = new CreateNewUser();
                 bool created = cu.CreateUser(txt_UserName.Text);
-                if(created)
+                if(created && txt_UserName.Text == GameList.Player.Name)
                 {
-                    var nf = new Form1();
-                    nf.Show();
-                    this.Hide();
-                    nf.FormClosing += ShowThis;
+                    this.Close();
                 }
             }
             else
@@ -37,15 +34,8 @@ namespace Stepken.Page
                 MessageBox.Show("Enter name");
             }
         }
-
-        private void ShowThis(object? sender, FormClosingEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Btn_Exit_Click(object sender, EventArgs e)
         {
-            
             this.Close();
         }
     }

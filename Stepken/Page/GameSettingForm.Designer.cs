@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             Btn_New = new Button();
-            Btn_load = new Button();
             Btn_exit = new Button();
-            UserPanel = new FlowLayoutPanel();
+            PlayerPanel = new FlowLayoutPanel();
             label1 = new Label();
             SuspendLayout();
             // 
@@ -40,26 +39,13 @@
             Btn_New.BackColor = Color.FromArgb(0, 0, 64);
             Btn_New.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             Btn_New.ForeColor = Color.White;
-            Btn_New.Location = new Point(36, 562);
+            Btn_New.Location = new Point(12, 562);
             Btn_New.Name = "Btn_New";
-            Btn_New.Size = new Size(300, 50);
+            Btn_New.Size = new Size(324, 50);
             Btn_New.TabIndex = 0;
             Btn_New.Text = "New Game";
             Btn_New.UseVisualStyleBackColor = false;
             Btn_New.Click += Btn_New_Click;
-            // 
-            // Btn_load
-            // 
-            Btn_load.BackColor = Color.FromArgb(0, 0, 64);
-            Btn_load.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            Btn_load.ForeColor = Color.White;
-            Btn_load.Location = new Point(36, 471);
-            Btn_load.Name = "Btn_load";
-            Btn_load.Size = new Size(300, 50);
-            Btn_load.TabIndex = 0;
-            Btn_load.Text = "Load Game";
-            Btn_load.UseVisualStyleBackColor = false;
-            Btn_load.Click += Btn_load_Click;
             // 
             // Btn_exit
             // 
@@ -74,14 +60,14 @@
             Btn_exit.UseVisualStyleBackColor = false;
             Btn_exit.Click += Btn_exit_Click;
             // 
-            // UserPanel
+            // PlayerPanel
             // 
-            UserPanel.BorderStyle = BorderStyle.FixedSingle;
-            UserPanel.FlowDirection = FlowDirection.TopDown;
-            UserPanel.Location = new Point(12, 52);
-            UserPanel.Name = "UserPanel";
-            UserPanel.Size = new Size(362, 395);
-            UserPanel.TabIndex = 1;
+            PlayerPanel.BorderStyle = BorderStyle.FixedSingle;
+            PlayerPanel.FlowDirection = FlowDirection.TopDown;
+            PlayerPanel.Location = new Point(12, 52);
+            PlayerPanel.Name = "PlayerPanel";
+            PlayerPanel.Size = new Size(324, 504);
+            PlayerPanel.TabIndex = 1;
             // 
             // label1
             // 
@@ -101,9 +87,8 @@
             BackColor = Color.Black;
             ClientSize = new Size(944, 641);
             Controls.Add(label1);
-            Controls.Add(UserPanel);
+            Controls.Add(PlayerPanel);
             Controls.Add(Btn_exit);
-            Controls.Add(Btn_load);
             Controls.Add(Btn_New);
             Name = "GameSettingForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -115,9 +100,8 @@
         #endregion
 
         private Button Btn_New;
-        private Button Btn_load;
         private Button Btn_exit;
-        private FlowLayoutPanel UserPanel;
+        private FlowLayoutPanel PlayerPanel;
         private Label label1;
     }
 }

@@ -17,7 +17,7 @@ namespace Domain.Service
     {
         private static int GetUnitId()
         {
-            return GameList.UnitList.Count + 1;
+            return GameList.EnemyList.Count + 1;
         }
         public void CreateEnemyes()
         {
@@ -30,7 +30,7 @@ namespace Domain.Service
             var goblin = new Character(
                 GetUnitId(), "Goblin", 450, 17, 16, CharacterRaceEnum.Goblin, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg");
             goblin.Shield = GameList.ShieldList[1];
-            GameList.UnitList.Add(goblin);
+            GameList.EnemyList.Add(goblin);
         }
 
 
@@ -38,7 +38,7 @@ namespace Domain.Service
         {
             var kobold = new Character(3, "Kobold", 320, 14, 17, CharacterRaceEnum.Kobold, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Kobold.jpg");
             kobold.Shield = GameList.ShieldList[1];
-            GameList.UnitList.Add(kobold);
+            GameList.EnemyList.Add(kobold);
         }
 
         private static void CreateOrc()
@@ -46,7 +46,7 @@ namespace Domain.Service
             var orc = new Character(
                 GetUnitId(), "Orc", 640, 32, 24, CharacterRaceEnum.Orc, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Orc.jpg");
             orc.Shield = GameList.ShieldList[1];
-            GameList.UnitList.Add(orc);
+            GameList.EnemyList.Add(orc);
         }
     }
 }

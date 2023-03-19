@@ -4,6 +4,7 @@ using Domain.Model.HitPointModel;
 using Domain.Models;
 using Domain.Service;
 using Stepken.Page;
+using Player = Domain.Service.GameList;
 using System;
 using System.Collections;
 using System.Numerics;
@@ -14,8 +15,7 @@ namespace Stepken
 {
     public partial class Form1 : Form
     {
-
-        private Character player = GameList.Player;
+        Character player = Player.Player;
         public Character currentEnemy { get; set; }
 
         private Battle battle;
@@ -24,60 +24,30 @@ namespace Stepken
         public Form1()
         {
             InitializeComponent();
-            GetPlayer();
-            GetEnemy();
             SetLifeCount();
             GetShields();
         }
-        private void GetPlayer()
+        private double getAttackAmount()
         {
-            Image_Weapon_Player.ImageLocation = player.Weapon[0].ImageAddress;
-            Image_Player.ImageLocation = player.ImageAddress;
-            Lbl_Gold.Text = Gold.ToString();
-            Lbl_param_attack.Text = getAttackAmount(player).ToString();
-            Lbl_param_defence.Text = getDefenceAmount(player).ToString();
-            PlayerName_Text.Text = playerName;
+            double atackePower = Math.Round(player.Attack + player.Weapon[0].AttackPower, 2);
+            return atackePower;
         }
-        private double getAttackAmount(Character unit)
-        {
-            double atackAmount = Math.Round(unit.Attack + unit.Weapon[0].AttackPower, 2);
-            return atackAmount;
-        }
-        private double getDefenceAmount(Character unit)
+        private double getDefenceAmount()
         {
             double armorValue = 0;
-            foreach (var arm in unit.Armor)
+            foreach (var arm in player.Armor)
             {
                 armorValue += arm.Defence;
             }
-            double atackAmount = Math.Round(unit.Defence + armorValue + unit.Shield.Defence, 2);
-            return atackAmount;
+            double defencePower = Math.Round(player.Defence + armorValue + player.Shield.Defence, 2);
+            return defencePower;
         }
-        private void GetEnemy()
-        {
-            currentEnemy = GameList.UnitList[GetRandomEnemyId()];
-            currentEnemy.Weapon.Add(GameList.WeaponList[GetRandomWeaponId()]);
-            Weapon_2.ImageLocation = currentEnemy.Weapon[0].ImageAddress;
-            Picture_2.ImageLocation = currentEnemy.ImageAddress;
-            EnemyName_Text.Text = currentEnemy.Name.ToString();
-            Lbl_param_attack_enemy.Text = getAttackAmount(currentEnemy).ToString();
-            Lbl_param_defence_enemy.Text = getDefenceAmount(currentEnemy).ToString();
-        }
-        private int GetRandomWeaponId()
-        {
-            var random = new Random();
-            int weaponId = (int)random.Next(0, GameList.WeaponList.Count);
-            return weaponId;
-        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void Btn_equip_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void equipClosing(object? sender, FormClosingEventArgs e)
+        private void StoreColisng(object? sender, FormClosingEventArgs e)
         {
             this.Show();
         }
@@ -86,11 +56,11 @@ namespace Stepken
             var equipPanel = new StoreForm(player);
             equipPanel.Show();
             this.Hide();
-            equipPanel.FormClosing += equipClosing;
+            equipPanel.FormClosing += StoreColisng;
         }
         private void CheckAtacker()
         {
-
+            // if its enemy turn
             if (battle.atacker == 1)
             {
                 button4.Enabled = false;
@@ -110,7 +80,6 @@ namespace Stepken
             await Task.Delay(1000);
             // code to be executed after the delay
             Battle(player, currentEnemy, battle.GetRandomAttackZone());
-
         }
         private void Battle(Character player, Character enemy, ZoneModel zone)
         {
@@ -138,18 +107,23 @@ namespace Stepken
         }
         private void SetLifeCount()
         {
-            if (currentEnemy.Life == 0)
+            try
             {
-                GetEnemy();
+                if (GameList.FigterList[1].Life == 0)
+                {
+                }
+                if (player.Life == 0)
+                {
+                    PlayerDead();
+                    return;
+                }
+                Lbl_EnemyLife.Text = GameList.FigterList[1].Life.ToString();
+                Lbl_PlayerLife.Text = player.Life.ToString();
             }
-            if (player.Life == 0)
+            catch (Exception ex)
             {
-                PlayerDead();
-                return;
 
             }
-            Lbl_EnemyLife.Text = currentEnemy.Life.ToString();
-            Lbl_PlayerLife.Text = player.Life.ToString();
         }
         private void PlayerDead()
         {
@@ -162,12 +136,7 @@ namespace Stepken
             Image_Shield_3.Visible = false;
 
         }
-        private int GetRandomEnemyId()
-        {
-            var random = new Random();
-            int result = (int)random.Next(1, GameList.UnitList.Count);
-            return result;
-        }
+
         private void GetShields()
         {
             Image_Shield_1.Visible = false;
@@ -194,8 +163,8 @@ namespace Stepken
         }
         private void SaveGame()
         {
-            var saveUser = new SaveLoadUser();
-            saveUser.SaveUser(player);
+            var saveUser = new SaveAndLoadGame();
+            saveUser.Save(player);
         }
         private void LoadGame()
         {
