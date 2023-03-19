@@ -40,10 +40,15 @@ namespace Stepken
                 {
                     var uc = new UCLoadGameUsedrs();
                     uc.UserName = u;
-                    uc.btn_UserName.Click += (s, e) => { userName = uc.UserName; };
+                    uc.btn_UserName.Click += (s, e) => { SetUserName(uc.UserName); };
                     UserPanel.Controls.Add(uc);
                 }
             }
+        }
+
+        private void SetUserName(string name)
+        {
+            userName = name;
         }
 
         private void Btn_exit_Click(object sender, EventArgs e)

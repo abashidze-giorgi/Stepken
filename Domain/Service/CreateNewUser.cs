@@ -60,7 +60,7 @@ namespace Domain.Service
             try
             {
                 List<Character> myList = new List<Character>(); // new character list
-                StringCollection stringList = new StringCollection();// new list of collections.specialized.string.list
+                StringCollection stringList = Settings.Settings1.Default.PlayerS; // get list from settings
 
                 string characterJson = JsonConvert.SerializeObject(CreateCharacter(userName, userCount));
                 stringList.Add(characterJson);
