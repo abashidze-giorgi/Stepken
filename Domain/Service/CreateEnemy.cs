@@ -13,13 +13,13 @@ using System.Xml.Linq;
 
 namespace Domain.Service
 {
-    public static class CreateEnemy
+    public class CreateEnemy
     {
         private static int GetUnitId()
         {
             return GameList.UnitList.Count + 1;
         }
-        public static void CreateEnemyes()
+        public void CreateEnemyes()
         {
             CreateGoblin();
             CreateKobold();

@@ -14,18 +14,10 @@ namespace Domain.Service
 {
     public class CreatePlayer
     {
-        public void Player() 
+        public void Player(string name) 
         {
-            var player = new Character(GetId(), "Human", 350, 40, 40,
-                CharacterRaceEnum.Human, Model.Character.LevelModel.Level_1,                
-                $"{GetFolderPath.GetCharacterFolderPath()}\\human.jpg");
-            player.Weapon.Add(GameList.WeaponList[0]);
-            player.Shield = GameList.ShieldList[4];
-            GameList.UnitList.Add(player);
+            
         }
-        private static int GetId()
-        {
-            return GameList.UnitList.Count + 1;
-        }
+        
     }
 }

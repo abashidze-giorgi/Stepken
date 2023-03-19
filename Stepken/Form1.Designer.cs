@@ -71,7 +71,7 @@
             // 
             // Image_Player
             // 
-            Image_Player.Location = new Point(206, 388);
+            Image_Player.Location = new Point(122, 180);
             Image_Player.Name = "Image_Player";
             Image_Player.Size = new Size(147, 322);
             Image_Player.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -80,7 +80,7 @@
             // 
             // Picture_2
             // 
-            Picture_2.Location = new Point(917, 388);
+            Picture_2.Location = new Point(585, 196);
             Picture_2.Name = "Picture_2";
             Picture_2.Size = new Size(147, 322);
             Picture_2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -93,7 +93,7 @@
             Btn_equip.Enabled = false;
             Btn_equip.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Btn_equip.ForeColor = Color.White;
-            Btn_equip.Location = new Point(245, 716);
+            Btn_equip.Location = new Point(56, 442);
             Btn_equip.Name = "Btn_equip";
             Btn_equip.Size = new Size(60, 60);
             Btn_equip.TabIndex = 1;
@@ -107,7 +107,7 @@
             button2.BackColor = Color.FromArgb(192, 0, 0);
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(1114, 929);
+            button2.Location = new Point(799, 587);
             button2.Name = "button2";
             button2.Size = new Size(138, 44);
             button2.TabIndex = 1;
@@ -117,7 +117,7 @@
             // 
             // Btn_StartBattle
             // 
-            Btn_StartBattle.Location = new Point(503, 798);
+            Btn_StartBattle.Location = new Point(355, 568);
             Btn_StartBattle.Name = "Btn_StartBattle";
             Btn_StartBattle.Size = new Size(211, 60);
             Btn_StartBattle.TabIndex = 1;
@@ -128,7 +128,7 @@
             // button4
             // 
             button4.Enabled = false;
-            button4.Location = new Point(799, 405);
+            button4.Location = new Point(467, 213);
             button4.Name = "button4";
             button4.Size = new Size(99, 27);
             button4.TabIndex = 1;
@@ -139,7 +139,7 @@
             // button5
             // 
             button5.Enabled = false;
-            button5.Location = new Point(799, 535);
+            button5.Location = new Point(467, 343);
             button5.Name = "button5";
             button5.Size = new Size(99, 27);
             button5.TabIndex = 1;
@@ -150,7 +150,7 @@
             // button6
             // 
             button6.Enabled = false;
-            button6.Location = new Point(799, 667);
+            button6.Location = new Point(467, 475);
             button6.Name = "button6";
             button6.Size = new Size(99, 27);
             button6.TabIndex = 1;
@@ -163,7 +163,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(0, 192, 0);
-            label1.Location = new Point(225, 95);
+            label1.Location = new Point(155, 46);
             label1.Name = "label1";
             label1.Size = new Size(56, 30);
             label1.TabIndex = 3;
@@ -174,7 +174,7 @@
             Lbl_PlayerLife.AutoSize = true;
             Lbl_PlayerLife.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             Lbl_PlayerLife.ForeColor = Color.FromArgb(0, 192, 0);
-            Lbl_PlayerLife.Location = new Point(287, 95);
+            Lbl_PlayerLife.Location = new Point(217, 46);
             Lbl_PlayerLife.Name = "Lbl_PlayerLife";
             Lbl_PlayerLife.Size = new Size(26, 30);
             Lbl_PlayerLife.TabIndex = 3;
@@ -183,7 +183,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(206, 305);
+            label3.Location = new Point(122, 97);
             label3.Name = "label3";
             label3.Size = new Size(44, 15);
             label3.TabIndex = 3;
@@ -192,7 +192,7 @@
             // Lbl_param_attack
             // 
             Lbl_param_attack.AutoSize = true;
-            Lbl_param_attack.Location = new Point(340, 305);
+            Lbl_param_attack.Location = new Point(256, 97);
             Lbl_param_attack.Name = "Lbl_param_attack";
             Lbl_param_attack.Size = new Size(13, 15);
             Lbl_param_attack.TabIndex = 3;
@@ -201,7 +201,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(206, 346);
+            label7.Location = new Point(122, 138);
             label7.Name = "label7";
             label7.Size = new Size(53, 15);
             label7.TabIndex = 3;
@@ -210,7 +210,7 @@
             // Lbl_param_defence
             // 
             Lbl_param_defence.AutoSize = true;
-            Lbl_param_defence.Location = new Point(340, 346);
+            Lbl_param_defence.Location = new Point(256, 138);
             Lbl_param_defence.Name = "Lbl_param_defence";
             Lbl_param_defence.Size = new Size(13, 15);
             Lbl_param_defence.TabIndex = 3;
@@ -221,7 +221,7 @@
             label29.AutoSize = true;
             label29.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label29.ForeColor = Color.FromArgb(255, 128, 0);
-            label29.Location = new Point(12, 95);
+            label29.Location = new Point(12, 46);
             label29.Name = "label29";
             label29.Size = new Size(68, 30);
             label29.TabIndex = 3;
@@ -232,7 +232,7 @@
             Lbl_Gold.AutoSize = true;
             Lbl_Gold.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             Lbl_Gold.ForeColor = Color.FromArgb(255, 128, 0);
-            Lbl_Gold.Location = new Point(86, 95);
+            Lbl_Gold.Location = new Point(86, 46);
             Lbl_Gold.Name = "Lbl_Gold";
             Lbl_Gold.Size = new Size(26, 30);
             Lbl_Gold.TabIndex = 3;
@@ -243,7 +243,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(192, 0, 0);
-            label5.Location = new Point(927, 95);
+            label5.Location = new Point(612, 46);
             label5.Name = "label5";
             label5.Size = new Size(56, 30);
             label5.TabIndex = 3;
@@ -254,7 +254,7 @@
             Lbl_EnemyLife.AutoSize = true;
             Lbl_EnemyLife.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             Lbl_EnemyLife.ForeColor = Color.FromArgb(192, 0, 0);
-            Lbl_EnemyLife.Location = new Point(989, 95);
+            Lbl_EnemyLife.Location = new Point(674, 46);
             Lbl_EnemyLife.Name = "Lbl_EnemyLife";
             Lbl_EnemyLife.Size = new Size(26, 30);
             Lbl_EnemyLife.TabIndex = 3;
@@ -263,7 +263,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(917, 305);
+            label17.Location = new Point(585, 113);
             label17.Name = "label17";
             label17.Size = new Size(44, 15);
             label17.TabIndex = 3;
@@ -272,7 +272,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(917, 346);
+            label18.Location = new Point(585, 154);
             label18.Name = "label18";
             label18.Size = new Size(53, 15);
             label18.TabIndex = 3;
@@ -281,7 +281,7 @@
             // Lbl_param_attack_enemy
             // 
             Lbl_param_attack_enemy.AutoSize = true;
-            Lbl_param_attack_enemy.Location = new Point(1051, 305);
+            Lbl_param_attack_enemy.Location = new Point(719, 113);
             Lbl_param_attack_enemy.Name = "Lbl_param_attack_enemy";
             Lbl_param_attack_enemy.Size = new Size(13, 15);
             Lbl_param_attack_enemy.TabIndex = 3;
@@ -290,7 +290,7 @@
             // Lbl_param_defence_enemy
             // 
             Lbl_param_defence_enemy.AutoSize = true;
-            Lbl_param_defence_enemy.Location = new Point(1051, 346);
+            Lbl_param_defence_enemy.Location = new Point(719, 154);
             Lbl_param_defence_enemy.Name = "Lbl_param_defence_enemy";
             Lbl_param_defence_enemy.Size = new Size(13, 15);
             Lbl_param_defence_enemy.TabIndex = 3;
@@ -301,9 +301,9 @@
             Btn_Store.BackColor = Color.FromArgb(255, 128, 0);
             Btn_Store.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Btn_Store.ForeColor = Color.White;
-            Btn_Store.Location = new Point(12, 929);
+            Btn_Store.Location = new Point(122, 521);
             Btn_Store.Name = "Btn_Store";
-            Btn_Store.Size = new Size(138, 44);
+            Btn_Store.Size = new Size(147, 44);
             Btn_Store.TabIndex = 1;
             Btn_Store.Text = "Store";
             Btn_Store.UseVisualStyleBackColor = false;
@@ -312,7 +312,7 @@
             // label37
             // 
             label37.AutoSize = true;
-            label37.Location = new Point(113, 409);
+            label37.Location = new Point(29, 201);
             label37.Name = "label37";
             label37.Size = new Size(51, 15);
             label37.TabIndex = 3;
@@ -321,10 +321,10 @@
             // PlayerName_Text
             // 
             PlayerName_Text.AutoSize = true;
-            PlayerName_Text.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            PlayerName_Text.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
             PlayerName_Text.Location = new Point(12, 9);
             PlayerName_Text.Name = "PlayerName_Text";
-            PlayerName_Text.Size = new Size(33, 45);
+            PlayerName_Text.Size = new Size(28, 37);
             PlayerName_Text.TabIndex = 3;
             PlayerName_Text.Text = "-";
             // 
@@ -332,7 +332,7 @@
             // 
             EnemyName_Text.AutoSize = true;
             EnemyName_Text.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            EnemyName_Text.Location = new Point(927, 141);
+            EnemyName_Text.Location = new Point(667, 86);
             EnemyName_Text.Name = "EnemyName_Text";
             EnemyName_Text.Size = new Size(33, 45);
             EnemyName_Text.TabIndex = 3;
@@ -340,7 +340,7 @@
             // 
             // Image_Weapon_Player
             // 
-            Image_Weapon_Player.Location = new Point(92, 427);
+            Image_Weapon_Player.Location = new Point(8, 219);
             Image_Weapon_Player.Name = "Image_Weapon_Player";
             Image_Weapon_Player.Size = new Size(108, 117);
             Image_Weapon_Player.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -350,7 +350,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(1091, 409);
+            label4.Location = new Point(759, 217);
             label4.Name = "label4";
             label4.Size = new Size(51, 15);
             label4.TabIndex = 3;
@@ -358,7 +358,7 @@
             // 
             // Weapon_2
             // 
-            Weapon_2.Location = new Point(1070, 427);
+            Weapon_2.Location = new Point(738, 235);
             Weapon_2.Name = "Weapon_2";
             Weapon_2.Size = new Size(108, 117);
             Weapon_2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -368,7 +368,7 @@
             // Image_Shield_2
             // 
             Image_Shield_2.BackColor = Color.White;
-            Image_Shield_2.Location = new Point(379, 495);
+            Image_Shield_2.Location = new Point(295, 287);
             Image_Shield_2.Name = "Image_Shield_2";
             Image_Shield_2.Size = new Size(86, 86);
             Image_Shield_2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -379,7 +379,7 @@
             // Image_Shield_1
             // 
             Image_Shield_1.BackColor = Color.White;
-            Image_Shield_1.Location = new Point(379, 388);
+            Image_Shield_1.Location = new Point(295, 180);
             Image_Shield_1.Name = "Image_Shield_1";
             Image_Shield_1.Size = new Size(86, 86);
             Image_Shield_1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -390,7 +390,7 @@
             // Image_Shield_3
             // 
             Image_Shield_3.BackColor = Color.White;
-            Image_Shield_3.Location = new Point(379, 624);
+            Image_Shield_3.Location = new Point(295, 416);
             Image_Shield_3.Name = "Image_Shield_3";
             Image_Shield_3.Size = new Size(86, 86);
             Image_Shield_3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -402,7 +402,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 985);
+            ClientSize = new Size(944, 641);
             Controls.Add(Image_Shield_3);
             Controls.Add(Image_Shield_1);
             Controls.Add(Image_Shield_2);
