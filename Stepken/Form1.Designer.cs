@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Image_Player = new PictureBox();
-            Picture_2 = new PictureBox();
+            Image_player = new PictureBox();
+            Image_enemy = new PictureBox();
             button2 = new Button();
             Btn_StartBattle = new Button();
             button4 = new Button();
@@ -37,30 +37,30 @@
             button6 = new Button();
             label1 = new Label();
             Lbl_PlayerLife = new Label();
-            label3 = new Label();
-            Lbl_param_attack = new Label();
             label7 = new Label();
-            Lbl_param_defence = new Label();
+            Lbl_player_atack = new Label();
+            label6 = new Label();
+            Lbl_player_defence = new Label();
             label29 = new Label();
             Lbl_Gold = new Label();
             label5 = new Label();
             Lbl_EnemyLife = new Label();
             label17 = new Label();
             label18 = new Label();
-            Lbl_param_attack_enemy = new Label();
-            Lbl_param_defence_enemy = new Label();
+            Lbl_enemy_atack = new Label();
+            Lbl_enemy_defence = new Label();
             Btn_Store = new Button();
             label37 = new Label();
-            PlayerName_Text = new Label();
-            EnemyName_Text = new Label();
+            Lbl_user_name = new Label();
+            Lbl_enemy_name = new Label();
             Image_Weapon_Player = new PictureBox();
             label4 = new Label();
             Weapon_2 = new PictureBox();
             Image_Shield_2 = new PictureBox();
             Image_Shield_1 = new PictureBox();
             Image_Shield_3 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)Image_Player).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Picture_2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_player).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Image_enemy).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_Weapon_Player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_Shield_2).BeginInit();
@@ -68,23 +68,23 @@
             ((System.ComponentModel.ISupportInitialize)Image_Shield_3).BeginInit();
             SuspendLayout();
             // 
-            // Image_Player
+            // Image_player
             // 
-            Image_Player.Location = new Point(122, 180);
-            Image_Player.Name = "Image_Player";
-            Image_Player.Size = new Size(147, 322);
-            Image_Player.SizeMode = PictureBoxSizeMode.StretchImage;
-            Image_Player.TabIndex = 0;
-            Image_Player.TabStop = false;
+            Image_player.Location = new Point(122, 180);
+            Image_player.Name = "Image_player";
+            Image_player.Size = new Size(147, 322);
+            Image_player.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image_player.TabIndex = 0;
+            Image_player.TabStop = false;
             // 
-            // Picture_2
+            // Image_enemy
             // 
-            Picture_2.Location = new Point(585, 196);
-            Picture_2.Name = "Picture_2";
-            Picture_2.Size = new Size(147, 322);
-            Picture_2.SizeMode = PictureBoxSizeMode.StretchImage;
-            Picture_2.TabIndex = 0;
-            Picture_2.TabStop = false;
+            Image_enemy.Location = new Point(585, 196);
+            Image_enemy.Name = "Image_enemy";
+            Image_enemy.Size = new Size(147, 322);
+            Image_enemy.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image_enemy.TabIndex = 0;
+            Image_enemy.TabStop = false;
             // 
             // button2
             // 
@@ -164,41 +164,41 @@
             Lbl_PlayerLife.TabIndex = 3;
             Lbl_PlayerLife.Text = "0";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(122, 97);
-            label3.Name = "label3";
-            label3.Size = new Size(44, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Attack:";
-            // 
-            // Lbl_param_attack
-            // 
-            Lbl_param_attack.AutoSize = true;
-            Lbl_param_attack.Location = new Point(256, 97);
-            Lbl_param_attack.Name = "Lbl_param_attack";
-            Lbl_param_attack.Size = new Size(13, 15);
-            Lbl_param_attack.TabIndex = 3;
-            Lbl_param_attack.Text = "0";
-            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(122, 138);
+            label7.Location = new Point(122, 97);
             label7.Name = "label7";
-            label7.Size = new Size(53, 15);
+            label7.Size = new Size(44, 15);
             label7.TabIndex = 3;
-            label7.Text = "Defence:";
+            label7.Text = "Attack:";
             // 
-            // Lbl_param_defence
+            // Lbl_player_atack
             // 
-            Lbl_param_defence.AutoSize = true;
-            Lbl_param_defence.Location = new Point(256, 138);
-            Lbl_param_defence.Name = "Lbl_param_defence";
-            Lbl_param_defence.Size = new Size(13, 15);
-            Lbl_param_defence.TabIndex = 3;
-            Lbl_param_defence.Text = "0";
+            Lbl_player_atack.AutoSize = true;
+            Lbl_player_atack.Location = new Point(256, 97);
+            Lbl_player_atack.Name = "Lbl_player_atack";
+            Lbl_player_atack.Size = new Size(13, 15);
+            Lbl_player_atack.TabIndex = 3;
+            Lbl_player_atack.Text = "0";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(122, 138);
+            label6.Name = "label6";
+            label6.Size = new Size(53, 15);
+            label6.TabIndex = 3;
+            label6.Text = "Defence:";
+            // 
+            // Lbl_player_defence
+            // 
+            Lbl_player_defence.AutoSize = true;
+            Lbl_player_defence.Location = new Point(256, 138);
+            Lbl_player_defence.Name = "Lbl_player_defence";
+            Lbl_player_defence.Size = new Size(13, 15);
+            Lbl_player_defence.TabIndex = 3;
+            Lbl_player_defence.Text = "0";
             // 
             // label29
             // 
@@ -262,23 +262,23 @@
             label18.TabIndex = 3;
             label18.Text = "Defence:";
             // 
-            // Lbl_param_attack_enemy
+            // Lbl_enemy_atack
             // 
-            Lbl_param_attack_enemy.AutoSize = true;
-            Lbl_param_attack_enemy.Location = new Point(719, 113);
-            Lbl_param_attack_enemy.Name = "Lbl_param_attack_enemy";
-            Lbl_param_attack_enemy.Size = new Size(13, 15);
-            Lbl_param_attack_enemy.TabIndex = 3;
-            Lbl_param_attack_enemy.Text = "0";
+            Lbl_enemy_atack.AutoSize = true;
+            Lbl_enemy_atack.Location = new Point(719, 113);
+            Lbl_enemy_atack.Name = "Lbl_enemy_atack";
+            Lbl_enemy_atack.Size = new Size(13, 15);
+            Lbl_enemy_atack.TabIndex = 3;
+            Lbl_enemy_atack.Text = "0";
             // 
-            // Lbl_param_defence_enemy
+            // Lbl_enemy_defence
             // 
-            Lbl_param_defence_enemy.AutoSize = true;
-            Lbl_param_defence_enemy.Location = new Point(719, 154);
-            Lbl_param_defence_enemy.Name = "Lbl_param_defence_enemy";
-            Lbl_param_defence_enemy.Size = new Size(13, 15);
-            Lbl_param_defence_enemy.TabIndex = 3;
-            Lbl_param_defence_enemy.Text = "0";
+            Lbl_enemy_defence.AutoSize = true;
+            Lbl_enemy_defence.Location = new Point(719, 154);
+            Lbl_enemy_defence.Name = "Lbl_enemy_defence";
+            Lbl_enemy_defence.Size = new Size(13, 15);
+            Lbl_enemy_defence.TabIndex = 3;
+            Lbl_enemy_defence.Text = "0";
             // 
             // Btn_Store
             // 
@@ -302,25 +302,25 @@
             label37.TabIndex = 3;
             label37.Text = "Weapon";
             // 
-            // PlayerName_Text
+            // Lbl_user_name
             // 
-            PlayerName_Text.AutoSize = true;
-            PlayerName_Text.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-            PlayerName_Text.Location = new Point(12, 9);
-            PlayerName_Text.Name = "PlayerName_Text";
-            PlayerName_Text.Size = new Size(28, 37);
-            PlayerName_Text.TabIndex = 3;
-            PlayerName_Text.Text = "-";
+            Lbl_user_name.AutoSize = true;
+            Lbl_user_name.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_user_name.Location = new Point(12, 9);
+            Lbl_user_name.Name = "Lbl_user_name";
+            Lbl_user_name.Size = new Size(28, 37);
+            Lbl_user_name.TabIndex = 3;
+            Lbl_user_name.Text = "-";
             // 
-            // EnemyName_Text
+            // Lbl_enemy_name
             // 
-            EnemyName_Text.AutoSize = true;
-            EnemyName_Text.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            EnemyName_Text.Location = new Point(667, 86);
-            EnemyName_Text.Name = "EnemyName_Text";
-            EnemyName_Text.Size = new Size(33, 45);
-            EnemyName_Text.TabIndex = 3;
-            EnemyName_Text.Text = "-";
+            Lbl_enemy_name.AutoSize = true;
+            Lbl_enemy_name.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_enemy_name.Location = new Point(585, 9);
+            Lbl_enemy_name.Name = "Lbl_enemy_name";
+            Lbl_enemy_name.Size = new Size(28, 37);
+            Lbl_enemy_name.TabIndex = 3;
+            Lbl_enemy_name.Text = "-";
             // 
             // Image_Weapon_Player
             // 
@@ -392,21 +392,21 @@
             Controls.Add(Image_Shield_2);
             Controls.Add(Weapon_2);
             Controls.Add(Image_Weapon_Player);
-            Controls.Add(Lbl_param_defence_enemy);
-            Controls.Add(Lbl_param_defence);
-            Controls.Add(Lbl_param_attack_enemy);
-            Controls.Add(Lbl_param_attack);
+            Controls.Add(Lbl_enemy_defence);
+            Controls.Add(Lbl_player_defence);
+            Controls.Add(Lbl_enemy_atack);
+            Controls.Add(Lbl_player_atack);
             Controls.Add(Lbl_Gold);
             Controls.Add(Lbl_EnemyLife);
             Controls.Add(Lbl_PlayerLife);
             Controls.Add(label4);
             Controls.Add(label37);
-            Controls.Add(EnemyName_Text);
-            Controls.Add(PlayerName_Text);
+            Controls.Add(Lbl_enemy_name);
+            Controls.Add(Lbl_user_name);
             Controls.Add(label18);
             Controls.Add(label17);
+            Controls.Add(label6);
             Controls.Add(label7);
-            Controls.Add(label3);
             Controls.Add(label29);
             Controls.Add(label5);
             Controls.Add(label1);
@@ -416,14 +416,14 @@
             Controls.Add(button4);
             Controls.Add(Btn_Store);
             Controls.Add(button2);
-            Controls.Add(Picture_2);
-            Controls.Add(Image_Player);
+            Controls.Add(Image_enemy);
+            Controls.Add(Image_player);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)Image_Player).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Picture_2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Image_player).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Image_enemy).EndInit();
             ((System.ComponentModel.ISupportInitialize)Image_Weapon_Player).EndInit();
             ((System.ComponentModel.ISupportInitialize)Weapon_2).EndInit();
             ((System.ComponentModel.ISupportInitialize)Image_Shield_2).EndInit();
@@ -435,8 +435,8 @@
 
         #endregion
 
-        private PictureBox Image_Player;
-        private PictureBox Picture_2;
+        private PictureBox Image_player;
+        private PictureBox Image_enemy;
         private Button button2;
         private Button Btn_StartBattle;
         private Button button4;
@@ -444,22 +444,22 @@
         private Button button6;
         private Label label1;
         private Label Lbl_PlayerLife;
-        private Label label3;
-        private Label Lbl_param_attack;
         private Label label7;
-        private Label Lbl_param_defence;
+        private Label Lbl_player_atack;
+        private Label label6;
+        private Label Lbl_player_defence;
         private Label label29;
         private Label Lbl_Gold;
         private Label label5;
         private Label Lbl_EnemyLife;
         private Label label17;
         private Label label18;
-        private Label Lbl_param_attack_enemy;
-        private Label Lbl_param_defence_enemy;
+        private Label Lbl_enemy_atack;
+        private Label Lbl_enemy_defence;
         private Button Btn_Store;
         private Label label37;
-        private Label PlayerName_Text;
-        private Label EnemyName_Text;
+        private Label Lbl_user_name;
+        private Label Lbl_enemy_name;
         private PictureBox Image_Weapon_Player;
         private Label label4;
         private PictureBox Weapon_2;

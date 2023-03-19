@@ -10,34 +10,27 @@ namespace Domain.Service
     {
         public int atacker { get; set; } = 0;
         private int defender = 1;
-        
-        private List<Character> figters = new List<Character>();
-        
-        public void StartBattle(Character player, Character enemy, ZoneModel zone)
+        public void StartBattle(ZoneModel zone)
         {
-            SetFigtersList(player, enemy);
-            var hitPower = GetHitPower(figters[atacker]);
-            var defencePower = GetDefencePower(figters[defender], zone);
+
+            var hitPower = GetHitPower(GameList.FigterList[atacker]);
+            var defencePower = GetDefencePower(GameList.FigterList[defender], zone);
             var lifeDecrease = GetBattleResult(hitPower, defencePower, zone);
             
-            var isDefenderAlive = IsDefenderAlive(figters[defender], lifeDecrease);
+            var isDefenderAlive = IsDefenderAlive(GameList.FigterList[defender], lifeDecrease);
             if(isDefenderAlive)
             {
-                figters[defender].Life = Math.Round(figters[defender].Life - lifeDecrease, 2);
+                GameList.FigterList[defender].Life = Math.Round(GameList.FigterList[defender].Life - lifeDecrease, 2);
             }
             else
             {
-                figters[defender].Life = 0;
-                figters.Clear();
+                GameList.FigterList[defender].Life = 0;
+                GameList.FigterList.Clear();
             }
             ChageAtacker();
         }
 
-        private void SetFigtersList(Character player, Character enemy)
-        {
-            figters.Add(player);
-            figters.Add(enemy);
-        }
+     
         public double GetBattleResult(double hitPower, double defencePower, ZoneModel zone)
         {
             double zonePenalt = GetZonePenalte(zone);
@@ -51,7 +44,7 @@ namespace Domain.Service
             double bodyPenalt = 0.5;
             double legPenalt = 0.2;
             double zonePenalt = 0.5;
-            foreach(var sh in figters[defender].Shield.Zone)
+            foreach(var sh in GameList.FigterList[defender].Shield.Zone)
             {
                 if(sh == zone)
                 {

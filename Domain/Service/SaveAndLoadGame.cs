@@ -25,7 +25,7 @@ namespace Domain.Service
             }
         }
 
-        public bool Save(Character user)
+        public bool Save()
         {
             try
             {
@@ -39,13 +39,13 @@ namespace Domain.Service
 
                 foreach (Character character in myList)
                 {
-                    if (character.Name != user.Name)
+                    if (character.Name != GameList.Player.Name)
                     {
                         string oldCharacter = JsonConvert.SerializeObject(character);
                         stringList.Add(oldCharacter);
                     }
                 }
-                string palayerJson = JsonConvert.SerializeObject(user);
+                string palayerJson = JsonConvert.SerializeObject(GameList.Player);
                 stringList.Add(palayerJson);
 
                 Settings.Settings1.Default.PlayerS = stringList;

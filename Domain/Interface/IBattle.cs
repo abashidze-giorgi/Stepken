@@ -6,7 +6,7 @@ namespace Domain.Interface
 {
     public interface IBattle
     {
-        public void StartBattle(Character player, Character enemy, ZoneModel zone);
+        public void StartBattle(ZoneModel zone);
         public void SetAtacker(); // get randomly 0 or 1 in stage start
         public double GetHitPower(Character atacker); // return demage power 
         public double CalculateWEaponFault(WeaponModel weapon); // возвращает количество промаха

@@ -5,6 +5,7 @@ using Domain.Models;
 using Domain.Service;
 using Stepken.Page;
 using Player = Domain.Service.GameList;
+using Enemy = Domain.Service.GameList;
 using System;
 using System.Collections;
 using System.Numerics;
@@ -16,30 +17,51 @@ namespace Stepken
     public partial class Form1 : Form
     {
         Character player = Player.Player;
+        Character enemy = Enemy.FigterList[1];
         public Character currentEnemy { get; set; }
-
         private Battle battle;
         private string playerName = "YourNameHere";
         private int Gold = 10;
         public Form1()
         {
             InitializeComponent();
-            SetLifeCount();
-            GetShields();
+            LoadCharacterValues();
         }
-        private double getAttackAmount()
+
+        private void LoadCharacterValues()
         {
-            double atackePower = Math.Round(player.Attack + player.Weapon[0].AttackPower, 2);
+            if (player != null)
+            {
+                Lbl_player_atack.Text = getAttackAmount(player).ToString();
+                Lbl_player_defence.Text = getDefenceAmount(player).ToString();
+                Lbl_user_name.Text = player.Name;
+                Lbl_PlayerLife.Text = player.Life.ToString();
+                Image_player.ImageLocation = player.ImageAddress;
+                ImagePlayerShield();
+            }
+            if (enemy != null)
+            {
+                Lbl_enemy_atack.Text = getAttackAmount(enemy).ToString();
+                Lbl_enemy_defence.Text = getDefenceAmount(enemy).ToString();
+                Lbl_enemy_name.Text = enemy.Name;
+                Lbl_EnemyLife.Text = enemy.Life.ToString();
+                Image_enemy.ImageLocation = enemy.ImageAddress;
+            }
+        }
+
+        private double getAttackAmount(Character unit)
+        {
+            double atackePower = Math.Round(unit.Attack + unit.Weapon[0].AttackPower, 2);
             return atackePower;
         }
-        private double getDefenceAmount()
+        private double getDefenceAmount(Character unit)
         {
             double armorValue = 0;
-            foreach (var arm in player.Armor)
+            foreach (var arm in unit.Armor)
             {
                 armorValue += arm.Defence;
             }
-            double defencePower = Math.Round(player.Defence + armorValue + player.Shield.Defence, 2);
+            double defencePower = Math.Round(unit.Defence + armorValue + unit.Shield.Defence, 2);
             return defencePower;
         }
 
@@ -79,12 +101,12 @@ namespace Stepken
         {
             await Task.Delay(1000);
             // code to be executed after the delay
-            Battle(player, currentEnemy, battle.GetRandomAttackZone());
+            Battle(battle.GetRandomAttackZone());
         }
-        private void Battle(Character player, Character enemy, ZoneModel zone)
+        private void Battle(ZoneModel zone)
         {
-            battle.StartBattle(player, enemy, zone);
-            SetLifeCount();
+            battle.StartBattle(zone);
+            GetLife();
             CheckAtacker();
         }
         private void Btn_StartBattle_Click(object sender, EventArgs e)
@@ -93,31 +115,21 @@ namespace Stepken
             battle.SetAtacker();
             CheckAtacker();
         }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Battle(player, currentEnemy, ZoneModel.Head);
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Battle(player, currentEnemy, ZoneModel.Body);
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Battle(player, currentEnemy, ZoneModel.Leg);
-        }
-        private void SetLifeCount()
+
+        private void GetLife()
         {
             try
             {
-                if (GameList.FigterList[1].Life == 0)
+                if (enemy.Life == 0)
                 {
+
                 }
                 if (player.Life == 0)
                 {
                     PlayerDead();
                     return;
                 }
-                Lbl_EnemyLife.Text = GameList.FigterList[1].Life.ToString();
+                Lbl_EnemyLife.Text = enemy.Life.ToString();
                 Lbl_PlayerLife.Text = player.Life.ToString();
             }
             catch (Exception ex)
@@ -129,15 +141,19 @@ namespace Stepken
         {
             player = null;
             Lbl_PlayerLife.Text = 0.ToString();
-            Image_Player.ImageLocation = null;
+            Image_player.ImageLocation = null;
             Image_Weapon_Player.ImageLocation = null;
             Image_Shield_1.Visible = false;
             Image_Shield_2.Visible = false;
             Image_Shield_3.Visible = false;
 
         }
-
-        private void GetShields()
+        private void SaveGame()
+        {
+            var saveUser = new SaveAndLoadGame();
+            saveUser.Save();
+        }
+        private void ImagePlayerShield()
         {
             Image_Shield_1.Visible = false;
             Image_Shield_2.Visible = false;
@@ -161,14 +177,20 @@ namespace Stepken
                 }
             }
         }
-        private void SaveGame()
-        {
-            var saveUser = new SaveAndLoadGame();
-            saveUser.Save(player);
-        }
-        private void LoadGame()
-        {
 
+        #region BattleZone button click
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Battle(ZoneModel.Head);
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Battle(ZoneModel.Body);
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Battle(ZoneModel.Leg);
+        }
+        #endregion
     }
 }
