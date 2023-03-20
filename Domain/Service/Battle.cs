@@ -12,7 +12,6 @@ namespace Domain.Service
         private int defender = 1;
         public void StartBattle(ZoneModel zone)
         {
-
             var hitPower = GetHitPower(GameList.FigterList[atacker]);
             var defencePower = GetDefencePower(GameList.FigterList[defender], zone);
             var lifeDecrease = GetBattleResult(hitPower, defencePower, zone);
@@ -27,9 +26,8 @@ namespace Domain.Service
                 GameList.FigterList[defender].Life = 0;
                 GameList.FigterList.Clear();
             }
-            ChageAtacker();
+            ChangeAtacker();
         }
-
      
         public double GetBattleResult(double hitPower, double defencePower, ZoneModel zone)
         {
@@ -122,7 +120,7 @@ namespace Domain.Service
                 defender = 0;
             }
         }
-        private void ChageAtacker()
+        private void ChangeAtacker()
         {
             var temp = atacker;
             atacker = defender;

@@ -18,6 +18,7 @@ namespace Domain.Service
 
         private void SetFigterList(int id = -1)
         {
+            GameList.FigterList.Clear();
             GameList.FigterList.Add(GameList.Player);
             GameList.FigterList.Add(GetEnemy(id));
         }
