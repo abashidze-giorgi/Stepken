@@ -16,6 +16,7 @@ namespace Stepken
 {
     public partial class GameSettingForm : Form
     {
+        private string userName = "";
         public GameSettingForm()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Stepken
                 {
                     var uc = new UCLoadGameUsedrs();
                     uc.UserName = u;
-                    uc.btn_UserName.Click += (s, e) => { LoadGame(uc.UserName); };
+                    uc.btn_UserName.Click += (s, e) => { userName = uc.UserName; };
                     PlayerPanel.Controls.Add(uc);
                 }
             }
@@ -97,6 +98,20 @@ namespace Stepken
         {
             LoadPlayerList();
             this.Show();
+        }
+        private void Btn_load_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(userName))
+            {
+                LoadGame(userName);
+            }
+        }
+
+        private void Btn_delete_Click_1(object sender, EventArgs e)
+        {
+            var delete = new DeleteUser();
+            delete.DeleteUserSave(userName);
+            LoadPlayerList();
         }
     }
 }

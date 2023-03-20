@@ -39,7 +39,7 @@
             btn_UserName.ForeColor = Color.White;
             btn_UserName.Location = new Point(0, 0);
             btn_UserName.Name = "btn_UserName";
-            btn_UserName.Size = new Size(270, 58);
+            btn_UserName.Size = new Size(317, 45);
             btn_UserName.TabIndex = 0;
             btn_UserName.Text = "button1";
             btn_UserName.UseVisualStyleBackColor = false;
@@ -50,7 +50,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btn_UserName);
             Name = "UCLoadGameUsedrs";
-            Size = new Size(270, 58);
+            Size = new Size(317, 45);
             ResumeLayout(false);
         }
 
