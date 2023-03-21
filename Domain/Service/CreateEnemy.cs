@@ -32,15 +32,12 @@ namespace Domain.Service
             goblin.Shield = GameList.ShieldList[1];
             GameList.EnemyList.Add(goblin);
         }
-
-
         private static void CreateKobold()
         {
             var kobold = new Character(3, "Kobold", 320, 14, 17, CharacterRaceEnum.Kobold, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Kobold.jpg");
             kobold.Shield = GameList.ShieldList[1];
             GameList.EnemyList.Add(kobold);
         }
-
         private static void CreateOrc()
         {
             var orc = new Character(
