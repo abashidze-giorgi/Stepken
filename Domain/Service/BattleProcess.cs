@@ -8,27 +8,22 @@ namespace Domain.Service
 {
     public class BattleProcess
     {
-        public void SetStartUpFigterParams()
+        public static void SetStartUpFigterParams()
         {
 
         }
 
-        public void Startbattle()
+        public static void Startbattle()
         {
 
         }
 
-        public void CheckHitResult()
+        public static void CheckHitResult()
         {
 
         }
 
-        public void BattleOverWhenPlayerWin()
-        {
-
-        }
-
-        public void BattleOverWhenPlayerWon()
+        public static void BattleOverWhenPlayerWin()
         {
 
         }
