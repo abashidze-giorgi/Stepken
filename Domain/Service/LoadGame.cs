@@ -35,7 +35,7 @@ namespace Domain.Service
         private int GetRandomEnemyId()
         {
             var random = new Random();
-            int result = (int)random.Next(1, GameList.EnemyList.Count);
+            int result = (int)random.Next(0, GameList.EnemyList.Count);
             return result;
         }
         private int GetRandomWeaponId()
