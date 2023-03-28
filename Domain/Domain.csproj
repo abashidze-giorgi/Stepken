@@ -7,8 +7,86 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Lib\Image\Character\Changeling.png" />
+    <None Remove="Lib\Image\Character\Cyclop.jpg" />
+    <None Remove="Lib\Image\Character\Dryad.jpg" />
+    <None Remove="Lib\Image\Character\Giant.png" />
+    <None Remove="Lib\Image\Character\Goblin.jpg" />
+    <None Remove="Lib\Image\Character\human.jpg" />
+    <None Remove="Lib\Image\Character\Kobold.jpg" />
+    <None Remove="Lib\Image\Character\Orc.jpg" />
+    <None Remove="Lib\Image\Character\Treant.png" />
+    <None Remove="Lib\Image\Character\Troll.jpg" />
+    <None Remove="Lib\Image\ShieldImage\BodyShield.jpg" />
+    <None Remove="Lib\Image\WeaponImage\Alebard.jpg" />
+    <None Remove="Lib\Image\WeaponImage\CrossBow.jpg" />
+    <None Remove="Lib\Image\WeaponImage\LongBow.jpg" />
+    <None Remove="Lib\Image\WeaponImage\LongSword.jpg" />
+    <None Remove="Lib\Image\WeaponImage\Pike.png" />
+    <None Remove="Lib\Image\WeaponImage\ShortBow.png" />
+    <None Remove="Lib\Image\WeaponImage\ShortSword.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Lib\Image\Character\Changeling.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Cyclop.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Dryad.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Giant.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Goblin.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\human.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Kobold.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Orc.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Treant.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\Character\Troll.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\ShieldImage\BodyShield.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\WeaponImage\Alebard.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\WeaponImage\CrossBow.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\WeaponImage\LongBow.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\WeaponImage\LongSword.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\WeaponImage\Pike.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\WeaponImage\ShortBow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Lib\Image\WeaponImage\ShortSword.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -20,57 +98,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Lib\Image\Character\Changeling.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Cyclop.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Dryad.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Giant.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Goblin.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\human.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Kobold.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Orc.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Treant.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\Character\Troll.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\WeaponImage\Alebard.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\WeaponImage\CrossBow.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\WeaponImage\LongBow.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\WeaponImage\LongSword.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\WeaponImage\Pike.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\WeaponImage\ShortBow.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Lib\Image\WeaponImage\ShortSword.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Settings\Settings1.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>

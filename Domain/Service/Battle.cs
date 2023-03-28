@@ -12,23 +12,44 @@ namespace Domain.Service
         private int defender = 1;
         public void StartBattle(ZoneModel zone)
         {
-            var hitPower = GetHitPower(GameList.FigterList[atacker]);
-            var defencePower = GetDefencePower(GameList.FigterList[defender], zone);
+            var hitPower = GetHitPower(GetCharacterByAtackerDefenderNum(atacker));
+            var defencePower = GetDefencePower(GetCharacterByAtackerDefenderNum(defender), zone);
             var lifeDecrease = GetBattleResult(hitPower, defencePower, zone);
-            
-            var isDefenderAlive = IsDefenderAlive(GameList.FigterList[defender], lifeDecrease);
+            var isDefenderAlive = IsDefenderAlive(GetCharacterByAtackerDefenderNum(defender), lifeDecrease);
+
+            GameList.hitResult.Atacker = GetCharacterByAtackerDefenderNum(atacker).Name;
+            GameList.hitResult.Defender = GetCharacterByAtackerDefenderNum(defender).Name;
+            GameList.hitResult.AtackPower = hitPower;
+            GameList.hitResult.DefencePower = defencePower;
+            GameList.hitResult.AtackZone = zone.ToString();
+            GameList.hitResult.DefenceShieldZone = GetCharacterByAtackerDefenderNum(defender).Shield.Name;
+            GameList.hitResult.DecreaseLife = lifeDecrease;
+
             if(isDefenderAlive)
             {
-                GameList.FigterList[defender].Life = Math.Round(GameList.FigterList[defender].Life - lifeDecrease, 2);
+                GetCharacterByAtackerDefenderNum(defender).CurrentLife = Math.Round(GetCharacterByAtackerDefenderNum(defender).CurrentLife - lifeDecrease, 2);
             }
             else
             {
-                GameList.FigterList[defender].Life = 0;
-                GameList.FigterList.Clear();
+                GetCharacterByAtackerDefenderNum(defender).CurrentLife = 0;
+                var deadChar = GetCharacterByAtackerDefenderNum(defender);
+                if(deadChar == GameList.Player)
+                {
+                    GameOver("lose");
+                }
+                else
+                {
+                    GameOver("win");
+                }
             }
             ChangeAtacker();
         }
-     
+
+        private void GameOver(string v)
+        {
+
+        }
+
         public double GetBattleResult(double hitPower, double defencePower, ZoneModel zone)
         {
             double zonePenalt = GetZonePenalte(zone);
@@ -42,7 +63,7 @@ namespace Domain.Service
             double bodyPenalt = 0.5;
             double legPenalt = 0.2;
             double zonePenalt = 0.5;
-            foreach(var sh in GameList.FigterList[defender].Shield.Zone)
+            foreach(var sh in GetCharacterByAtackerDefenderNum(defender).Shield.Zone)
             {
                 if(sh == zone)
                 {
@@ -86,10 +107,18 @@ namespace Domain.Service
 
         public double GetHitPower(Character unit)
         {
-            double result = unit.Weapon[0].AttackPower - CalculateWEaponFault(unit.Weapon[0]);
-            // set average hit power
-            double averageHitPower = Math.Round(unit.Attack + result, 2);
-            return averageHitPower;
+            try
+            {
+                double result = unit.Weapon[0].AttackPower - CalculateWEaponFault(unit.Weapon[0]);
+                // set average hit power
+                double averageHitPower = Math.Round(unit.Attack + result, 2);
+                return averageHitPower;
+            }
+            catch
+            {
+                return 0;
+            }
+            
         }
 
         public double CalculateWEaponFault(WeaponModel weapon)
@@ -103,7 +132,7 @@ namespace Domain.Service
 
         public bool IsDefenderAlive(Character defender, double LifeDecrease)
         {
-            return defender.Life - LifeDecrease > 0 ? true : false;
+            return defender.CurrentLife - LifeDecrease > 0 ? true : false;
         }
         public void SetAtacker()
         {
@@ -127,6 +156,15 @@ namespace Domain.Service
             defender = temp;
         }
 
+        private Character GetCharacterByAtackerDefenderNum(int num)
+        {
+            if(num == 0)
+            {
+                return GameList.Player;
+
+            };
+            return GameList.Enemy;
+        }
         public ZoneModel GetRandomAttackZone()
         {
             var random = new Random();

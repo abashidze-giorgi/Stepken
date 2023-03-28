@@ -1,4 +1,5 @@
 ﻿using Domain.Interface;
+using Domain.Inventory.Weapon;
 using Domain.Models;
 using Domain.Service;
 
@@ -15,20 +16,17 @@ namespace Stepken.UserController
 
         public void AddWeaponToStorePanel()
         {
-            foreach (WeaponModel weapon in GameList.WeaponList)
-            {
-                UCItem item = new UCItem();
-                item.Name = weapon.Name;
-                Dictionary<string, string> itemPropertyes = new Dictionary<string, string>();
-                itemPropertyes.Add("Id", weapon.Id.ToString());
-                itemPropertyes.Add("Name", weapon.Name.ToString());
-                itemPropertyes.Add("Attack", weapon.AttackPower.ToString());
-                itemPropertyes.Add("Fault", weapon.Fault.ToString());
-                item.AddItemCharactersAndValues(itemPropertyes);
-                item.Price = weapon.Price;
-                item.ImageAddress = weapon.ImageAddress;
-                Flow_weapon.Controls.Add(item);
-            }
+            //UCItem item = new UCItem();
+            //item.Name = weapon.Name;
+            //Dictionary<string, string> itemPropertyes = new Dictionary<string, string>();
+            //itemPropertyes.Add("Id", weapon.Id.ToString());
+            //itemPropertyes.Add("Name", weapon.Name.ToString());
+            //itemPropertyes.Add("Attack", weapon.AttackPower.ToString());
+            //itemPropertyes.Add("Fault", weapon.Fault.ToString());
+            //item.AddItemCharactersAndValues(itemPropertyes);
+            //item.Price = weapon.Price;
+            //item.ImageAddress = weapon.ImageAddress;
+            //Flow_weapon.Controls.Add(item);
         }
 
         public void DeselectWeaponFromUnit()

@@ -26,8 +26,6 @@ namespace Stepken.Page
                 bool created = cu.CreateUser(txt_UserName.Text);
                 if(created && txt_UserName.Text == GameList.Player.Name)
                 {
-                    var ld = new LoadGame();
-                    ld.LoadGameUnits();
                     this.Close();
                 }
             }

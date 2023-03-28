@@ -32,7 +32,7 @@ namespace Domain.Service
                     Settings.Settings1.Default.PlayerS = stringList;
                     Settings.Settings1.Default.Save();
                 }
-                catch (Exception ex)
+                catch
                 {
 
                 }

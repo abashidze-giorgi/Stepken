@@ -8,11 +8,6 @@ namespace Domain.Service
 {
     public class BattleProcess
     {
-        public static void SetStartUpFigterParams()
-        {
-
-        }
-
         public static void Startbattle()
         {
 
@@ -24,6 +19,11 @@ namespace Domain.Service
         }
 
         public static void BattleOverWhenPlayerWin()
+        {
+
+        }
+
+        private void GetEnemy(int battleRound)
         {
 
         }

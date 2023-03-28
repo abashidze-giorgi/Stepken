@@ -1,5 +1,6 @@
 ﻿
 using Domain.GameCharacter;
+using Domain.Service;
 
 namespace Stepken.Page
 {
@@ -9,7 +10,6 @@ namespace Stepken.Page
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private Character player;
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Stepken.Page
             Name = "EquipmentForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Equipment";
-            _player = player;
+            _player = GameList.Player;
             Load += EquipmentForm_Load;
             ResumeLayout(false);
         }

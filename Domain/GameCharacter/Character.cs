@@ -11,12 +11,13 @@ namespace Domain.GameCharacter
     public class Character : CharacterModel
 
     {
-        public Character(int id, string name, double life, double attack, double defence, CharacterRaceEnum characterRace,
+        public Character(int id, string name,double maxLife, double currentLife, double attack, double defence, CharacterRaceEnum characterRace,
             LevelModel level, string imageAddress)
         {
             Id = id;
             Name = name;
-            Life = life;
+            MaxLife = maxLife;
+            CurrentLife = currentLife;
             Attack = attack;
             Defence = defence;
             CharacterRace = characterRace;

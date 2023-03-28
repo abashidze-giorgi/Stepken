@@ -1,38 +1,52 @@
-﻿namespace Domain.Service
+﻿using Domain.GameCharacter;
+
+namespace Domain.Service
 {
     public static class GetFolderPath
     {
+        private static string GetMainDirectoryPath()
+        {
+            string directoryPath = AppDomain.CurrentDomain.BaseDirectory;
+            string parentDirectoryPath = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(directoryPath)))));
+
+            return parentDirectoryPath;
+        }
         public static string GetLibFolderPath()
         {
-            string mainDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
-            string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib"));
+            string mainDirectoryPath = GetMainDirectoryPath();
+            string folderPath = Path.Combine(mainDirectoryPath, "Domain", "Lib");
+            //string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib"));
             return folderPath;
         }
 
         public static string GetImageFolderPath()
         {
-            string mainDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
-            string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image"));
+            string mainDirectoryPath = GetMainDirectoryPath();
+            string folderPath = Path.Combine(mainDirectoryPath, "Domain", "Lib", "Image");
+            //string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image"));
             return folderPath;
         }
 
         public static string GetCharacterFolderPath()
         {
-            string mainDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
-            string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\Character"));
+            string mainDirectoryPath = GetMainDirectoryPath();
+            string folderPath = Path.Combine(mainDirectoryPath, "Domain", "Lib", "Image", "Character");
+            //string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\Character"));
             return folderPath;
         }
-        public static string GetWeaponFolderPath()
+        public static string GetWeaponFolderPath() 
         {
-            string mainDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
-            string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\WeaponImage"));
+            string mainDirectoryPath = GetMainDirectoryPath();
+            string folderPath = Path.Combine(mainDirectoryPath, "Domain", "Lib", "Image", "WeaponImage");
+            //string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\WeaponImage"));
             return folderPath;
         }
 
         public static string GetShieldFolderPath()
         {
-            string mainDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
-            string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\ShieldImage"));
+            string mainDirectoryPath = GetMainDirectoryPath();
+            string folderPath = Path.Combine(mainDirectoryPath, "Domain", "Lib", "Image", "ShieldImage");
+            //string folderPath = Path.GetFullPath(Path.Combine(mainDirectoryPath, @"..\..\..\..\Domain\Lib\Image\ShieldImage"));
             return folderPath;
         }
     }

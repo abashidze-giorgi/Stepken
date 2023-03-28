@@ -59,6 +59,12 @@
             Image_Shield_2 = new PictureBox();
             Image_Shield_1 = new PictureBox();
             Image_Shield_3 = new PictureBox();
+            label2 = new Label();
+            button1 = new Button();
+            label3 = new Label();
+            listBox1 = new ListBox();
+            label8 = new Label();
+            Lbl_level = new Label();
             ((System.ComponentModel.ISupportInitialize)Image_player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_enemy).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_Weapon_Player).BeginInit();
@@ -72,16 +78,16 @@
             // 
             Image_player.Location = new Point(122, 180);
             Image_player.Name = "Image_player";
-            Image_player.Size = new Size(147, 322);
+            Image_player.Size = new Size(147, 267);
             Image_player.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_player.TabIndex = 0;
             Image_player.TabStop = false;
             // 
             // Image_enemy
             // 
-            Image_enemy.Location = new Point(585, 196);
+            Image_enemy.Location = new Point(585, 180);
             Image_enemy.Name = "Image_enemy";
-            Image_enemy.Size = new Size(147, 322);
+            Image_enemy.Size = new Size(147, 267);
             Image_enemy.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_enemy.TabIndex = 0;
             Image_enemy.TabStop = false;
@@ -101,18 +107,20 @@
             // 
             // Btn_StartBattle
             // 
-            Btn_StartBattle.Location = new Point(355, 568);
+            Btn_StartBattle.BackColor = Color.FromArgb(0, 64, 64);
+            Btn_StartBattle.ForeColor = Color.White;
+            Btn_StartBattle.Location = new Point(330, 97);
             Btn_StartBattle.Name = "Btn_StartBattle";
             Btn_StartBattle.Size = new Size(211, 60);
             Btn_StartBattle.TabIndex = 1;
             Btn_StartBattle.Text = "Start Battle";
-            Btn_StartBattle.UseVisualStyleBackColor = true;
+            Btn_StartBattle.UseVisualStyleBackColor = false;
             Btn_StartBattle.Click += Btn_StartBattle_Click;
             // 
             // button4
             // 
             button4.Enabled = false;
-            button4.Location = new Point(467, 213);
+            button4.Location = new Point(467, 189);
             button4.Name = "button4";
             button4.Size = new Size(99, 27);
             button4.TabIndex = 1;
@@ -123,7 +131,7 @@
             // button5
             // 
             button5.Enabled = false;
-            button5.Location = new Point(467, 343);
+            button5.Location = new Point(467, 298);
             button5.Name = "button5";
             button5.Size = new Size(99, 27);
             button5.TabIndex = 1;
@@ -134,7 +142,7 @@
             // button6
             // 
             button6.Enabled = false;
-            button6.Location = new Point(467, 475);
+            button6.Location = new Point(467, 420);
             button6.Name = "button6";
             button6.Size = new Size(99, 27);
             button6.TabIndex = 1;
@@ -167,6 +175,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = Color.White;
             label7.Location = new Point(122, 97);
             label7.Name = "label7";
             label7.Size = new Size(44, 15);
@@ -176,6 +185,7 @@
             // Lbl_player_atack
             // 
             Lbl_player_atack.AutoSize = true;
+            Lbl_player_atack.ForeColor = Color.White;
             Lbl_player_atack.Location = new Point(256, 97);
             Lbl_player_atack.Name = "Lbl_player_atack";
             Lbl_player_atack.Size = new Size(13, 15);
@@ -185,6 +195,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = Color.White;
             label6.Location = new Point(122, 138);
             label6.Name = "label6";
             label6.Size = new Size(53, 15);
@@ -194,6 +205,7 @@
             // Lbl_player_defence
             // 
             Lbl_player_defence.AutoSize = true;
+            Lbl_player_defence.ForeColor = Color.White;
             Lbl_player_defence.Location = new Point(256, 138);
             Lbl_player_defence.Name = "Lbl_player_defence";
             Lbl_player_defence.Size = new Size(13, 15);
@@ -210,6 +222,7 @@
             label29.Size = new Size(68, 30);
             label29.TabIndex = 3;
             label29.Text = "Gold:";
+            label29.Visible = false;
             // 
             // Lbl_Gold
             // 
@@ -221,6 +234,7 @@
             Lbl_Gold.Size = new Size(26, 30);
             Lbl_Gold.TabIndex = 3;
             Lbl_Gold.Text = "0";
+            Lbl_Gold.Visible = false;
             // 
             // label5
             // 
@@ -247,7 +261,8 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(585, 113);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(585, 97);
             label17.Name = "label17";
             label17.Size = new Size(44, 15);
             label17.TabIndex = 3;
@@ -256,7 +271,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(585, 154);
+            label18.Location = new Point(585, 138);
             label18.Name = "label18";
             label18.Size = new Size(53, 15);
             label18.TabIndex = 3;
@@ -265,7 +280,8 @@
             // Lbl_enemy_atack
             // 
             Lbl_enemy_atack.AutoSize = true;
-            Lbl_enemy_atack.Location = new Point(719, 113);
+            Lbl_enemy_atack.ForeColor = Color.White;
+            Lbl_enemy_atack.Location = new Point(719, 97);
             Lbl_enemy_atack.Name = "Lbl_enemy_atack";
             Lbl_enemy_atack.Size = new Size(13, 15);
             Lbl_enemy_atack.TabIndex = 3;
@@ -274,7 +290,8 @@
             // Lbl_enemy_defence
             // 
             Lbl_enemy_defence.AutoSize = true;
-            Lbl_enemy_defence.Location = new Point(719, 154);
+            Lbl_enemy_defence.ForeColor = Color.White;
+            Lbl_enemy_defence.Location = new Point(719, 138);
             Lbl_enemy_defence.Name = "Lbl_enemy_defence";
             Lbl_enemy_defence.Size = new Size(13, 15);
             Lbl_enemy_defence.TabIndex = 3;
@@ -285,18 +302,20 @@
             Btn_Store.BackColor = Color.FromArgb(255, 128, 0);
             Btn_Store.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Btn_Store.ForeColor = Color.White;
-            Btn_Store.Location = new Point(122, 521);
+            Btn_Store.Location = new Point(785, 403);
             Btn_Store.Name = "Btn_Store";
             Btn_Store.Size = new Size(147, 44);
             Btn_Store.TabIndex = 1;
             Btn_Store.Text = "Store";
             Btn_Store.UseVisualStyleBackColor = false;
+            Btn_Store.Visible = false;
             Btn_Store.Click += Btn_Store_Click;
             // 
             // label37
             // 
             label37.AutoSize = true;
-            label37.Location = new Point(29, 201);
+            label37.ForeColor = Color.White;
+            label37.Location = new Point(25, 190);
             label37.Name = "label37";
             label37.Size = new Size(51, 15);
             label37.TabIndex = 3;
@@ -306,6 +325,7 @@
             // 
             Lbl_user_name.AutoSize = true;
             Lbl_user_name.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_user_name.ForeColor = Color.White;
             Lbl_user_name.Location = new Point(12, 9);
             Lbl_user_name.Name = "Lbl_user_name";
             Lbl_user_name.Size = new Size(28, 37);
@@ -316,6 +336,7 @@
             // 
             Lbl_enemy_name.AutoSize = true;
             Lbl_enemy_name.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_enemy_name.ForeColor = Color.White;
             Lbl_enemy_name.Location = new Point(585, 9);
             Lbl_enemy_name.Name = "Lbl_enemy_name";
             Lbl_enemy_name.Size = new Size(28, 37);
@@ -324,7 +345,7 @@
             // 
             // Image_Weapon_Player
             // 
-            Image_Weapon_Player.Location = new Point(8, 219);
+            Image_Weapon_Player.Location = new Point(4, 208);
             Image_Weapon_Player.Name = "Image_Weapon_Player";
             Image_Weapon_Player.Size = new Size(108, 117);
             Image_Weapon_Player.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -334,7 +355,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(759, 217);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(759, 190);
             label4.Name = "label4";
             label4.Size = new Size(51, 15);
             label4.TabIndex = 3;
@@ -342,7 +364,7 @@
             // 
             // Weapon_2
             // 
-            Weapon_2.Location = new Point(738, 235);
+            Weapon_2.Location = new Point(738, 208);
             Weapon_2.Name = "Weapon_2";
             Weapon_2.Size = new Size(108, 117);
             Weapon_2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -354,7 +376,7 @@
             Image_Shield_2.BackColor = Color.White;
             Image_Shield_2.Location = new Point(295, 287);
             Image_Shield_2.Name = "Image_Shield_2";
-            Image_Shield_2.Size = new Size(86, 86);
+            Image_Shield_2.Size = new Size(60, 54);
             Image_Shield_2.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_Shield_2.TabIndex = 5;
             Image_Shield_2.TabStop = false;
@@ -365,7 +387,7 @@
             Image_Shield_1.BackColor = Color.White;
             Image_Shield_1.Location = new Point(295, 180);
             Image_Shield_1.Name = "Image_Shield_1";
-            Image_Shield_1.Size = new Size(86, 86);
+            Image_Shield_1.Size = new Size(60, 54);
             Image_Shield_1.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_Shield_1.TabIndex = 5;
             Image_Shield_1.TabStop = false;
@@ -374,19 +396,89 @@
             // Image_Shield_3
             // 
             Image_Shield_3.BackColor = Color.White;
-            Image_Shield_3.Location = new Point(295, 416);
+            Image_Shield_3.Location = new Point(295, 393);
             Image_Shield_3.Name = "Image_Shield_3";
-            Image_Shield_3.Size = new Size(86, 86);
+            Image_Shield_3.Size = new Size(60, 54);
             Image_Shield_3.SizeMode = PictureBoxSizeMode.StretchImage;
             Image_Shield_3.TabIndex = 5;
             Image_Shield_3.TabStop = false;
             Image_Shield_3.Visible = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(19, 336);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Increase Life";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(30, 354);
+            button1.Name = "button1";
+            button1.Size = new Size(50, 50);
+            button1.TabIndex = 7;
+            button1.Text = "0";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(12, 442);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Battle result:";
+            // 
+            // listBox1
+            // 
+            listBox1.BackColor = Color.Black;
+            listBox1.ForeColor = Color.FromArgb(255, 128, 0);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(12, 460);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(720, 169);
+            listBox1.TabIndex = 10;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(759, 23);
+            label8.Name = "label8";
+            label8.Size = new Size(72, 30);
+            label8.TabIndex = 11;
+            label8.Text = "Level:";
+            // 
+            // Lbl_level
+            // 
+            Lbl_level.AutoSize = true;
+            Lbl_level.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_level.ForeColor = Color.White;
+            Lbl_level.Location = new Point(837, 23);
+            Lbl_level.Name = "Lbl_level";
+            Lbl_level.Size = new Size(26, 30);
+            Lbl_level.TabIndex = 11;
+            Lbl_level.Text = "1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
             ClientSize = new Size(944, 641);
+            Controls.Add(Lbl_level);
+            Controls.Add(label8);
+            Controls.Add(listBox1);
+            Controls.Add(label3);
+            Controls.Add(button1);
+            Controls.Add(label2);
             Controls.Add(Image_Shield_3);
             Controls.Add(Image_Shield_1);
             Controls.Add(Image_Shield_2);
@@ -466,5 +558,11 @@
         private PictureBox Image_Shield_2;
         private PictureBox Image_Shield_1;
         private PictureBox Image_Shield_3;
+        private Label label2;
+        private Button button1;
+        private Label label3;
+        private ListBox listBox1;
+        private Label label8;
+        private Label Lbl_level;
     }
 }

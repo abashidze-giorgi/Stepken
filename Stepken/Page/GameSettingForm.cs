@@ -20,14 +20,7 @@ namespace Stepken
         public GameSettingForm()
         {
             InitializeComponent();
-            //LoadGameEnvironment();
             LoadPlayerList();
-        }
-
-        private void LoadGameEnvironment()
-        {
-            var lg = new LoadGameEnvironment();
-            lg.LoadGame();
         }
 
         private void LoadPlayerList()
@@ -46,25 +39,20 @@ namespace Stepken
                 }
             }
         }
-
         private void Btn_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void LoadGame(string userName)
         {
-            var loadGame = new SaveAndLoadGame();
-            loadGame.Load(userName);
-            var ld = new LoadGame();
-            ld.LoadGameUnits();
+            var battleProcess = new LoadGame();
+            battleProcess.LoadFight(userName);
 
             var nf = new Form1();
             nf.Show();
             this.Hide();
             nf.FormClosing += Form1Closing;
         }
-
         private void Btn_New_Click(object sender, EventArgs e)
         {
             var nf = new NewUser();
@@ -72,28 +60,18 @@ namespace Stepken
             this.Hide();
             nf.FormClosing += ShowThis;
         }
-
         private void ShowThis(object? sender, FormClosingEventArgs e)
         {
             if (GameList.Player != null)
             {
-                if (!string.IsNullOrEmpty(GameList.Player.Name))
-                {
-                    var nf = new Form1();
-                    nf.Show();
-                    nf.FormClosing += Form1Closing;
-                }
-                else
-                {
-                    this.Show();
-                }
+                GameList.battleRound = 1;
+                LoadGame(GameList.Player.Name);
             }
             else
             {
                 this.Show();
             }
         }
-
         private void Form1Closing(object? sender, FormClosingEventArgs e)
         {
             LoadPlayerList();
@@ -106,7 +84,6 @@ namespace Stepken
                 LoadGame(userName);
             }
         }
-
         private void Btn_delete_Click_1(object sender, EventArgs e)
         {
             var delete = new DeleteUser();

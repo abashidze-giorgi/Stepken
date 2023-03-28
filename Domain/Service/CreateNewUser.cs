@@ -2,6 +2,7 @@
 using Domain.GameCharacter;
 using System.Collections.Specialized;
 using System.Xml.Linq;
+using Domain.Models;
 
 namespace Domain.Service
 {
@@ -18,7 +19,7 @@ namespace Domain.Service
                 if (notExist)
                 {
                     // call saveNewUser and if it return true
-                    if(SaveNewUser(userName, userCount))
+                    if(CreateUser(userName, userCount))
                     {
                         created = true;
                         return created;
@@ -26,7 +27,7 @@ namespace Domain.Service
                 }
                 return created;
             }
-            catch (Exception ex)
+            catch
             {
                 return created;
             }
@@ -54,7 +55,7 @@ namespace Domain.Service
             }
         }
 
-        private bool SaveNewUser(string userName, int userCount)
+        private bool CreateUser(string userName, int userCount)
         {
             bool saved = false;
             try
@@ -82,20 +83,19 @@ namespace Domain.Service
 
         private Character CreateCharacter(string userName, int userId)
         {
-            var player = new Character(userId+1, userName, 350, 40, 40,
+            var player = new Character(userId+1, userName, 350, 350, 40, 40,
                 CharacterRaceEnum.Human, Model.Character.LevelModel.Level_1,
                 $"{GetFolderPath.GetCharacterFolderPath()}\\human.jpg");
-            player.Weapon.Add(GameList.WeaponList[GetRandomWeaponId()]);
-            player.Shield = GameList.ShieldList[4];
+            player.Weapon.Add((WeaponModel)CreateAmmunition.CreateWeapon(6));
+            player.Shield =(ShieldModel) CreateAmmunition.CreateShield(RandomShieldId());
             GameList.Player = player;
             return player;
         }
-       
-        private int GetRandomWeaponId()
+
+        private int RandomShieldId()
         {
             var random = new Random();
-            int weaponId = (int)random.Next(0, GameList.WeaponList.Count);
-            return weaponId;
+            return random.Next(1, 6);
         }
     }
 }

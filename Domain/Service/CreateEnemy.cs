@@ -15,35 +15,73 @@ namespace Domain.Service
 {
     public class CreateEnemy
     {
-        private static int GetUnitId()
+        
+        public void CreateEnemye()
         {
-            return GameList.EnemyList.Count + 1;
+            switch (GameList.battleRound)
+            {
+                case 1:
+                    CreateGoblin();
+                    break;
+                case 2:
+                    CreateKobold();
+                    break;
+                case 3:
+                    CreateOrc();
+                    break;
+                case 4:
+                    CreateCyclop();
+                    break;
+            }
         }
-        public void CreateEnemyes()
+        private void CreateGoblin()
         {
-            CreateGoblin();
-            CreateKobold();
-            CreateOrc();
-        }
-        private static void CreateGoblin()
-        {
+            var folderPath = GetFolderPath.GetCharacterFolderPath();
+            var imagePath = Path.Combine(folderPath, "Goblin.jpg");
             var goblin = new Character(
-                GetUnitId(), "Goblin", 450, 17, 16, CharacterRaceEnum.Goblin, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Goblin.jpg");
-            goblin.Shield = GameList.ShieldList[1];
-            GameList.EnemyList.Add(goblin);
+                1, "Goblin", 350, 350, 15, 15, CharacterRaceEnum.Goblin, LevelModel.Level_1, imagePath);
+            goblin.Shield = (ShieldModel) CreateAmmunition.CreateShield(RandomShieldId());
+            goblin.Weapon.Add((WeaponModel)CreateAmmunition.CreateWeapon(1));
+            GameList.Enemy = goblin;
         }
-        private static void CreateKobold()
+        private void CreateKobold()
         {
-            var kobold = new Character(3, "Kobold", 320, 14, 17, CharacterRaceEnum.Kobold, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Kobold.jpg");
-            kobold.Shield = GameList.ShieldList[1];
-            GameList.EnemyList.Add(kobold);
+            var folderPath = GetFolderPath.GetCharacterFolderPath();
+            var imagePath = Path.Combine(folderPath, "Kobold.jpg");
+            var kobold = new Character(
+                2, "Kobold", 400, 400, 20, 16, CharacterRaceEnum.Kobold, LevelModel.Level_1, imagePath);
+            kobold.Shield = (ShieldModel)CreateAmmunition.CreateShield(RandomShieldId());
+            kobold.Weapon.Add((WeaponModel)CreateAmmunition.CreateWeapon(1));
+            GameList.Enemy = kobold;
         }
-        private static void CreateOrc()
+        private void CreateOrc()
         {
+            var folderPath = GetFolderPath.GetCharacterFolderPath();
+            var imagePath = Path.Combine(folderPath, "Orc.jpg");
             var orc = new Character(
-                GetUnitId(), "Orc", 640, 32, 24, CharacterRaceEnum.Orc, LevelModel.Level_1, $"{GetFolderPath.GetCharacterFolderPath()}\\Orc.jpg");
-            orc.Shield = GameList.ShieldList[1];
-            GameList.EnemyList.Add(orc);
+                3, "Orc", 420, 420, 22, 26, CharacterRaceEnum.Orc, LevelModel.Level_1, imagePath);
+            orc.Shield = (ShieldModel)CreateAmmunition.CreateShield(RandomShieldId());
+            orc.Weapon.Add((WeaponModel)CreateAmmunition.CreateWeapon(1));
+
+
+            GameList.Enemy = orc;
+        }
+
+        private void CreateCyclop()
+        {
+            var folderPath = GetFolderPath.GetCharacterFolderPath();
+            var imagePath = Path.Combine(folderPath, "Cyclop.jpg");
+            var cyclop = new Character(
+                4, "Cyclop", 500, 500, 34, 75, CharacterRaceEnum.Orc, LevelModel.Level_1, imagePath);
+            cyclop.Shield = (ShieldModel)CreateAmmunition.CreateShield(RandomShieldId());
+            cyclop.Weapon.Add((WeaponModel)CreateAmmunition.CreateWeapon(1));
+            GameList.Enemy = cyclop;
+        }
+
+        private int RandomShieldId()
+        {
+            var random = new Random();
+            return random.Next(1, 6);
         }
     }
 }

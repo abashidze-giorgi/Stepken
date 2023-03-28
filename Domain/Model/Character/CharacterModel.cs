@@ -8,7 +8,8 @@ namespace Domain.Models
     {
         public virtual int Id { get; set; } = 0;
         public virtual string? Name { get; set; }
-        public virtual double Life { get; set; } = 0;
+        public virtual double MaxLife { get; set; } = 0;
+        public virtual double CurrentLife { get; set; } = 0;
         public virtual double Attack { get; set; } = 0;
         public virtual double Defence { get; set; } = 0;
         public virtual CharacterRaceEnum? CharacterRace { get; set; }

@@ -16,8 +16,6 @@ namespace Stepken
 {
     public partial class Form1 : Form
     {
-        Character player = Player.Player;
-        Character enemy = Enemy.FigterList[1];
         public Character currentEnemy { get; set; }
         private Battle battle;
         private string playerName = "YourNameHere";
@@ -26,27 +24,29 @@ namespace Stepken
         {
             InitializeComponent();
             LoadCharacterValues();
+            listBox1.Items.Clear();
         }
 
         private void LoadCharacterValues()
         {
-            if (player != null)
+            if (Player.Player != null)
             {
-                Lbl_player_atack.Text = getAttackAmount(player).ToString();
-                Lbl_player_defence.Text = getDefenceAmount(player).ToString();
-                Lbl_user_name.Text = player.Name;
-                Lbl_PlayerLife.Text = player.Life.ToString();
-                Image_player.ImageLocation = player.ImageAddress;
+                Lbl_player_atack.Text = getAttackAmount(Player.Player).ToString();
+                Lbl_player_defence.Text = getDefenceAmount(Player.Player).ToString();
+                Lbl_user_name.Text = Player.Player.Name;
+                Lbl_PlayerLife.Text = $"{Player.Player.CurrentLife.ToString()} / {Player.Player.MaxLife.ToString()}";
+                Image_player.ImageLocation = Player.Player.ImageAddress;
                 ImagePlayerShield();
             }
-            if (enemy != null)
+            if (Enemy.Enemy != null)
             {
-                Lbl_enemy_atack.Text = getAttackAmount(enemy).ToString();
-                Lbl_enemy_defence.Text = getDefenceAmount(enemy).ToString();
-                Lbl_enemy_name.Text = enemy.Name;
-                Lbl_EnemyLife.Text = enemy.Life.ToString();
-                Image_enemy.ImageLocation = enemy.ImageAddress;
+                Lbl_enemy_atack.Text = getAttackAmount(Enemy.Enemy).ToString();
+                Lbl_enemy_defence.Text = getDefenceAmount(Enemy.Enemy).ToString();
+                Lbl_enemy_name.Text = Enemy.Enemy.Name;
+                Lbl_EnemyLife.Text = Enemy.Enemy.CurrentLife.ToString();
+                Image_enemy.ImageLocation = Enemy.Enemy.ImageAddress;
             }
+            Lbl_level.Text = GameList.battleRound.ToString();
         }
 
         private double getAttackAmount(Character unit)
@@ -75,14 +75,14 @@ namespace Stepken
         }
         private void Btn_Store_Click(object sender, EventArgs e)
         {
-            var equipPanel = new StoreForm(player);
+            var equipPanel = new StoreForm(Player.Player);
             equipPanel.Show();
             this.Hide();
             equipPanel.FormClosing += StoreColisng;
         }
         private void CheckAtacker()
         {
-            // if its enemy turn
+            // if enemy turn
             if (battle.atacker == 1)
             {
                 button4.Enabled = false;
@@ -107,10 +107,43 @@ namespace Stepken
         {
             battle.StartBattle(zone);
             GetLife();
+            ChangeCharacteerShield(GameList.Enemy);
             CheckAtacker();
+            TextBattleResult();
         }
+
+        private void TextBattleResult()
+        {
+            try
+            {
+                //if (GameList.hitResult.Atacker == GameList.Player.Name)
+                //{
+                //    listBox1.ForeColor = Color.Green;
+                //}
+                //else
+                //{
+                //    listBox1.ForeColor = Color.Orange;
+                //}
+                listBox1.Items.Add($"Atacker: {GameList.hitResult.Atacker}");
+                listBox1.Items.Add($"Defender: {GameList.hitResult.Defender}");
+                listBox1.Items.Add($"Attack power: {GameList.hitResult.AtackPower}");
+                listBox1.Items.Add($"Defence power: {GameList.hitResult.DefencePower}");
+                listBox1.Items.Add($"Atack zone: {GameList.hitResult.AtackZone}");
+                listBox1.Items.Add($"Defence zone: {GameList.hitResult.DefenceShieldZone}");
+                listBox1.Items.Add($"Life decrease: {GameList.hitResult.DecreaseLife}");
+                listBox1.Items.Add($"Player life: {GameList.Player.CurrentLife}");
+                listBox1.Items.Add($"Enemy life: {GameList.Enemy.CurrentLife}");
+                listBox1.Items.Add("-----------------------------");
+            }
+            catch
+            {
+
+            }
+        }
+
         private void Btn_StartBattle_Click(object sender, EventArgs e)
         {
+            Btn_StartBattle.Visible = false;
             battle = new Battle();
             battle.SetAtacker();
             CheckAtacker();
@@ -120,17 +153,35 @@ namespace Stepken
         {
             try
             {
-                if (enemy.Life == 0)
+                if (Enemy.Enemy.CurrentLife == 0)
                 {
-
+                    var attempt = Convert.ToInt16(button1.Text);
+                    attempt++;
+                    button1.Text = attempt.ToString();
+                    GameList.Enemy = null;
+                    GameList.battleRound++;
+                    ChangeCharacteerShield(GameList.Player);
+                    SaveGame();
+                    listBox1.Items.Clear();
+                    if (GameList.battleRound < 5)
+                    {
+                        var createEnemy = new CreateEnemy();
+                        createEnemy.CreateEnemye();
+                        LoadCharacterValues();
+                    }
+                    else
+                    {
+                        var nf = new PlayerWinForm();
+                        nf.Show();
+                        this.Hide();
+                    }
                 }
-                if (player.Life == 0)
+                if (Player.Player.CurrentLife == 0)
                 {
                     PlayerDead();
                     return;
                 }
-                Lbl_EnemyLife.Text = enemy.Life.ToString();
-                Lbl_PlayerLife.Text = player.Life.ToString();
+                LoadCharacterValues();
             }
             catch (Exception ex)
             {
@@ -139,14 +190,9 @@ namespace Stepken
         }
         private void PlayerDead()
         {
-            player = null;
-            Lbl_PlayerLife.Text = 0.ToString();
-            Image_player.ImageLocation = null;
-            Image_Weapon_Player.ImageLocation = null;
-            Image_Shield_1.Visible = false;
-            Image_Shield_2.Visible = false;
-            Image_Shield_3.Visible = false;
-
+            var nf = new PlayerLoseForm();
+            nf.Show();
+            this.Hide();
         }
         private void SaveGame()
         {
@@ -158,22 +204,22 @@ namespace Stepken
             Image_Shield_1.Visible = false;
             Image_Shield_2.Visible = false;
             Image_Shield_3.Visible = false;
-            foreach (var sh in player.Shield.Zone)
+            foreach (var sh in Player.Player.Shield.Zone)
             {
                 if (sh == ZoneModel.Head)
                 {
                     Image_Shield_1.Visible = true;
-                    Image_Shield_1.ImageLocation = player.Shield.ImageAddress;
+                    Image_Shield_1.ImageLocation = Player.Player.Shield.ImageAddress;
                 }
                 if (sh == ZoneModel.Body)
                 {
                     Image_Shield_2.Visible = true;
-                    Image_Shield_2.ImageLocation = player.Shield.ImageAddress;
+                    Image_Shield_2.ImageLocation = Player.Player.Shield.ImageAddress;
                 }
                 if (sh == ZoneModel.Leg)
                 {
                     Image_Shield_3.Visible = true;
-                    Image_Shield_3.ImageLocation = player.Shield.ImageAddress;
+                    Image_Shield_3.ImageLocation = Player.Player.Shield.ImageAddress;
                 }
             }
         }
@@ -192,5 +238,35 @@ namespace Stepken
             Battle(ZoneModel.Leg);
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var attempt = Convert.ToInt16(button1.Text);
+            if (attempt > 0)
+            {
+                attempt--;
+                GameList.Player.CurrentLife = GameList.Player.MaxLife;
+                button1.Text = attempt.ToString();
+                LoadCharacterValues();
+            }
+        }
+
+        private void ChangeCharacteerShield(Character chara)
+        {
+            try
+            {
+                chara.Shield = (ShieldModel)CreateAmmunition.CreateShield(RandomShieldId());
+
+            }
+            catch
+            {
+
+            }
+        }
+        private int RandomShieldId()
+        {
+            var random = new Random();
+            return random.Next(1, 6);
+        }
     }
 }
