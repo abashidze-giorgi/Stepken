@@ -17,7 +17,10 @@ namespace Domain.Service
         {
             List<Character> playerList = GetSavedCharacter();
             Character? character = playerList.FirstOrDefault(p => p.Name == userName);
-            GameList.Player = character;
+            if(character != null)
+            {
+                GameList.Player = character;
+            }
         }
 
         public bool Save()
