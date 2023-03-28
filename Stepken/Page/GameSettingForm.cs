@@ -20,7 +20,7 @@ namespace Stepken
         public GameSettingForm()
         {
             InitializeComponent();
-            LoadGameEnvironment();
+            //LoadGameEnvironment();
             LoadPlayerList();
         }
 

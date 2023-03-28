@@ -15,14 +15,9 @@ namespace Domain.Service
     {
         public void Load(string userName)
         {
-            List<Character> playerList = GetSavedCharacters();
-            foreach(var player in playerList)
-            {
-                if(player.Name == userName)
-                {
-                    GameList.Player = player;
-                }
-            }
+            List<Character> playerList = GetSavedCharacter();
+            Character? character = playerList.FirstOrDefault(p => p.Name == userName);
+            GameList.Player = character;
         }
 
         public bool Save()
@@ -35,7 +30,7 @@ namespace Domain.Service
                  
                 StringCollection savedList = Settings.Settings1.Default.PlayerS; // get list from settings
 
-                myList = GetSavedCharacters();
+                myList = GetSavedCharacter();
 
                 foreach (Character character in myList)
                 {
@@ -58,7 +53,7 @@ namespace Domain.Service
             }
         }
 
-        private List<Character> GetSavedCharacters()
+        private List<Character> GetSavedCharacter()
         {
             StringCollection stringList = Settings.Settings1.Default.PlayerS;
             List<Character> myList = new List<Character>();
