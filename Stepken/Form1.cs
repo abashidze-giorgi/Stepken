@@ -92,10 +92,39 @@ namespace Stepken
             }
             else
             {
+                EmptyShield();
                 button4.Enabled = true;
                 button5.Enabled = true;
                 button6.Enabled = true;
             }
+        }
+
+        private void EmptyShield()
+        {
+            GameList.Player.Shield = null;
+            Shield_select_head.Visible = true;
+            Shld_selectbody.Visible = true;
+            Shield_select_legs.Visible = true;
+        }
+
+        private void SelectShield(string zone)
+        {
+            switch (zone)
+            {
+                case "head":
+                    GameList.Player.Shield = (ShieldModel)CreateAmmunition.CreateShield(1);
+                    break;
+                case "body":
+                    GameList.Player.Shield = (ShieldModel)CreateAmmunition.CreateShield(2);
+                    break;
+                case "leg":
+                    GameList.Player.Shield = (ShieldModel)CreateAmmunition.CreateShield(3);
+                    break;
+            }
+            LoadCharacterValues();
+            Shield_select_head.Visible = false;
+            Shld_selectbody.Visible = false;
+            Shield_select_legs.Visible = false;
         }
         public async Task Wait1000MillisecondsAsync()
         {
@@ -105,11 +134,18 @@ namespace Stepken
         }
         private void Battle(ZoneModel zone)
         {
-            battle.StartBattle(zone);
-            GetLife();
-            ChangeCharacteerShield(GameList.Enemy);
-            CheckAtacker();
-            TextBattleResult();
+            if(GameList.Player.Shield != null)
+            {
+                battle.StartBattle(zone);
+                GetLife();
+                ChangeCharacteerShield(GameList.Enemy);
+                CheckAtacker();
+                TextBattleResult();
+            }
+            else
+            {
+                MessageBox.Show("Select Defence zone");
+            }
         }
 
         private void TextBattleResult()
@@ -267,6 +303,21 @@ namespace Stepken
         {
             var random = new Random();
             return random.Next(1, 6);
+        }
+
+        private void Shield_select_head_Click(object sender, EventArgs e)
+        {
+            SelectShield("head");
+        }
+
+        private void Shld_selectbody_Click(object sender, EventArgs e)
+        {
+            SelectShield("body");
+        }
+
+        private void Shield_select_legs_Click(object sender, EventArgs e)
+        {
+            SelectShield("leg");
         }
     }
 }

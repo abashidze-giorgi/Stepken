@@ -74,9 +74,9 @@ namespace Domain.Service
             switch (id)
             {
                 case 1:
-                    return BodyShield();
-                case 2:
                     return HeadShield();
+                case 2:
+                    return BodyShield();
                 case 3:
                     return LegShield();
                 case 4:

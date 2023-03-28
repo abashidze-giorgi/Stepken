@@ -65,6 +65,9 @@
             listBox1 = new ListBox();
             label8 = new Label();
             Lbl_level = new Label();
+            Shield_select_head = new Button();
+            Shld_selectbody = new Button();
+            Shield_select_legs = new Button();
             ((System.ComponentModel.ISupportInitialize)Image_player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_enemy).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Image_Weapon_Player).BeginInit();
@@ -467,12 +470,45 @@
             Lbl_level.TabIndex = 11;
             Lbl_level.Text = "1";
             // 
+            // Shield_select_head
+            // 
+            Shield_select_head.Location = new Point(296, 180);
+            Shield_select_head.Name = "Shield_select_head";
+            Shield_select_head.Size = new Size(59, 54);
+            Shield_select_head.TabIndex = 12;
+            Shield_select_head.Text = "select";
+            Shield_select_head.UseVisualStyleBackColor = true;
+            Shield_select_head.Click += Shield_select_head_Click;
+            // 
+            // Shld_selectbody
+            // 
+            Shld_selectbody.Location = new Point(296, 287);
+            Shld_selectbody.Name = "Shld_selectbody";
+            Shld_selectbody.Size = new Size(59, 54);
+            Shld_selectbody.TabIndex = 12;
+            Shld_selectbody.Text = "select";
+            Shld_selectbody.UseVisualStyleBackColor = true;
+            Shld_selectbody.Click += Shld_selectbody_Click;
+            // 
+            // Shield_select_legs
+            // 
+            Shield_select_legs.Location = new Point(296, 393);
+            Shield_select_legs.Name = "Shield_select_legs";
+            Shield_select_legs.Size = new Size(59, 54);
+            Shield_select_legs.TabIndex = 12;
+            Shield_select_legs.Text = "select";
+            Shield_select_legs.UseVisualStyleBackColor = true;
+            Shield_select_legs.Click += Shield_select_legs_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(944, 641);
+            Controls.Add(Shield_select_legs);
+            Controls.Add(Shld_selectbody);
+            Controls.Add(Shield_select_head);
             Controls.Add(Lbl_level);
             Controls.Add(label8);
             Controls.Add(listBox1);
@@ -564,5 +600,8 @@
         private ListBox listBox1;
         private Label label8;
         private Label Lbl_level;
+        private Button Shield_select_head;
+        private Button Shld_selectbody;
+        private Button Shield_select_legs;
     }
 }

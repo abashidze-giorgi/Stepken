@@ -1,10 +1,5 @@
-﻿using Domain.Model.Character;
-using Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Models;
+using Domain.Model.Character;
 
 namespace Domain.GameCharacter
 {
@@ -16,16 +11,16 @@ namespace Domain.GameCharacter
         {
             Id = id;
             Name = name;
-            MaxLife = maxLife;
-            CurrentLife = currentLife;
-            Attack = attack;
-            Defence = defence;
-            CharacterRace = characterRace;
             Level = level;
+            Attack = attack;
+            MaxLife = maxLife;
+            Defence = defence;
+            CurrentLife = currentLife;
             Shield = new ShieldModel();
-            Weapon = new List<WeaponModel>();
-            Armor = new List<ArmorModel>();
             ImageAddress = imageAddress;
+            CharacterRace = characterRace;
+            Armor = new List<ArmorModel>();
+            Weapon = new List<WeaponModel>();
         }
     }
 }

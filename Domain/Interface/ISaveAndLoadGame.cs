@@ -1,16 +1,8 @@
-﻿using Domain.GameCharacter;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Interface
+﻿namespace Domain.Interface
 {
     public interface ISaveAndLoadGame
     {
         public bool Save();
-
         public void Load(string userName);
     }
 }
